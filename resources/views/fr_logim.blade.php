@@ -12,8 +12,6 @@
       
          <form method="POST" action="/executaLog">
 
-
-
              {{ csrf_field() }}
              <div class="form-group">
                <label for="id_text_usuario">Usuario</label> 

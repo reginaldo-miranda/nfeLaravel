@@ -18,3 +18,7 @@ Route::post('executaLog', 'usuariosController@execurtarLogin');
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/funcionario', function () {
+    return view('fr_funcionarios.fr_funcionarios');
+});
