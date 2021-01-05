@@ -99,7 +99,7 @@ class usuariosController extends Controller
           ]);
 
         if($request->text_usuario == 'admin' && $request->text_senha == 'master' ){
-          return 'pagina adm';
+          return view('fr_admin');
         }
 
           // verificar se usuario existe
