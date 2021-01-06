@@ -1,14 +1,28 @@
+  {{--  <div class="col-md-4 offset-4 col-sm-8 offset-2 col-xs-12 imag-logo"> --}}
+   <style>
 
-<div class="row">
-  <style>
-    .row{
-      background: rgb(204, 237, 240);
+    #img{
+      padding-top: 2px;
     }
-  </style>
+    #cabecalho{
+      display: block;
+      width: 30%; 
+      height: 100px;
+      padding-top: 20px;
+    }
 
- <div class="col-md-4 offset-4 col-sm-8 offset-2 col-xs-12 imag-logo">
 
-    <img src={{ asset('imagem/logo.jpg')}}>
+
+   </style>
    
-  </div>
-</div>
+        <div id="cabecalho">
+          <h3>Empresa de distribuicao</h3>
+        </div>
+    
+    <div id="img">
+       <div class="col-md-4 col-md-4 offset-5 col-sm-8 offset-2 col-xs-12"> 
+         <img src={{ asset('imagem/logo.jpg')}}>
+       </div>
+    </div>
+   
+  

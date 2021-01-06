@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS 
+    {{--  Bootstrap CSS 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    -->
+     --}}
     <link href="{{ asset('css/app.css')}}" rel="stylesheet">
     <link href="{{ asset('css/main.css')}}" rel="stylesheet">
     <title>sistema de usuarios</title>
@@ -15,13 +15,17 @@
 <body>
     <div class="container">
         {{-- header --}}
-
-        @include('inc.header')
-
+      
+           @include('inc.header')
+      
         {{-- conteudo --}}
 
         @yield('conteudo')
+        
     </div>
+    <div id="footer">
+        @include('inc.footer')
+    </div> 
 
     <!-- JavaScript (Opcional) -->
     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
@@ -30,4 +34,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
+
 </html>
