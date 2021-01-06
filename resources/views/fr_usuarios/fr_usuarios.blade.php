@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="text_endereco">Endereco</label> 
+                    <label for="text_endereco">Nome</label> 
                     <input type="text" class="form-control" id="text_endereco" name="text_endereco" placeholder="endereco:">   
                 </div>
 
@@ -55,3 +55,47 @@
     </div>
 
 @endsection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
