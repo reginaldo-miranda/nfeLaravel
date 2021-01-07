@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class FuncionarioController extends Controller
 {
+
+    public function __construct(Request $request)
+  {
+    $this->request = $request;
+  }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +19,7 @@ class FuncionarioController extends Controller
      */
     public function index()
     {
-        //
+        return view('fr_funcionarios.listarFuncionarios');
     }
 
     /**

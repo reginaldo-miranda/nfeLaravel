@@ -9,6 +9,12 @@ use App\usuarios;
 
 class usuariosController extends Controller
 {
+
+
+  public function __construct(Request $request)
+  {
+    $this->request = $request;
+  }
     /**
      * Display a listing of the resource.
      *
@@ -99,7 +105,7 @@ class usuariosController extends Controller
           'text_senha' => 'required'
           ]);
 
-        if($request->text_usuario == 'admin' && $request->text_senha == 'master' ){
+        if($request->text_usuario == "admin" && $request->text_senha == "master" ){
           return view('fr_admin');
         }
 

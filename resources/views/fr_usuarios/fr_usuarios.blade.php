@@ -3,6 +3,12 @@
 @section('conteudo')
 
 <div class="col-md-4">  
+
+    @section('titulopagina')
+     <div>
+        <h4>Cadastrar Uusarios</h4>
+     </div>
+    @endsection  
           
       {{-- apresentacao de erros de validacao --}}
 

@@ -5,11 +5,15 @@
 
 
  {{--<div class="row"> --}}     
+ 
+     @include('inc.imagem')
+
        
    <div class="col-md-4 col-md-4 offset-4 col-sm-8 offset-2 col-xs-12"> 
       {{-- apresentacao de erros de validacao --}}
 
        @include('inc.erros')
+       
       
          <form method="POST" action="/executaLog">
 

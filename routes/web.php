@@ -26,3 +26,7 @@ Route::get('/funcionario', function () {
 Route::get('/administrador',function(){
     return view('fr_admin');
 });
+
+Route::get('/listarfuncionario', function () {
+    return view('fr_funcionarios.fr_listarFuncionarios');
+});

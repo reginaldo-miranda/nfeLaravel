@@ -1,42 +1,41 @@
   {{--  <div class="col-md-4 offset-4 col-sm-8 offset-2 col-xs-12 imag-logo"> --}}
-  
-
     <style>
 
       .topo {
         background-color: azure;
         position: relative;
-        padding: 2rem;
+        padding: 5px;
         height: 122px;
       }
       
       
-      .img {
+    .img {
         position: absolute;
         max-width: 25%;
-        top: 5%;
+        top: 1%;
         left: 46%;
       } 
       #botao{
         float: right;
+        padding-left: 15px; 
+        
       }
+       #titulo{
+         text-align: center;
+       }
     
     </style> 
-
+    
     <div class="topo">
-      
        <h4>Empresa de distribuicao</h4> 
        <h5>Rua Duque de Caxias,199 - Limeira<h5>
-     
-       <div class="img" class="col-md-4 col-md-4 offset-5 col-sm-8 offset-2 col-xs-12"> 
-         <img src={{ asset('imagem/logo.jpg')}}>
-       </div>
-       <div id="botao">
-          <a href="/administrador">Voltar</a>
-          <a href="/">sair</a>
-       </div>
-    
-
+        <div id="titulo">
+            @yield('titulopagina') 
+         </div>
+            <div>
+              <a id="botao"href="/">sair</a>
+              <a id="botao"href="/administrador">Voltar</a>
+          </div> 
     </div>
    
   

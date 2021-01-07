@@ -4,6 +4,11 @@
 
 <div class="col-md-4"> 
             {{-- apresentacao de erros de validacao --}}
+    @section('titulopagina')
+    <div>
+        <h4>Cadastrar Funcionarios</h4>
+     </div>
+    @endsection  
 
             @include('inc.erros')
             
