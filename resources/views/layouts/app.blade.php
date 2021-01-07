@@ -11,6 +11,25 @@
     <link href="{{ asset('css/app.css')}}" rel="stylesheet">
     <link href="{{ asset('css/main.css')}}" rel="stylesheet">
     <title>sistema de usuarios</title>
+    <style>
+              
+        .container{
+            background: greenyellow;
+            height: 650px;
+        }
+
+        #footer{
+            margin-left: 70px;
+            padding-top: 5px;
+            width: 89%;
+
+        }
+        input {
+            height: 25px;
+        }
+          
+    </style>   
+
 </head>
 <body>
     <div class="container">
@@ -34,5 +53,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
-
+{{--  verificar video 77 joao ribeiro validar sessao --}}
 </html>

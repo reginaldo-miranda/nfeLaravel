@@ -71,6 +71,7 @@
                       <li><a href="#">Clientes</a></li>
                       <li><a href="#">Fornecedor</a></li>
                       <li><a href="{{ ('funcionario') }}">Funcionário</a></li>
+                      <li><a href="{{ ('usuario') }}">Usuario</a></li>
                       <li><a href="#">Produtos</a></li>
                     </ul>
                 </li>

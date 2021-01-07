@@ -21,4 +21,8 @@ Route::get('/', function () {
 
 Route::get('/funcionario', function () {
     return view('fr_funcionarios.fr_funcionarios');
+    
+});
+Route::get('/administrador',function(){
+    return view('fr_admin');
 });

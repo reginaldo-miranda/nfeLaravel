@@ -3,22 +3,8 @@
 {{-- formulario de Login --}}
 @section('conteudo')
 
-<style>
 
-  input {
-    height: 25px;
-    
-  }
- 
-  .container{
-    background: greenyellow;
-    height: 500px;
-  }
-
-   
- </style>
-  
- {{--  <div class="row">  --}}  
+ {{--<div class="row"> --}}     
        
    <div class="col-md-4 col-md-4 offset-4 col-sm-8 offset-2 col-xs-12"> 
       {{-- apresentacao de erros de validacao --}}
@@ -54,7 +40,7 @@
            
          </form>
 
-      <div>
+     </div>
 
   {{--   </div>  --}}
  

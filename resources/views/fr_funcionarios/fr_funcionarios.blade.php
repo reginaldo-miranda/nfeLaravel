@@ -2,26 +2,7 @@
 
 @section('conteudo')
 
-<style>
-
- input {
-   height: 25px;
- }
-
- #footer{
-   padding-top: 5px;
-   width: 89%;
-   margin-left:70px;
-
- }
-
- .container{
-   background: greenyellow;
-   height: 620px;
- }
- 
-</style>
-         <div class="col-md-4"> 
+<div class="col-md-4"> 
             {{-- apresentacao de erros de validacao --}}
 
             @include('inc.erros')

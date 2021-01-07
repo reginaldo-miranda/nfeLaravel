@@ -16,7 +16,8 @@ class usuariosController extends Controller
      */
     public function index()
     {
-        return 'lista de usuarios';
+        //return 'lista de usuarios';
+        return view('fr_usuarios.fr_usuarios');
     }
 
     /**
