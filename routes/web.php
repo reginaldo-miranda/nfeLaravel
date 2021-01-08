@@ -10,23 +10,37 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::resource('usuario', 'usuariosController');
-
-Route::post('executaLog', 'usuariosController@execurtarLogin');
-
 Route::get('/', function () {
     return view('welcome');
 });
 
+//-----------------------------------------------------------------
+Route::resource('usuario', 'usuariosController');
+
+Route::post('executaLog', 'usuariosController@execurtarLogin');
+
+Route::get('editarUusuario', function (){
+
+    return view('fr_usuarios.fr_editarUsuarios');
+});
+
+//-----------------------------------------------------------------
+
 Route::get('/funcionario', function () {
-    return view('fr_funcionarios.fr_funcionarios');
+    return view('fr_funcionarios.fr_cadastroFunc');
+
+Route::get('/listarfuncionario', function () {
+    return view('fr_funcionarios.fr_listarFuncionarios');
+});
+
+//--------------------------------------------------------------------
+
     
 });
 Route::get('/administrador',function(){
     return view('fr_admin');
 });
 
-Route::get('/listarfuncionario', function () {
-    return view('fr_funcionarios.fr_listarFuncionarios');
-});
+
+
+
