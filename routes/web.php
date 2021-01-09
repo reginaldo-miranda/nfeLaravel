@@ -19,24 +19,22 @@ Route::resource('usuario', 'usuariosController');
 
 Route::post('executaLog', 'usuariosController@execurtarLogin');
 
-Route::get('editarUusuario', function (){
-
-    return view('fr_usuarios.fr_editarUsuarios');
-});
+Route::get('cadastrorUsuario' ,'usuariosController@telacadastrar');
 
 //-----------------------------------------------------------------
 
-Route::get('/funcionario', function () {
-    return view('fr_funcionarios.fr_cadastroFunc');
 
-Route::get('/listarfuncionario', function () {
+Route::resource('funcionario', 'FuncionarioController');
+
+Route::get('cadastrofunc', 'FuncionarioController@telacadastrarFunc');
+
+/*Route::get('/listarfuncionario', function () {
     return view('fr_funcionarios.fr_listarFuncionarios');
-});
+});*/
 
 //--------------------------------------------------------------------
 
     
-});
 Route::get('/administrador',function(){
     return view('fr_admin');
 });

@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 
 class FuncionarioController extends Controller
 {
-
+    protected $request;
+    
     public function __construct(Request $request)
   {
     $this->request = $request;
@@ -19,7 +20,7 @@ class FuncionarioController extends Controller
      */
     public function index()
     {
-        return view('fr_funcionarios.listarFuncionarios');
+        return view('fr_funcionarios.fr_listarFuncionarios');
     }
 
     /**
@@ -86,5 +87,10 @@ class FuncionarioController extends Controller
     public function destroy(funcionario $funcionario)
     {
         //
+    }
+
+    public function telacadastrarFunc()
+    {
+      return view('fr_funcionarios.fr_cadastroFunc');
     }
 }

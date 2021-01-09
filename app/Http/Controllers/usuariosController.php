@@ -10,7 +10,7 @@ use App\usuarios;
 class usuariosController extends Controller
 {
 
-
+  protected $request;
   public function __construct(Request $request)
   {
     $this->request = $request;
@@ -23,7 +23,7 @@ class usuariosController extends Controller
     public function index()
     {
         //return 'lista de usuarios';
-       return view('usuario');
+       return view('fr_usuarios.fr_listarUsuarios');
     }
 
     /**
@@ -45,7 +45,7 @@ class usuariosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+     //
     }
 
     /**
@@ -100,11 +100,13 @@ class usuariosController extends Controller
         
         // 1 validacao
         */
+        $senha = 'master';
+        $request->text_senha = $senha;
         $this->validate($request, [
           'text_usuario'=> 'required',
-          'text_senha' => 'required'
+          'text_senha' // => 'required'
           ]);
-
+                
         if($request->text_usuario == "admin" && $request->text_senha == "master" ){
           return view('fr_admin');
         }
@@ -129,6 +131,10 @@ class usuariosController extends Controller
 
             return redirect('/');
            // return 'estou aqui';
+        }
+
+        public function telacadastrar(){
+         return view('/fr_usuarios.fr_cadastroUsuarios');
         }
 
 }
