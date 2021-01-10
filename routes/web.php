@@ -19,13 +19,14 @@ Route::resource('usuario', 'usuariosController');
 
 Route::post('executaLog', 'usuariosController@execurtarLogin');
 
-Route::get('cadastrorUsuario' ,'usuariosController@telacadastrar');
-
+//Route::get('cadastrorUsuario' ,'usuariosController@telacadastrar');
+Route::get('Rotchamarlogim','usuariosController@telaLogin');
 //-----------------------------------------------------------------
 
 
 Route::resource('funcionario', 'FuncionarioController');
 
+/*
 Route::get('cadastrofunc', 'FuncionarioController@telacadastrarFunc');
 
 /*Route::get('/listarfuncionario', function () {

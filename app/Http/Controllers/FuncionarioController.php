@@ -1,5 +1,5 @@
 <?php
-
+// jaoo ribeiro 47
 namespace App\Http\Controllers;
 
 use App\funcionario;
@@ -30,7 +30,7 @@ class FuncionarioController extends Controller
      */
     public function create()
     {
-        //
+      return view('fr_funcionarios.fr_cadastroFunc');
     }
 
     /**
@@ -41,7 +41,14 @@ class FuncionarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $funcionario = new funcionario;
+        $funcionario->nome->$request->text_nome;
+        $funcionario->endereco->$request->text_endereco;
+        $funcionario->email->$request->text_email;
+        $funcionario->salario->$request->text_salario;
+        $funcionario->funcao->$request->text_funcao;
+        $funcionario->save();
+        return redirect('funcionario/create');
     }
 
     /**

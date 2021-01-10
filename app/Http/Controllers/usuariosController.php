@@ -33,8 +33,8 @@ class usuariosController extends Controller
      */
     public function create()
     {
-         return view('fr_logim');
-
+        
+        return view('/fr_usuarios.fr_cadastroUsuarios');
     }
 
     /**
@@ -133,8 +133,8 @@ class usuariosController extends Controller
            // return 'estou aqui';
         }
 
-        public function telacadastrar(){
-         return view('/fr_usuarios.fr_cadastroUsuarios');
+        public function telaLogin(){
+              return view('fr_logim');
         }
 
 }

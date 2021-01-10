@@ -12,7 +12,7 @@
 
             @include('inc.erros')
             
-                <form method="POST" action="/">
+                <form method="post" action="/funcionario">
 
                         {{ csrf_field() }}
                         

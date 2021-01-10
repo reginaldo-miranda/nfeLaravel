@@ -66,14 +66,8 @@
                    <ul>
                       <li><a href="#">Clientes</a></li>
                       <li><a href="#">Fornecedor</a></li>
-                      <li><a href="{{ ('/cadastrofunc') }}">Funcionário</a></li>
-
-
-
-                      <li><a href="{{ ('/cadastrorUsuario') }}">Usuario</a></li>
-
-
-
+                      <li><a href="{{ route('funcionario.create') }}">Funcionário</a></li>
+                      <li><a href="{{ route('usuario.create') }}">Usuario</a></li>
                       <li><a href="#">Produtos</a></li>
                     </ul>
                 </li>
