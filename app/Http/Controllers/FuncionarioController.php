@@ -20,7 +20,9 @@ class FuncionarioController extends Controller
      */
     public function index()
     {
-        return view('fr_funcionarios.fr_listarFuncionarios');
+        $dados = funcionario::all();
+       return view('fr_funcionarios.fr_listarFuncionarios', compact('dados'));
+       
     }
 
     /**
@@ -41,14 +43,21 @@ class FuncionarioController extends Controller
      */
     public function store(Request $request)
     {
+      /*
+       $dados = ['
+         $request->all();
+       '];*/
+      
         $funcionario = new funcionario;
-        $funcionario->nome->$request->text_nome;
-        $funcionario->endereco->$request->text_endereco;
-        $funcionario->email->$request->text_email;
-        $funcionario->salario->$request->text_salario;
-        $funcionario->funcao->$request->text_funcao;
+
+        $funcionario->nome = $request->text_nome;
+        $funcionario->endereco = $request->text_endereco;
+        $funcionario->email = $request->text_email;
+        $funcionario->salario = $request->text_salario;
+        $funcionario->funcao = $request->text_funcao;
         $funcionario->save();
-        return redirect('funcionario/create');
+        return redirect('funcionario/create'); 
+        //return $dados;
     }
 
     /**
