@@ -1,5 +1,5 @@
 
-@extends('layouts.app')
+@extends('layouts.app') 
 
 @section('titulopagina')
     <div>
@@ -16,16 +16,28 @@
     @else
       
        @foreach($dados as $funcionario)
-           <div class="row">
-               <div class="col-md-4">
-                 <h3>{{ $funcionario->nome }}</h3>
-               </div>
-               <div class="col-md-4">
-                 <h3>{{ $funcionario->funcao }}</h3>
-               </div>
-   
+       
+        
+            <div class="row">
+               
+                <div class="col-4">
+                    
+                    {{ $funcionario->nome }}
+                                       
+                </div>
+                <div class="col-4">
 
-         </div>
+                    {{ $funcionario->funcao }}
+
+
+                </div>
+                <div class="col-4">
+                    <a href="{{ ('/funcionario/edit{'id_funcionario'}') }}" class="glyphicon glyphicon-pencil">editar</a> 
+                   {{--   class="glyphicon glyphicon-pencil"  --}}
+                </div>   
+            
+            </div>
+            
            
        @endforeach 
     

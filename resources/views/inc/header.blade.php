@@ -5,7 +5,7 @@
         background-color: azure;
         position: relative;
         padding: 5px;
-        height: 122px;
+        height: 110px;
       }
       
       
@@ -18,6 +18,7 @@
       #botao{
         float: right;
         padding-left: 15px; 
+        margin-top: -15px;
         
       }
        #titulo{
@@ -36,6 +37,7 @@
               <a id="botao"href="/">sair</a>
               <a id="botao"href="/administrador">Voltar</a>
           </div> 
-    </div>
+     </div>
+     <br>
    
   

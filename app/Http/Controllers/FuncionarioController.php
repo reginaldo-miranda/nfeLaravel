@@ -79,7 +79,7 @@ class FuncionarioController extends Controller
      */
     public function edit(funcionario $funcionario)
     {
-        //
+        return 'estou a ediatr';
     }
 
     /**
