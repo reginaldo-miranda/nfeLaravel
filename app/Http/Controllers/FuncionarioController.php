@@ -92,9 +92,17 @@ class FuncionarioController extends Controller
      * @param  \App\funcionario  $funcionario
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, funcionario $funcionario)
+    public function update(Request $request, $id_funcionarios)
     {
-        //
+      $funcionario = funcionario::find($id_funcionarios);
+      $funcionario->nome = $request->text_nome;
+      $funcionario->endereco = $request->text_endereco;
+      $funcionario->email = $request->text_email;
+      $funcionario->salario = $request->text_salario;
+      $funcionario->funcao = $request->text_funcao;
+      $funcionario->save();
+
+      return redirect('funcionario');
     }
 
     /**
@@ -103,9 +111,15 @@ class FuncionarioController extends Controller
      * @param  \App\funcionario  $funcionario
      * @return \Illuminate\Http\Response
      */
-    public function destroy(funcionario $funcionario)
+    public function destroy($id_funcionarios)
     {
-        //
+        
+        if (!$funcionario = funcionario::find($id_funcionarios))
+          return redirect()->back();
+          $funcionario->delete();
+          return redirect('funcionario');
+        
+
     }
 
     public function telacadastrarFunc()

@@ -14,7 +14,8 @@ use App\funcionario;
 
             @include('inc.erros')
             
-                <form method="post" action="/">
+                <form method="post" action="{{ route('funcionario.update', $funcionario->id_funcionarios ) }}" >
+                    @method('put')
 
                         {{ csrf_field() }}
                         

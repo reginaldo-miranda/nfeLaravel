@@ -31,10 +31,35 @@
 
 
                 </div>
-                <div class="col-4">
-                    <a href="edit_func/{{ $funcionario->id_funcionarios}}">editar</a> 
+
+                    {{--  <div class="col-4">   --}}
+                    {{-- <a href="edit_func/{{ $funcionario->id_funcionarios}}">editar</a>
+                    <a href="#">Excluir</a>  --}}
+                    <style>
+
+                        .btn{
+                            height: 23px;
+                            margin-right: 5px;
+                            font-size: 10px;
+                            text-align: center;
+                        }
+                    </style>
+
+                    <form action="{{ route('funcionario.edit',$funcionario->id_funcionarios ) }}" method="get">
+                        @csrf
+                        <button type="submit" class="btn btn-warning btn-sm">Editar</button>
+                    </form>
+                    <form action="{{ route('funcionario.destroy', $funcionario->id_funcionarios) }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger btn-sm">Excluir</button>
+
+                    </form>
+                      
+                    
+
                    {{--   class="glyphicon glyphicon-pencil"  --}}
-                </div>   
+               {{--  </div>  --}}  
             
             </div>
             
