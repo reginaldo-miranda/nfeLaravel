@@ -97,6 +97,9 @@ class usuariosController extends Controller
            2 procurar na bd (enlouquente orm)
            3 comparar os dados digitado com bd (haching)
            4 passou os dados acima criar sessao usario
+
+
+           5             video aula joao ribeiro 67
         
         // 1 validacao
         */
