@@ -77,9 +77,12 @@ class FuncionarioController extends Controller
      * @param  \App\funcionario  $funcionario
      * @return \Illuminate\Http\Response
      */
-    public function edit(funcionario $funcionario)
-    {
-        return 'estou a ediatr';
+    public function edit($id_funcionarios)
+     {   
+
+        $funcionario = funcionario::find($id_funcionarios);
+ 
+        return view('fr_funcionarios.fr_editarFuncionarios', compact('funcionario'));
     }
 
     /**

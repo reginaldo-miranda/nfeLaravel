@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class funcionario extends Model
 {
-    protected $primaryKey = 'id_usuarios';
+    protected $primaryKey = 'id_funcionarios';
 }

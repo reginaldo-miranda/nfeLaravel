@@ -26,6 +26,8 @@ Route::get('Rotchamarlogim','usuariosController@telaLogin');
 
 Route::resource('funcionario', 'FuncionarioController');
 
+Route::get('edit_func/{id_funcionarios}', 'FuncionarioController@edit');
+
 /*
 Route::get('cadastrofunc', 'FuncionarioController@telacadastrarFunc');
 

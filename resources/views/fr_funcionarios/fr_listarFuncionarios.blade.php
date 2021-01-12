@@ -22,7 +22,7 @@
                
                 <div class="col-4">
                     
-                    {{ $funcionario->nome }}
+                    {{ $funcionario->nome }} 
                                        
                 </div>
                 <div class="col-4">
@@ -32,7 +32,7 @@
 
                 </div>
                 <div class="col-4">
-                    <a href="{{ ('/funcionario/edit{'id_funcionario'}') }}" class="glyphicon glyphicon-pencil">editar</a> 
+                    <a href="edit_func/{{ $funcionario->id_funcionarios}}">editar</a> 
                    {{--   class="glyphicon glyphicon-pencil"  --}}
                 </div>   
             
