@@ -43,9 +43,25 @@ class usuariosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request) // joao ribeiro 75 13:25 mim
     {
-     //
+      $this->validate($request,[
+        'text_nome' => 'required|between:2,40',
+        'text_email' => 'required|email',
+        'text_senha' => 'required|between:6,15',
+        'text_senhaRepetida' =>  'required|same:text_senha'
+
+      ]);
+
+      $dados = usuarios::where('email','-',$request->text_email)->get();
+
+      if($dados->count()!=0){
+
+          $erros_bd =['ja existe esse email'];
+
+          return view('/fr_cadastroUsuarios');
+      }
+       return 'cadastrando usuario';
     }
 
     /**
