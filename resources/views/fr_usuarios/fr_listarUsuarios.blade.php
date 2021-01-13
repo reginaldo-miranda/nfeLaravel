@@ -22,7 +22,7 @@
                
                 <div class="col-4">
                     
-                    {{ $usuarios->nome }} 
+                    {{ $usuarios->usuario }} 
                                        
                 </div>
                 <div class="col-4">

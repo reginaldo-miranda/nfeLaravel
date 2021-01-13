@@ -103,9 +103,16 @@ class usuariosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_usuarios)
     {
-        //
+        $usuario = usuarios::find($id_usuarios);
+
+        $usuario->usuario = $request->text_nome;
+        $usuario->email = $request->text_email;
+        $usuario->senha = Hash::make($request->text_senha);
+        $usuario->save();
+        return redirect('usuario');
+
     }
 
     /**
@@ -132,27 +139,28 @@ class usuariosController extends Controller
         
         // 1 validacao
         */
-        $senha = 'master';
-        $request->text_senha = $senha;
+     //   $senha = 'master';
+       // $request->text_senha = $senha;
         $this->validate($request, [
           'text_usuario'=> 'required',
-          'text_senha' // => 'required'
+          'text_senha'  => 'required'
+          
           ]);
-                
+               
         if($request->text_usuario == "admin" && $request->text_senha == "master" ){
           return view('fr_admin');
         }
 
           // verificar se usuario existe
-          $usuario = usuarios::where('usuario',$request->text_usuario)->get();
+          $usuario = usuarios::where('usuario',$request->text_usuario)->first();
              // if(count($usuario)==0){
              if($usuario->count()==0){
                 $erros_bd = ['essa conta de usuario nao existe'];
                 return view('fr_logim', compact('erros_bd'));
              }
-          $usuario = usuarios::where('usuario',$request->text_usuario)->first();
+        //  $usuario = usuarios::where('usuario',$request->text_senha)->get();
           //  verificar a senha
-            if(!Hash::check($request->text_senha, $usuario->senha)){
+            if(!Hash::check($request->text_senha, $usuario->senha)){ // joao ribeiro 76
               $erros_bd = ['essa senha de usuario nao existe'];
               return view('fr_logim', compact('erros_bd'));
 
@@ -161,7 +169,7 @@ class usuariosController extends Controller
               Session::put('usuario', $usuario->usuario);
             */
 
-            return redirect('/');
+            return  view('fr_admin');
            // return 'estou aqui';
         }
 
