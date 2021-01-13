@@ -22,8 +22,8 @@ class usuariosController extends Controller
      */
     public function index()
     {
-        //return 'lista de usuarios';
-       return view('fr_usuarios.fr_listarUsuarios');
+       $dados = usuarios::all();
+       return view('fr_usuarios.fr_listarUsuarios', compact('dados'));
     }
 
     /**
@@ -61,7 +61,15 @@ class usuariosController extends Controller
 
           return view('/fr_cadastroUsuarios');
       }
-       return 'cadastrando usuario';
+
+      $dadosNovos = new usuarios;
+
+      $dadosNovos->usuario = $request->text_nome;
+      $dadosNovos->email = $request->text_email;
+      $dadosNovos->senha = Hash::make($request->text_senha);
+      $dadosNovos->save();
+      
+       return redirect('usuario');
     }
 
     /**
@@ -81,9 +89,11 @@ class usuariosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id_usuarios)
     {
-        //
+      $usuarios = usuarios::find($id_usuarios);
+ 
+      return view('fr_usuarios.fr_editarUsuarios', compact('usuarios'));
     }
 
     /**
@@ -104,9 +114,12 @@ class usuariosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id_usuarios)
     {
-        //
+      if (!$usuarios = usuarios::find($id_usuarios))
+      return redirect()->back();
+      $usuarios->delete();
+      return redirect('usuario');
     }
      public function execurtarLogin(Request $request){
           /* 1 verifacar das preenchidos validacao
