@@ -11,7 +11,7 @@
 |
 */
 
-use Illuminate\Routing\Route;
+//use Illuminate\Routing\Route;
 
 Route::get('/', function () {
     return view('welcome');
@@ -40,7 +40,7 @@ Route::get('cadastrofunc', 'FuncionarioController@telacadastrarFunc');
 
 //--------------------------------------------------------------------
 
-Route::resource('clinte', 'ClintesController');
+Route::resource('cliente', 'ClientesController');
 
 //--------------------------------------------------------------------
     

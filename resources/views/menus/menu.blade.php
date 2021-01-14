@@ -64,7 +64,7 @@
                 <li>
                    <a href="#">cadastro</a>
                    <ul>
-                      <li><a href="#">Clientes</a></li>
+                      <li><a href="{{ route('cliente.create') }}">Clientes</a></li>
                       <li><a href="#">Fornecedor</a></li>
                       <li><a href="{{ route('funcionario.create') }}">Funcionário</a></li>
                       <li><a href="{{ route('usuario.create') }}">Usuario</a></li>
@@ -78,7 +78,7 @@
                     <a href="#">Relatorios</a>
                     <ul>
                         <a>relatorios</a>
-                        <li><a href="#">Clientes</a></li>
+                        <li><a href="">Clientes</a></li>
                         <li><a href="#">Fornecedor</a></li>
                         <li><a href="{{ route('funcionario.index') }}">Funcionario</a></li>
                         <li><a href="{{ route('usuario.index') }}">Usuario</a></li>
