@@ -10,6 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+use Illuminate\Routing\Route;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -37,6 +40,9 @@ Route::get('cadastrofunc', 'FuncionarioController@telacadastrarFunc');
 
 //--------------------------------------------------------------------
 
+Route::resource('clinte', 'ClintesController');
+
+//--------------------------------------------------------------------
     
 Route::get('/administrador',function(){
     return view('fr_admin');
