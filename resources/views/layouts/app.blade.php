@@ -16,7 +16,7 @@
     <link href="{{ asset('js/app.js') }}"rel="stylesheet">
     <title>sistema de usuarios</title>
     <style>
-              
+           
         #containerApp{
             background: greenyellow;
             height: 630px;
@@ -40,13 +40,15 @@
     <div class="container" id="containerApp">
         {{-- header --}}
       
-        @include('inc.header') 
+        @include('inc.header')   
       
         {{-- conteudo --}}
 
-         @yield('conteudo')
+        @yield('conteudo') 
+
         
     </div>
+
     <div id="footer">
         @include('inc.footer')
     </div> 
