@@ -7,14 +7,17 @@
 
     {{--  Bootstrap CSS   
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-   --}}
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   
+  --}}    
     <link href="{{ asset('css/app.css')}}" rel="stylesheet">
     {{-- <link href="{{ asset('css/main.css')}}"rel="stylesheet">  --}} 
     <link href="{{ asset('js/app.js') }}"rel="stylesheet">
     <title>sistema de usuarios</title>
     <style>
               
-        .container{
+        #containerApp{
             background: greenyellow;
             height: 630px;
         }
@@ -34,7 +37,7 @@
 
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="containerApp">
         {{-- header --}}
       
         @include('inc.header') 

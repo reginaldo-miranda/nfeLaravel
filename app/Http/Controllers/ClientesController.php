@@ -24,7 +24,8 @@ class ClientesController extends Controller
      */
     public function create()
     {
-        return view('fr_clientes.fr_cadastroClientes');
+       // return view('fr_clientes.fr_cadastroClientes');
+        return view('fr_clientes.fr_Teste');
     }
 
     /**
