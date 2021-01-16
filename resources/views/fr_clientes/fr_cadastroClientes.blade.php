@@ -1,13 +1,18 @@
 @extends('layouts.app')
 
 @section('conteudo')
-
-     {{-- apresentacao de erros de validacao --}}
+    {{--   apresentacao de erros de validacao  --}}
     @section('titulopagina')
-    <div>
-        <h4>Cadastrar clientes</h4>
-    </div>
-    @endsection  
+    
+      <div class="img" class="col-md-4 col-md-4 offset-5 col-sm-8 offset-2 col-xs-12">
+          <h3>Cadastro de Clientes</h3>
+      </div>
+
+    
+    @endsection 
+   
+    
+
     @include('inc.erros')
 
   {{--   <div class="container">  --}}
@@ -74,13 +79,9 @@
 
                 </div> {{--<!-- /Primeira coluna do formulário -->  --}}
 
-               
-
-
                     {{--  <!-- Segunda Coluna do formulário -->  --}}
                     <div class="col-12 col-lg-6" style="background-color: aquamarine">
-                        
-                   
+                     
                         <div class="row">  {{--   <!-- Terceira linha de campos -->  --}}
 
                             <div class="col-12">
@@ -119,9 +120,9 @@
                                     <label for="text_funcao">contato</label> 
                                     <input type="text" class="form-control" id="text_funcao" name="text_funcao" placeholder="funcao">   
                                 </div> 
-                            </div>   
-                        </div> {{--  <!-- /Terceira linha de campos -->  --}}
+                            </div>  
 
+                        </div> {{--  <!-- /Terceira linha de campos -->  --}}
                     </div> {{-- <!-- /Segunda Coluna do formulário -->  --}}
 
             </div> {{-- <!-- /Linha formulário todo -->  --}}
@@ -153,80 +154,75 @@
 
 
 
-                            <div class="col-12 col-md-6">
-                                <div class="form-group">
-                                   <label for="text_nome">Bairro</label> 
-                                   <input type="text" class="form-control" id="text_nome" name="text_nome" placeholder="nome do funcionario:">   
-                                </div>
-                            </div>   
-                            
-                            <div class="col-12 col-md-6">
-                                <div class="form-group">
-                                     <label for="text_nome">Cep</label> 
-                                     <input type="text" class="form-control" id="text_nome" name="text_nome" placeholder="nome do funcionario:">   
-                                </div>     
+                    <div class="col-12 col-md-6">
+                        <div class="form-group">
+                            <label for="text_nome">Bairro</label> 
+                            <input type="text" class="form-control" id="text_nome" name="text_nome" placeholder="nome do funcionario:">   
+                        </div>
+                    </div>   
+                    
+                    <div class="col-12 col-md-6">
+                        <div class="form-group">
+                                <label for="text_nome">Cep</label> 
+                                <input type="text" class="form-control" id="text_nome" name="text_nome" placeholder="nome do funcionario:">   
+                        </div>     
+                    </div>
+
+
+                    <div class="col-12 col-md-6">
+                        
+                            <div class="form-group">
+                            <label for="text_salario">Cod Cidade</label> 
+                            <input type="text" class="form-control" id="text_salario" name="text_salario" placeholder="salario:">   
                             </div>
+                    </div>
 
-
-                            <div class="col-12 col-md-6">
-                               
-                                 <div class="form-group">
-                                    <label for="text_salario">Cod Cidade</label> 
-                                    <input type="text" class="form-control" id="text_salario" name="text_salario" placeholder="salario:">   
-                                 </div>
+                        <div class="col-12 col-md-6">   
+                            <div class="form-group">
+                                <label for="text_funcao">uf</label> 
+                                <input type="text" class="form-control" id="text_funcao" name="text_funcao" placeholder="funcao">   
                             </div>
-
-                                 <div class="col-12 col-md-6">   
-                                    <div class="form-group">
-                                        <label for="text_funcao">uf</label> 
-                                        <input type="text" class="form-control" id="text_funcao" name="text_funcao" placeholder="funcao">   
-                                    </div>
-                                 </div>   
-                                 
-                                
-                            </div>   
+                        </div>   
+                        
+                    </div>   
    
-                    </div>
-                   
                 </div>
-                      
 
+               {{-- <div class="col-12 col-md-6">  --}}
 
-
-             {{-- fim do bloco inferior esquerdo --}}
-
-
-
-
-        {{--                  
-                  
-                  
-
-                
-
-                    <div class="form-group">
-                        <label for="text_funcao">consufinal</label> 
-                        <input type="text" class="form-control" id="text_funcao" name="text_funcao" placeholder="funcao">   
+                <div class="col-12 col-md-6" style="background-color: aqua">
+                    <div class="col-12">
+                    <h4>Outros</h4>
                     </div>
 
-                    <div class="form-group">
-                        <label for="text_funcao">diferido</label> 
-                        <input type="text" class="form-control" id="text_funcao" name="text_funcao" placeholder="funcao">   
+                    <div class="col-12 col-md-6">
+                        <div class="form-group">
+                            <label for="text_funcao">consufinal</label>
+                            <input type="text" class="form-control" id="text_funcao" name="text_funcao" placeholder="funcao">
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="text_funcao">ehtransp</label> 
-                        <input type="text" class="form-control" id="text_funcao" name="text_funcao" placeholder="funcao">   
+                    <div class="col-12 col=md-6">
+                        <div class="form-group">
+                           <label for="text_funcao">diferido</label>
+                           <input type="text" class="form-control" id="text_funcao" name="text_funcao" placeholder="funcao">
+                        </div>
                     </div>
-
-
+                    <div class="col-12 col=md-6">
+                     <div class="form-group">
+                         <label for="text_funcao">ehtransp</label>
+                         <input type="text" class="form-control" id="text_funcao" name="text_funcao" placeholder="funcao">
+                     </div>
                 </div>
-                     
-            </div>   --}} 
-           
-                <div class="text-center">
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+
+                     <div="row">
+                         <div= class="text-center">
+                             <button type="submit" class="btn btn-primary">Enviar</button>
+                         </div=>
+                     </div>
                 </div>
+               
+
                                   
     </form>
     {{-- </div> --}}

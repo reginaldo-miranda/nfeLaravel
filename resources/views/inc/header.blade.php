@@ -2,10 +2,11 @@
     <style>
 
       .topo {
+        width:99%;
         background-color: azure;
         position: relative;
         padding: 5px;
-        height: 110px;
+        height: 75px;
       }
       
       
@@ -22,22 +23,24 @@
         
       }
        #titulo{
-         text-align: center;
+          text-align: center;
        }
     
     </style> 
-    
-    <div class="topo">
-       <h4>Empresa de distribuicao</h4> 
-       <h5>Rua Duque de Caxias,199 - Limeira<h5>
-        <div id="titulo">
-            @yield('titulopagina') 
-         </div>
-            <div>
-              <a id="botao"href="/">sair</a>
-              <a id="botao"href="/administrador">Voltar</a>
-          </div> 
-     </div>
+     
+  <div class="row">
+ 
+      <div class="topo">
+         <h4>Empresa de distribuicao</h4>
+         <h5>Rua Duque de Caxias,199 - Limeira<h5>
+         @yield('titulopagina')
+
+         <a id="botao" href="/">sair</a>
+         <a id="botao" href="/administrador">Voltar</a>
+      </div>
+
+  </div> 
+
      <br>
    
   
