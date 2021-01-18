@@ -23,13 +23,18 @@
         }
 
         #footer{
-            margin-left: 70px;
+            background: rgb(161, 173, 231);
+            margin-left: 3%;
             padding-top: 5px;
-            width: 89%;
+            width: 95%;
+            height: 25px;
+            text-align: center;
            
         }
         input {
             height: 25px;
+            border: 0;
+            padding: 0;
         }
         
           

@@ -14,10 +14,14 @@
     
 
     @include('inc.erros')
+    <style>
+        input{
+            height: 18px;
+        }
+    </style>
 
   {{--   <div class="container">  --}}
     
-
     <form method="post" action="/cliente">
 
         {{ csrf_field() }}
@@ -37,8 +41,8 @@
 
                             <div class="col-12 col-md-8">
                                 <div class="form-group">
-                                <label for="text_nome">razaosocial</label> 
-                                <input type="text" class="form-control" id="text_nome" name="text_razaosocial" placeholder=" razao social:">          
+                                     <label for="text_nome">razaosocial</label> 
+                                    <input type="text" class="form-control" id="text_nome" name="text_razaosocial" placeholder=" razao social:">          
                                 </div>
                                 <div class="form-group">
                                 <label for="text_nome">Fantasia</label> 
@@ -215,12 +219,12 @@
                      </div>
                 </div>
 
-                     <div="row">
-                         <div= class="text-center">
-                             <button type="submit" class="btn btn-primary">Enviar</button>
-                         </div=>
+             </div>
+                     <div class="row container-fluid text-center">
+                        <div class="col-12" >
+                             <button type="submit" class="btn btn-primary" style="height: 25px" >Enviar</button>
+                        </div> 
                      </div>
-                </div>
                
 
                                   
