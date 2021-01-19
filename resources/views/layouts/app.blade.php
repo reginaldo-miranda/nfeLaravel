@@ -23,14 +23,17 @@
         }
 
         #footer{
-            background: rgb(161, 173, 231);
-            margin-left: 1%;
+          background: rgb(161, 173, 231);
+            margin-left: 2%;
             padding-top: 5px;
-            width: 99%;
-            height:40px;
-            text-align: center;
-           
-        }
+            width: 98%;
+            height:30px;
+            text-align: center;  
+            position: absolute;
+            bottom: 0;
+            left: 0;
+         }
+            
        
         input {
             height: 25px;

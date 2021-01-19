@@ -13,8 +13,9 @@ class ClientesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+    {    
+        $dados = cliente::all();
+        return  view('fr_clientes.fr_listarClientes', compact('dados'));
     }
 
     /**

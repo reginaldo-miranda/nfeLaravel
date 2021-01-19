@@ -21,6 +21,7 @@
         #grupo{
             height: 25px;
         }
+        
     </style>   
 
   {{--   <div class="container">  --}}
@@ -220,19 +221,16 @@
                          <label for="text_funcao">ehtransp</label>
                          <input type="text" class="form-control" id="text_funcao" name="text_funcao" placeholder="funcao">
                      </div>
+                     
                 </div>
-
+                  <button type="submit" class="btn btn-primary" >Enviar</button>
+            
              </div>
-                     <div class="row container-fluid text-center" style="height: 35px">
-                         <div class="col-12" > 
-                             <button type="submit" class="btn btn-primary" style="height: 25px" >Enviar</button>
-                         </div>   
-                     </div>
-               
-
+           
                                   
     </form>
     {{-- </div> --}}
+   
             
 @endsection
 
