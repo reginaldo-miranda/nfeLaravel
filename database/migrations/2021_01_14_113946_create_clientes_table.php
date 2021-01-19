@@ -13,7 +13,7 @@ class CreateClientesTable extends Migration
      */
     public function up()
     {
-        Schema::create('clientes', function (Blueprint $table) {
+        Schema::create('cliente', function (Blueprint $table) {
             $table->increments('codigo');  // id
            // +"codigo integer NOT NULL, "
             //+"razaosocial character varying(60), "

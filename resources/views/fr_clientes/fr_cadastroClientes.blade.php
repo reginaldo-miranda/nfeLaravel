@@ -18,7 +18,10 @@
         input{
             height: 18px;
         }
-    </style>
+        #grupo{
+            height: 25px;
+        }
+    </style>   
 
   {{--   <div class="container">  --}}
     
@@ -40,7 +43,7 @@
                             </div>
 
                             <div class="col-12 col-md-8">
-                                <div class="form-group">
+                                <div class="form-group" id="grupo">
                                      <label for="text_nome">razaosocial</label> 
                                     <input type="text" class="form-control" id="text_nome" name="text_razaosocial" placeholder=" razao social:">          
                                 </div>
@@ -220,10 +223,10 @@
                 </div>
 
              </div>
-                     <div class="row container-fluid text-center">
-                        <div class="col-12" >
+                     <div class="row container-fluid text-center" style="height: 35px">
+                         <div class="col-12" > 
                              <button type="submit" class="btn btn-primary" style="height: 25px" >Enviar</button>
-                        </div> 
+                         </div>   
                      </div>
                
 

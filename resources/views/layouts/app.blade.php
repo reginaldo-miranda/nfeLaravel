@@ -24,13 +24,14 @@
 
         #footer{
             background: rgb(161, 173, 231);
-            margin-left: 3%;
+            margin-left: 1%;
             padding-top: 5px;
-            width: 95%;
-            height: 25px;
+            width: 99%;
+            height:40px;
             text-align: center;
            
         }
+       
         input {
             height: 25px;
             border: 0;
