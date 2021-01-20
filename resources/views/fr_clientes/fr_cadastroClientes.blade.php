@@ -46,11 +46,11 @@
                             <div class="col-12 col-md-8">
                                 <div class="form-group" id="grupo">
                                      <label for="text_razaosocial">razaosocial</label> 
-                                    <input type="text" class="form-control" id="text_razaosocial" name="text_razaosocial" placeholder=" razao social:">          
+                                     <input type="text" class="form-control" id="text_razaosocial" name="text_razaosocial" placeholder=" razao social:">          
                                 </div>
                                 <div class="form-group">
-                                <label for="text_fantasia">Fantasia</label> 
-                                <input type="text" class="form-control" id="text_fantasia" name="text_fanatasia" placeholder="nome fantasia:">   
+                                     <label for="text_fantasia">Fantasia</label> 
+                                    <input type="text" class="form-control" id="text_fantasia" name="text_fantasia" placeholder="nome fantasia:">   
                             </div>
     
                             </div>
@@ -58,8 +58,8 @@
 
                             <div class="col-12 col-md-4">
                                 <div class="form-group">
-                                <label for="text_pessoa">Pessoa</label> 
-                                <input type="text" class="form-control" id="text_pessoa" name="text_pessoa" placeholder="pessoa:">   
+                                  <label for="text_pessoa">Pessoa</label> 
+                                  <input type="text" class="form-control" id="text_pessoa" name="text_pessoa" placeholder="pessoa:">   
                                 </div>
                             </div>
                         
@@ -99,8 +99,8 @@
 
                             <div class="col-12 col-md-4">
                                 <div class="form-group">
-                                <label for="fone">Fone</label>
-                                <input type="text" class="form-control" id="fone" placeholder="Seu Telefone">
+                                  <label for="telefone">Fone</label>
+                                  <input type="text" class="form-control" id="text_telefone" name="text_telefone" placeholder="Seu Telefone">
                                 </div>
                             </div>
 
@@ -110,12 +110,12 @@
                                   <input type="text" class="form-control" id="text_ramalcontato" name="text_ramalcontato" placeholder="ramal do contato">   
                                 </div>
                             </div>   
-
+                          
                             <div class="col-12 col-md-5">
                                 <div class="form-group">
-                                <label for="cel">Celular</label>
-                                <input type="text" class="form-control" id="cel" placeholder="Celular">
-                                </div>
+                                   <label for="cel">Celular</label>
+                              {{--     <input type="text" class="form-control" id="cel" placeholder="Celular">  --}}
+                                </div>  
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
@@ -125,8 +125,8 @@
                             </div>  
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
-                                    <label for="text_caontato">contato</label> 
-                                    <input type="text" class="form-control" id="text_caontato" name="text_caontato" placeholder="caontato">   
+                                    <label for="text_contato">contato</label> 
+                                    <input type="text" class="form-control" id="text_contato" name="text_contato" placeholder="contato">   
                                 </div> 
                             </div>  
 
@@ -149,14 +149,14 @@
                         <div class="col-12 col-md-10">
                             <div class="form-group">
                                 <label for="endereco">Endereço</label>
-                                <input type="text" class="form-control" id="endereco" placeholder="Seu Endereço">
+                                <input type="text" class="form-control" id="endereco" name="text_endereco" placeholder="Seu Endereço">
                             </div>
                         </div>
 
                         <div class="col-12 col-md-2">
                             <div class="form-group">
-                                <label for="num">Nº</label>
-                                <input type="text" class="form-control" id="num" placeholder="n:">
+                                <label for="numero">Nº</label>
+                                <input type="text" class="form-control" id="text_numero" name="text_numero" placeholder="n:">
                             </div>
                         </div>
 
@@ -180,9 +180,9 @@
                     <div class="col-12 col-md-6">
                         
                             <div class="form-group">
-                            <label for="text_codcidade">Cod Cidade</label> 
-                            <input type="text" class="form-control" id="text_codcidade" name="text_codcidade" placeholder="codigo cidade:">   
-                            </div>text_codcidade
+                               <label for="text_codcidade">Cod Cidade</label> 
+                               <input type="text" class="form-control" id="text_codcidade" name="text_codcidade" placeholder="codigo cidade:">   
+                            </div>
                     </div>
 
                         <div class="col-12 col-md-6">   
@@ -200,7 +200,7 @@
 
                 <div class="col-12 col-md-6" style="background-color: aqua">
                     <div class="col-12">
-                    <h5>Outros</h5>
+                      <h5>Outros</h5>
                     </div>
 
                     <div class="col-12 col-md-6">
@@ -220,7 +220,7 @@
                      <div class="form-group">
                          <label for="text_ehtransp">ehtransp</label>
                          <input type="text" class="form-control" id="text_ehtransp" name="text_ehtransp" placeholder="ehtransp">
-                     </div>text_ehtransp
+                     </div>
                      
                 </div>
                   <button type="submit" class="btn btn-primary" >Enviar</button>
