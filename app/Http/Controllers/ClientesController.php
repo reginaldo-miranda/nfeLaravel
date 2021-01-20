@@ -2,11 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\clientes;
+use App\cliente;
 use Illuminate\Http\Request;
 
 class ClientesController extends Controller
 {
+    protected $request;
+    
+    public function __construct(Request $request)
+    {
+    $this->request = $request;
+    } 
+
     /**
      * Display a listing of the resource.
      *
@@ -43,10 +50,10 @@ class ClientesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\clientes  $clientes
+     * @param  \App\cliente  $cliente
      * @return \Illuminate\Http\Response
      */
-    public function show(clientes $clientes)
+    public function show(cliente $cliente)
     {
         //
     }
@@ -54,22 +61,24 @@ class ClientesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\clientes  $clientes
+     * @param  \App\cliente  $cliente
      * @return \Illuminate\Http\Response
      */
-    public function edit(clientes $clientes)
+    public function edit($codigo)
     {
-        //
+        $codigo = cliente::find($codigo);
+ 
+        return view('fr_clientes.fr_editarClientes', compact('codigo'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\clientes  $clientes
+     * @param  \App\cliente  $cliente
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, clientes $clientes)
+    public function update(Request $request, cliente $cliente)
     {
         //
     }
@@ -77,10 +86,10 @@ class ClientesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\clientes  $clientes
+     * @param  \App\cliente  $cliente
      * @return \Illuminate\Http\Response
      */
-    public function destroy(clientes $clientes)
+    public function destroy(cliente $cliente)
     {
         //
     }
