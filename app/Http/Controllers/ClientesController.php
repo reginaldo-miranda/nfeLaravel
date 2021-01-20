@@ -44,7 +44,10 @@ class ClientesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->only('razaosocial','fantasia','pessoa','cnpj','inscest','endereco','numero','bairro','cep','codcidade','uf','telefone' ,'contato','ramalcontato','email','consufinal', 'diferido','ehtransp' );
+        cliente::create($data);
+        return redirect()->route('cliente.index');
+
     }
 
     /**

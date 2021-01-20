@@ -26,7 +26,7 @@
 
   {{--   <div class="container">  --}}
     
-    <form method="post" action="/cliente">
+    <form method="post" action="/cliente">  {{--  video aula 46 ti --}}
 
         {{ csrf_field() }}
 
@@ -40,17 +40,17 @@
                         <div class="row"> {{-- <!-- Primeira linha de campos -->  --}}
                         
                             <div class="col-12">
-                                <h4>Ficha Cadastral</h4>
+                                <h5>Ficha Cadastral</h5>
                             </div>
 
                             <div class="col-12 col-md-8">
                                 <div class="form-group" id="grupo">
-                                     <label for="text_nome">razaosocial</label> 
-                                    <input type="text" class="form-control" id="text_nome" name="text_razaosocial" placeholder=" razao social:">          
+                                     <label for="text_razaosocial">razaosocial</label> 
+                                    <input type="text" class="form-control" id="text_razaosocial" name="text_razaosocial" placeholder=" razao social:">          
                                 </div>
                                 <div class="form-group">
-                                <label for="text_nome">Fantasia</label> 
-                                <input type="text" class="form-control" id="text_nome" name="text_nome" placeholder="nome do funcionario:">   
+                                <label for="text_fantasia">Fantasia</label> 
+                                <input type="text" class="form-control" id="text_fantasia" name="text_fanatasia" placeholder="nome fantasia:">   
                             </div>
     
                             </div>
@@ -58,8 +58,8 @@
 
                             <div class="col-12 col-md-4">
                                 <div class="form-group">
-                                <label for="text_nome">Pessoa</label> 
-                                <input type="text" class="form-control" id="text_nome" name="text_nome" placeholder="nome do funcionario:">   
+                                <label for="text_pessoa">Pessoa</label> 
+                                <input type="text" class="form-control" id="text_pessoa" name="text_pessoa" placeholder="pessoa:">   
                                 </div>
                             </div>
                         
@@ -70,16 +70,16 @@
 
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
-                                    <label for="text_nome">Cnpj</label> 
-                                    <input type="text" class="form-control" id="text_nome" name="text_nome" placeholder="nome do funcionario:">   
+                                    <label for="text_cnpj">Cnpj</label> 
+                                    <input type="text" class="form-control" id="text_cnpj" name="text_cnpj" placeholder="cnpj:">   
 
                                 </div>
                             </div>
 
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
-                                    <label for="text_endereco">inscricao</label> 
-                                    <input type="text" class="form-control" id="text_endereco" name="text_endereco" placeholder="endereco:">   
+                                    <label for="text_inscricao">inscricao</label> 
+                                    <input type="text" class="form-control" id="text_inscricao" name="text_inscricao" placeholder="inscricao:">   
                                 </div>
                             </div>
                         
@@ -93,7 +93,7 @@
                         <div class="row">  {{--   <!-- Terceira linha de campos -->  --}}
 
                             <div class="col-12">
-                                <h4>Contato</h4>
+                                <h5>Contato</h5>
                             </div>
 
 
@@ -106,27 +106,27 @@
 
                             <div class="col-12 col-md-2">
                                <div class="form-group">
-                                  <label for="text_funcao">ramalcontato</label> 
-                                  <input type="text" class="form-control" id="text_funcao" name="text_funcao" placeholder="funcao">   
+                                  <label for="text_ramalcontato">ramal contato</label> 
+                                  <input type="text" class="form-control" id="text_ramalcontato" name="text_ramalcontato" placeholder="ramal do contato">   
                                 </div>
                             </div>   
 
                             <div class="col-12 col-md-5">
                                 <div class="form-group">
                                 <label for="cel">Celular</label>
-                                <input type="text" class="form-control" id="cel" placeholder="Seu Celular">
+                                <input type="text" class="form-control" id="cel" placeholder="Celular">
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label for="text_funcao">email</label> 
-                                    <input type="text" class="form-control" id="text_funcao" name="text_funcao" placeholder="funcao">   
+                                    <label for="text_email">email</label> 
+                                    <input type="text" class="form-control" id="text_email" name="text_email" placeholder="email">   
                                 </div>
                             </div>  
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
-                                    <label for="text_funcao">contato</label> 
-                                    <input type="text" class="form-control" id="text_funcao" name="text_funcao" placeholder="funcao">   
+                                    <label for="text_caontato">contato</label> 
+                                    <input type="text" class="form-control" id="text_caontato" name="text_caontato" placeholder="caontato">   
                                 </div> 
                             </div>  
 
@@ -143,7 +143,7 @@
 
                       <div class="row">
                         <div class="col-12">
-                            <h4>Logradouro</h4>
+                            <h5>Logradouro</h5>
                         </div>
 
                         <div class="col-12 col-md-10">
@@ -156,7 +156,7 @@
                         <div class="col-12 col-md-2">
                             <div class="form-group">
                                 <label for="num">Nº</label>
-                                <input type="text" class="form-control" id="num" placeholder="999">
+                                <input type="text" class="form-control" id="num" placeholder="n:">
                             </div>
                         </div>
 
@@ -164,15 +164,15 @@
 
                     <div class="col-12 col-md-6">
                         <div class="form-group">
-                            <label for="text_nome">Bairro</label> 
-                            <input type="text" class="form-control" id="text_nome" name="text_nome" placeholder="nome do funcionario:">   
+                            <label for="text_bairro">Bairro</label> 
+                            <input type="text" class="form-control" id="text_bairro" name="text_bairro" placeholder="bairro:">   
                         </div>
                     </div>   
                     
                     <div class="col-12 col-md-6">
                         <div class="form-group">
-                                <label for="text_nome">Cep</label> 
-                                <input type="text" class="form-control" id="text_nome" name="text_nome" placeholder="nome do funcionario:">   
+                                <label for="text_cep">Cep</label> 
+                                <input type="text" class="form-control" id="text_cep" name="text_cep" placeholder="cep:">   
                         </div>     
                     </div>
 
@@ -180,15 +180,15 @@
                     <div class="col-12 col-md-6">
                         
                             <div class="form-group">
-                            <label for="text_salario">Cod Cidade</label> 
-                            <input type="text" class="form-control" id="text_salario" name="text_salario" placeholder="salario:">   
-                            </div>
+                            <label for="text_codcidade">Cod Cidade</label> 
+                            <input type="text" class="form-control" id="text_codcidade" name="text_codcidade" placeholder="codigo cidade:">   
+                            </div>text_codcidade
                     </div>
 
                         <div class="col-12 col-md-6">   
                             <div class="form-group">
-                                <label for="text_funcao">uf</label> 
-                                <input type="text" class="form-control" id="text_funcao" name="text_funcao" placeholder="funcao">   
+                                <label for="text_uf">uf</label> 
+                                <input type="text" class="form-control" id="text_uf" name="text_uf" placeholder="uf">   
                             </div>
                         </div>   
                         
@@ -200,27 +200,27 @@
 
                 <div class="col-12 col-md-6" style="background-color: aqua">
                     <div class="col-12">
-                    <h4>Outros</h4>
+                    <h5>Outros</h5>
                     </div>
 
                     <div class="col-12 col-md-6">
                         <div class="form-group">
-                            <label for="text_funcao">consufinal</label>
-                            <input type="text" class="form-control" id="text_funcao" name="text_funcao" placeholder="funcao">
+                            <label for="text_consufinal">consufinal</label>
+                            <input type="text" class="form-control" id="text_consufinal" name="text_consufinal" placeholder="consumidor final">
                         </div>
                     </div>
 
                     <div class="col-12 col=md-6">
                         <div class="form-group">
-                           <label for="text_funcao">diferido</label>
-                           <input type="text" class="form-control" id="text_funcao" name="text_funcao" placeholder="funcao">
+                           <label for="text_diferido">diferido</label>
+                           <input type="text" class="form-control" id="text_diferido" name="text_diferido" placeholder="diferido">
                         </div>
                     </div>
                     <div class="col-12 col=md-6">
                      <div class="form-group">
-                         <label for="text_funcao">ehtransp</label>
-                         <input type="text" class="form-control" id="text_funcao" name="text_funcao" placeholder="funcao">
-                     </div>
+                         <label for="text_ehtransp">ehtransp</label>
+                         <input type="text" class="form-control" id="text_ehtransp" name="text_ehtransp" placeholder="ehtransp">
+                     </div>text_ehtransp
                      
                 </div>
                   <button type="submit" class="btn btn-primary" >Enviar</button>
