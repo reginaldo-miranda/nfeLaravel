@@ -45,10 +45,9 @@ class ClientesController extends Controller
     public function store(Request $request)
     {
       // dd($request);
-      //  $data = $request->only('razaosocial','fantasia','pessoa','cnpj','inscest','telefone',
-       // ramalcontato','email','contato','endereco','numero','bairro','cep','codcidade','uf',
-       //'consufinal', 'diferido','ehtransp' );
-      //  cliente::create($data);
+       $data = $request->only('razaosocial','fantasia','pessoa','cnpj','inscest','telefone', 'ramalcontato','email','contato','endereco','numero','bairro','cep','codcidade','uf', 'consufinal', 'diferido','ehtransp' );
+       cliente::create($data);
+      /*
        $cliente = new cliente;
        $cliente->razaosocial  = $request->text_razaosocial;
        $cliente->fantasia     = $request->text_fantasia;
@@ -68,7 +67,7 @@ class ClientesController extends Controller
        $cliente->consufinal   = $request->text_consufinal;
        $cliente->diferido     = $request->text_diferido;
        $cliente->ehtransp     = $request->text_ehtransp;
-       $cliente->save();
+       $cliente->save(); */
        return redirect()->route('cliente.index');
 
     

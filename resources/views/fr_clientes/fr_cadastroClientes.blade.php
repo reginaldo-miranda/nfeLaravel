@@ -17,11 +17,38 @@
     <style>
         input{
             height: 18px;
+            
         }
-        #grupo{
+       /* #grupo{
             height: 25px;
+        } */
+        #text_codcidade, #text_uf, #text_pessoa{
+            width: 17px;
+            padding: 0;
+            text-align: left;
         }
-        
+
+       #text_consufinal, #text_diferido, #text_ehtransp{
+
+            width: 45px;
+            padding: 10;
+            text-align: left;
+            margin-left: 10px;
+        }
+        #text_cnpj, #text_inscricao,#text_cep{
+            width: 150px;
+        }
+        .lab{
+            margin-left: 10px;
+         /*   padding-right: 20px;*/
+            padding-bottom: 0;
+            
+        }
+
+        #btnsubmit{
+            padding-top: 10px;
+            text-align: center;
+        }
     </style>   
 
   {{--   <div class="container">  --}}
@@ -46,11 +73,11 @@
                             <div class="col-12 col-md-8">
                                 <div class="form-group" id="grupo">
                                      <label for="text_razaosocial">razaosocial</label> 
-                                     <input type="text" class="form-control" id="text_razaosocial" name="text_razaosocial" placeholder=" razao social:">          
+                                     <input type="text" class="form-control" id="text_razaosocial" name="razaosocial" placeholder=" razao social:">          
                                 </div>
                                 <div class="form-group">
                                      <label for="text_fantasia">Fantasia</label> 
-                                    <input type="text" class="form-control" id="text_fantasia" name="text_fantasia" placeholder="nome fantasia:">   
+                                    <input type="text" class="form-control" id="text_fantasia" name="fantasia" placeholder="nome fantasia:">   
                             </div>
     
                             </div>
@@ -59,7 +86,7 @@
                             <div class="col-12 col-md-4">
                                 <div class="form-group">
                                   <label for="text_pessoa">Pessoa</label> 
-                                  <input type="text" class="form-control" id="text_pessoa" name="text_pessoa" placeholder="pessoa:">   
+                                  <input type="text" class="form-control" id="text_pessoa" name="pessoa" placeholder="pessoa:">   
                                 </div>
                             </div>
                         
@@ -71,7 +98,7 @@
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label for="text_cnpj">Cnpj</label> 
-                                    <input type="text" class="form-control" id="text_cnpj" name="text_cnpj" placeholder="cnpj:">   
+                                    <input type="text" class="form-control" id="text_cnpj" name="cnpj" placeholder="cnpj:">   
 
                                 </div>
                             </div>
@@ -79,7 +106,7 @@
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label for="text_inscricao">inscricao</label> 
-                                    <input type="text" class="form-control" id="text_inscricao" name="text_inscricao" placeholder="inscricao:">   
+                                    <input type="text" class="form-control" id="text_inscricao" name="inscest" placeholder="inscricao:">   
                                 </div>
                             </div>
                         
@@ -95,19 +122,17 @@
                             <div class="col-12">
                                 <h5>Contato</h5>
                             </div>
-
-
                             <div class="col-12 col-md-4">
                                 <div class="form-group">
                                   <label for="telefone">Fone</label>
-                                  <input type="text" class="form-control" id="text_telefone" name="text_telefone" placeholder="Seu Telefone">
+                                  <input type="text" class="form-control" id="text_telefone" name="telefone" placeholder="Seu Telefone">
                                 </div>
                             </div>
 
                             <div class="col-12 col-md-2">
                                <div class="form-group">
-                                  <label for="text_ramalcontato">ramal contato</label> 
-                                  <input type="text" class="form-control" id="text_ramalcontato" name="text_ramalcontato" placeholder="ramal do contato">   
+                                  <label for="text_ramalcontato">R contato</label> 
+                                  <input type="text" class="form-control" id="text_ramalcontato" name="ramalcontato" placeholder="ramal do contato">   
                                 </div>
                             </div>   
                           
@@ -117,16 +142,17 @@
                               {{--     <input type="text" class="form-control" id="cel" placeholder="Celular">  --}}
                                 </div>  
                             </div>
+
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="text_email">email</label> 
-                                    <input type="text" class="form-control" id="text_email" name="text_email" placeholder="email">   
+                                    <input type="text" class="form-control" id="text_email" name="email" placeholder="email">   
                                 </div>
                             </div>  
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label for="text_contato">contato</label> 
-                                    <input type="text" class="form-control" id="text_contato" name="text_contato" placeholder="contato">   
+                                    <input type="text" class="form-control" id="text_contato" name="contato" placeholder="contato">   
                                 </div> 
                             </div>  
 
@@ -149,14 +175,14 @@
                         <div class="col-12 col-md-10">
                             <div class="form-group">
                                 <label for="endereco">Endereço</label>
-                                <input type="text" class="form-control" id="endereco" name="text_endereco" placeholder="Seu Endereço">
+                                <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Seu Endereço">
                             </div>
                         </div>
 
                         <div class="col-12 col-md-2">
                             <div class="form-group">
                                 <label for="numero">Nº</label>
-                                <input type="text" class="form-control" id="text_numero" name="text_numero" placeholder="n:">
+                                <input type="text" class="form-control" id="text_numero" name="numero" placeholder="n:">
                             </div>
                         </div>
 
@@ -165,66 +191,67 @@
                     <div class="col-12 col-md-6">
                         <div class="form-group">
                             <label for="text_bairro">Bairro</label> 
-                            <input type="text" class="form-control" id="text_bairro" name="text_bairro" placeholder="bairro:">   
+                            <input type="text" class="form-control" id="text_bairro" name="bairro" placeholder="bairro:">   
                         </div>
                     </div>   
                     
                     <div class="col-12 col-md-6">
                         <div class="form-group">
                                 <label for="text_cep">Cep</label> 
-                                <input type="text" class="form-control" id="text_cep" name="text_cep" placeholder="cep:">   
+                                <input type="text" class="form-control" id="text_cep" name="cep" placeholder="cep:">   
                         </div>     
                     </div>
 
 
-                    <div class="col-12 col-md-6">
-                        
+                        <div class="col-12 col-md-6">
                             <div class="form-group">
                                <label for="text_codcidade">Cod Cidade</label> 
-                               <input type="text" class="form-control" id="text_codcidade" name="text_codcidade" placeholder="codigo cidade:">   
+                               <input type="text" class="form-control" id="text_codcidade"  name="codcidade" placeholder="cc:">   
                             </div>
-                    </div>
-
+                        </div>  
                         <div class="col-12 col-md-6">   
                             <div class="form-group">
                                 <label for="text_uf">uf</label> 
-                                <input type="text" class="form-control" id="text_uf" name="text_uf" placeholder="uf">   
+                                <input type="text" class="form-control" id="text_uf" name="uf" placeholder="uf">   
                             </div>
                         </div>   
                         
-                    </div>   
+                   </div>   
    
                 </div>
 
                {{-- <div class="col-12 col-md-6">  --}}
-
+            
                 <div class="col-12 col-md-6" style="background-color: aqua">
+                 
                     <div class="col-12">
                       <h5>Outros</h5>
                     </div>
-
-                    <div class="col-12 col-md-6">
+                 <div class="row">
+                   {{--  <div class="col-12 col-md-12">   --}}
                         <div class="form-group">
-                            <label for="text_consufinal">consufinal</label>
-                            <input type="text" class="form-control" id="text_consufinal" name="text_consufinal" placeholder="consumidor final">
-                        </div>
-                    </div>
+                            <label for="text_consufinal" class="lab" >consufinal</label>
+                            <input type="text" class="form-control" id="text_consufinal" name="consufinal" placeholder="consumidor final">
+                        </div>  
+                   {{--  </div>   --}} 
 
-                    <div class="col-12 col=md-6">
-                        <div class="form-group">
-                           <label for="text_diferido">diferido</label>
-                           <input type="text" class="form-control" id="text_diferido" name="text_diferido" placeholder="diferido">
+                     {{-- <div class="col-12 col=md-6"> --}}
+                        <div class="form-group"> 
+                           <label for="text_diferido" class="lab">diferido</label>
+                           <input type="text" class="form-control" id="text_diferido" name="diferido" placeholder="diferido">
                         </div>
-                    </div>
-                    <div class="col-12 col=md-6">
+                   {{--   </div> --}}
+
+                   {{--  <div class="col-12 col=md-6">  --}}
                      <div class="form-group">
-                         <label for="text_ehtransp">ehtransp</label>
-                         <input type="text" class="form-control" id="text_ehtransp" name="text_ehtransp" placeholder="ehtransp">
+                         <label for="text_ehtransp" class="lab">ehtransp</label>
+                         <input type="text" class="form-control" id="text_ehtransp" name="ehtransp" placeholder="ehtransp">
                      </div>
-                     
+                    </div>
                 </div>
-                  <button type="submit" class="btn btn-primary" >Enviar</button>
-            
+                     <div class="col-12" id="btnsubmit">
+                       <button type="submit" class="btn btn-primary" >Enviar</button>
+                    </div>   
              </div>
            
                                   
