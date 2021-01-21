@@ -11,11 +11,10 @@
      </div>
     @endsection  
 
-            @include('inc.erros')
             
                 <form method="post" action="/funcionario">
-
-                        {{ csrf_field() }}
+                  @include('fr_funcionarios.fr_unicoCAdasEditarFunc')
+                    {{--     {{ csrf_field() }}
                         
                         <div class="form-group">
                             <label for="text_nome">Nome</label> 
@@ -45,7 +44,7 @@
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary">Enviar</button>
                         </div>
-                                
+                            --}}                                
                 </form>
                    
             </div>  

@@ -13,7 +13,7 @@
    
     
 
-    @include('inc.erros')
+   {{--  @include('inc.erros')  --}}
     <style>
         input{
             height: 18px;
@@ -55,16 +55,17 @@
     
     <form method="post" action="/cliente">  {{--  video aula 46 ti --}}
 
-        {{ csrf_field() }}
+     {{--    {{ csrf_field() }}  --}}
+        @include('fr_clientes.fr_unicoClienteCadastEdiar')
 
+    {{--      
+        <div class="row"> {{--<!-- Linha formulário todo --> 
             
-        <div class="row"> {{--<!-- Linha formulário todo --> --}}
-            
-              {{--    <!-- Primeira coluna do formulário -->  --}}
+              {{--    <!-- Primeira coluna do formulário -->  
             <div class="col-12 col-lg-6" style="background-color: aqua">
                     
                         
-                <div class="row"> {{-- <!-- Primeira linha de campos -->  --}}
+                <div class="row"> {{-- <!-- Primeira linha de campos -->  
                 
                     <div class="col-12">
                         <h5>Ficha Cadastral</h5>
@@ -89,10 +90,10 @@
                         </div>
                     </div>
                 
-                </div> {{--<!-- /Primeira linha de campos -->  --}}
+                </div> {{--<!-- /Primeira linha de campos -->  -
 
                     
-                <div class="row"> {{--  <!-- Segunda linha de campos -->  --}}
+                <div class="row"> {{--  <!-- Segunda linha de campos -->  
 
                     <div class="col-12 col-md-6">
                         <div class="form-group">
@@ -109,14 +110,14 @@
                         </div>
                     </div>
                 
-                </div> {{-- <!-- /Segunda linha de campos -->  --}}
+                </div> {{-- <!-- /Segunda linha de campos -->  
  
             </div> {{--<!-- /Primeira coluna do formulário -->  --}}
 
-                {{--  <!-- Segunda Coluna do formulário -->  --}}
+                {{--  <!-- Segunda Coluna do formulário -->  
             <div class="col-12 col-lg-6" style="background-color: aquamarine">
                 
-                <div class="row">  {{--   <!-- Terceira linha de campos -->  --}}
+                <div class="row">  {{--   <!-- Terceira linha de campos -->  
 
                     <div class="col-12">
                         <h5>Contato</h5>
@@ -138,7 +139,7 @@
                     <div class="col-12 col-md-5">
                         <div class="form-group">
                             <label for="cel">Celular</label>
-                        {{--     <input type="text" class="form-control" id="cel" placeholder="Celular">  --}}
+                        {{--     <input type="text" class="form-control" id="cel" placeholder="Celular">  
                         </div>  
                     </div>
 
@@ -155,11 +156,11 @@
                         </div> 
                     </div>  
 
-                </div> {{--  <!-- /Terceira linha de campos -->  --}}
-            </div> {{-- <!-- /Segunda Coluna do formulário -->  --}}
+                </div> {{--  <!-- /Terceira linha de campos -->  
+            </div> {{-- <!-- /Segunda Coluna do formulário -->  
 
-        </div> {{-- !-- /Linha formulário todo -->  --}}
-                {{-- bloco inferior esquerdo --}}
+        </div> {{-- !-- /Linha formulário todo -->  
+                {{-- bloco inferior esquerdo 
             <div class="row">
                     
                 <div class="col-12 col-lg-6" style="background-color: aquamarine">
@@ -217,7 +218,7 @@
 
                 </div>
 
-                     {{-- <div class="col-12 col-md-6">  --}}
+                     {{-- <div class="col-12 col-md-6">  -
             
                     <div class="col-12 col-md-6" style="background-color: aqua">
                 
@@ -225,19 +226,19 @@
                            <h5>Outros</h5>
                        </div>
                         <div class="row">
-                            {{--  <div class="col-12 col-md-12">   --}}
+                            {{--  <div class="col-12 col-md-12">   
                             <div class="form-group">
                               <label for="text_consufinal" class="lab" >consufinal</label>
                               <input type="text" class="form-control" id="text_consufinal" name="consufinal" placeholder="consumidor final">
                             </div>  
-                            {{--  </div>   --}} 
+                            {{--  </div>   
 
-                             {{-- <div class="col-12 col=md-6"> --}}
+                             {{-- <div class="col-12 col=md-6"> -
                             <div class="form-group"> 
                               <label for="text_diferido" class="lab">diferido</label>
                               <input type="text" class="form-control" id="text_diferido" name="diferido" placeholder="diferido">
                             </div>
-                             {{--   </div> --}}
+                             {{--   </div> -
 
                             
                             <div class="form-group">
@@ -250,7 +251,9 @@
                           <button type="submit" class="btn btn-primary" >Enviar</button>
                         </div>   
                     </div>   
-                     {{--<div class="col-12 col=md-6">  --}}                     
+                     {{--<div class="col-12 col=md-6">      
+                         
+                        --}}
     </form>
     {{-- </div> --}}
    

@@ -15,45 +15,30 @@ class usuariosController extends Controller
   {
     $this->request = $request;
   }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function index()
     {
        $dados = usuarios::all();
        return view('fr_usuarios.fr_listarUsuarios', compact('dados'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+       public function create()
     {
         
         return view('/fr_usuarios.fr_cadastroUsuarios');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request) // joao ribeiro 75 13:25 mim
     {
       $this->validate($request,[
-        'text_nome' => 'required|between:2,40',
-        'text_email' => 'required|email',
-        'text_senha' => 'required|between:6,15',
-        'text_senhaRepetida' =>  'required|same:text_senha'
+        'nome' => 'required|between:2,40',
+        'email' => 'required|email',
+        'senha' => 'required|between:6,15',
+        'senhaRepetida' =>  'required|same:senha'
 
       ]);
 
-      $dados = usuarios::where('email','-',$request->text_email)->get();
+      $dados = usuarios::where('email','-',$request->email)->get();
 
       if($dados->count()!=0){
 
@@ -62,65 +47,38 @@ class usuariosController extends Controller
           return view('/fr_cadastroUsuarios');
       }
 
-      $dadosNovos = new usuarios;
+       $dadosNovos = new usuarios;
 
-      $dadosNovos->usuario = $request->text_nome;
-      $dadosNovos->email = $request->text_email;
-      $dadosNovos->senha = Hash::make($request->text_senha);
-      $dadosNovos->save();
+       $dadosNovos->usuario = $request->nome;
+       $dadosNovos->email   = $request->email;
+       $dadosNovos->senha   = Hash::make($request->senha);
+       $dadosNovos->save();
       
        return redirect('usuario');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         return "usuario numero: {$id}";
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id_usuarios)
     {
       $usuarios = usuarios::find($id_usuarios);
- 
+      //dd($usuarios);
       return view('fr_usuarios.fr_editarUsuarios', compact('usuarios'));
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id_usuarios)
     {
         $usuario = usuarios::find($id_usuarios);
 
-        $usuario->usuario = $request->text_nome;
-        $usuario->email = $request->text_email;
-        $usuario->senha = Hash::make($request->text_senha);
+        $usuario->usuario = $request->nome;
+        $usuario->email = $request->email;
+        $usuario->senha = Hash::make($request->senha);
         $usuario->save();
         return redirect('usuario');
 
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id_usuarios)
     {
       if (!$usuarios = usuarios::find($id_usuarios))
@@ -132,45 +90,42 @@ class usuariosController extends Controller
           /* 1 verifacar das preenchidos validacao
            2 procurar na bd (enlouquente orm)
            3 comparar os dados digitado com bd (haching)
-           4 passou os dados acima criar sessao usario
-
-
-           5             video aula joao ribeiro 67
-        
-        // 1 validacao
+           4 passou os dados acima criar sessao usario   
+           5  video aula joao ribeiro 67
+           // 1 validacao
         */
-     //   $senha = 'master';
+       // $senha = 'master';
        // $request->text_senha = $senha;
         $this->validate($request, [
-          'text_usuario'=> 'required',
-          'text_senha'  => 'required'
+          'usuario'=> 'required',
+          'senha'  => 'required'
           
-          ]);
+         ]);
                
-        if($request->text_usuario == "admin" && $request->text_senha == "master" ){
+        if($request->usuario == "admin" && $request->senha == "master" ){
           return view('fr_admin');
         }
 
           // verificar se usuario existe
-          $usuario = usuarios::where('usuario',$request->text_usuario)->first();
+          $usuario = usuarios::where('usuario',$request->usuario)->first();
              // if(count($usuario)==0){
              if($usuario->count()==0){
                 $erros_bd = ['essa conta de usuario nao existe'];
                 return view('fr_logim', compact('erros_bd'));
              }
-        //  $usuario = usuarios::where('usuario',$request->text_senha)->get();
-          //  verificar a senha
-            if(!Hash::check($request->text_senha, $usuario->senha)){ // joao ribeiro 76
+              //  $usuario = usuarios::where('usuario',$request->text_senha)->get();
+              //  verificar a senha
+            if(!Hash::check($request->senha, $usuario->senha)){ // joao ribeiro 76
               $erros_bd = ['essa senha de usuario nao existe'];
               return view('fr_logim', compact('erros_bd'));
 
             }
-           /* Session::put('login','sim');
+            /* Session::put('login','sim');
               Session::put('usuario', $usuario->usuario);
             */
 
             return  view('fr_admin');
-           // return 'estou aqui';
+            
         }
 
         public function telaLogin(){

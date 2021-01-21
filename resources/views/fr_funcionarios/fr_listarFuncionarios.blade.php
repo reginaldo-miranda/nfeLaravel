@@ -26,6 +26,7 @@
                     {{ $funcionario->nome }} 
                                        
                 </div>
+                
                 <div class="col-4">
 
                     {{ $funcionario->funcao }}

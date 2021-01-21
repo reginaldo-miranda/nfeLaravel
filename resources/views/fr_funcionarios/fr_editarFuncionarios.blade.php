@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-use App\funcionario;
+{{-- use App\funcionario;  --}}
 
 @section('conteudo')
 
@@ -17,7 +17,8 @@ use App\funcionario;
             
                 <form method="post" action="{{ route('funcionario.update', $funcionario->id_funcionarios ) }}" >
                     @method('put')
-
+                    @include('fr_funcionarios.fr_unicoCadasEditarFunc')
+                {{-- 
                         {{ csrf_field() }}
                         
                         <div class="form-group">
@@ -48,7 +49,7 @@ use App\funcionario;
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary">Enviar</button>
                         </div>
-                                
+                                 --}}
                 </form>
                    
             </div>  

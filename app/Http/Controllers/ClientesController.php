@@ -94,7 +94,7 @@ class ClientesController extends Controller
     public function edit($codigo)
     {
         $codigo = cliente::find($codigo);
- 
+       // dd($codigo);
         return view('fr_clientes.fr_editarClientes', compact('codigo'));
     }
 
@@ -105,9 +105,13 @@ class ClientesController extends Controller
      * @param  \App\cliente  $cliente
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, cliente $cliente)
+    public function update(Request $request, $codigo)
     {
-        //
+        $data = cliente::find($codigo);
+        $data = $request->only('razaosocial','fantasia','pessoa','cnpj','inscest','telefone', 'ramalcontato','email','contato','endereco','numero','bairro','cep','codcidade','uf', 'consufinal', 'diferido','ehtransp' );
+        cliente::update[$data];
+       
+        return redirect('cliente');
     }
 
     /**

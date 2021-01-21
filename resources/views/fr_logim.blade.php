@@ -20,12 +20,12 @@
              {{ csrf_field() }}
              <div class="form-group">
                <label for="id_text_usuario">Usuario</label> 
-               <input type="text" class="form-control" id="id_text_usuario" name="text_usuario" placeholder="usuario:">   
+               <input type="text" class="form-control" id="id_text_usuario" name="usuario" placeholder="usuario:">   
              </div>
 
               <div class="form-group">
                <label for="id_text_senha">senha</label> 
-               <input type="password" class="form-control" id="id_text_senha" name="text_senha" placeholder="senha:">   
+               <input type="password" class="form-control" id="id_text_senha" name="senha" placeholder="senha:">   
              </div>
 
              <div class="text-center">
