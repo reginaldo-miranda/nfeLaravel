@@ -14,34 +14,20 @@ class ClientesController extends Controller
     $this->request = $request;
     } 
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function index()
     {    
         $dados = cliente::all();
         return  view('fr_clientes.fr_listarClientes', compact('dados'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+  
     public function create()
     {
         return view('fr_clientes.fr_cadastroClientes');
       //  return view('fr_clientes.fr_Teste');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
       // dd($request);
@@ -70,27 +56,14 @@ class ClientesController extends Controller
        $cliente->save(); */
        return redirect()->route('cliente.index');
 
-    
-
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\cliente  $cliente
-     * @return \Illuminate\Http\Response
-     */
+   
     public function show(cliente $cliente)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\cliente  $cliente
-     * @return \Illuminate\Http\Response
-     */
     public function edit($codigo)
     {
         $codigo = cliente::find($codigo);
@@ -98,30 +71,23 @@ class ClientesController extends Controller
         return view('fr_clientes.fr_editarClientes', compact('codigo'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\cliente  $cliente
-     * @return \Illuminate\Http\Response
-     */
+    
     public function update(Request $request, $codigo)
     {
-        $data = cliente::find($codigo);
-        $data = $request->only('razaosocial','fantasia','pessoa','cnpj','inscest','telefone', 'ramalcontato','email','contato','endereco','numero','bairro','cep','codcidade','uf', 'consufinal', 'diferido','ehtransp' );
-        cliente::update[$data];
-       
-        return redirect('cliente');
+      $data = cliente::find($codigo);
+     //  $data = $request->only('razaosocial','fantasia','pessoa','cnpj','inscest','telefone', 'ramalcontato','email','contato','endereco','numero','bairro','cep','codcidade','uf', 'consufinal', 'diferido','ehtransp' );
+
+      $data->update($request->all());
+
+      return redirect('cliente');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\cliente  $cliente
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(cliente $cliente)
+    
+    public function destroy($codigo)
     {
-        //
+        if (!$cliente = cliente::find($codigo))
+        return redirect()->back();
+        $cliente->delete();
+        return redirect('cliente');
     }
 }

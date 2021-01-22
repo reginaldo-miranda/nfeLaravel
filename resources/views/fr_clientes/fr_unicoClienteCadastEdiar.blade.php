@@ -2,6 +2,50 @@
 
     {{ csrf_field() }}
 
+    <style>
+        input{
+            height: 18px;
+            
+        }
+       /* #grupo{
+            height: 25px;
+        } */
+        #text_codcidade, #text_uf, #text_pessoa{
+            width: 17px;
+            padding: 0;
+            text-align: left;
+        }
+
+       #text_consufinal, #text_diferido, #text_ehtransp{
+
+            width: 45px;
+            padding: 10;
+            text-align: left;
+            margin-left: 10px;
+        }
+        #text_cnpj, #text_inscricao,#text_cep{
+            width: 150px;
+        }
+        .lab{
+            margin-left: 10px;
+            margin-bottom: 0;
+         /*   padding-right: 20px;*/
+            padding-bottom: 0;
+            
+        }
+        .juntar{
+            padding-bottom: 0;
+        }
+
+        #btnsubmit{
+            padding-top: 10px;
+            text-align: center;
+        }
+        #text_ramalcontato{
+            width:  40px;
+        }
+    </style>   
+
         
     <div class="row"> {{--<!-- Linha formulário todo --> --}}
         
@@ -16,14 +60,16 @@
                 </div>
 
                 <div class="col-12 col-md-8">
-                    <div class="form-group" id="grupo">
-                            <label for="text_razaosocial">razaosocial</label> 
+                  
+                    <div class="juntar" class="form-group">
+                            <label for="text_razaosocial" class="lab">razaosocial</label> 
                             <input type="text" class="form-control" id="text_razaosocial" name="razaosocial"
                              placeholder=" razao social:" value="{{ $codigo->razaosocial ?? old('razaosocial') }}">         
                                                         
                     </div>
-                    <div class="form-group">
-                            <label for="text_fantasia">Fantasia</label> 
+                
+                    <div class="juntar" class="form-group">
+                            <label for="text_fantasia"  class="lab">Fantasia</label> 
                         <input type="text" class="form-control" id="text_fantasia" name="fantasia" 
                         placeholder="nome fantasia:" value="{{ $codigo->fantasia ?? old('fantasia') }}">   
                     </div>
@@ -31,8 +77,8 @@
                 </div>
 
                 <div class="col-12 col-md-4">
-                    <div class="form-group">
-                        <label for="text_pessoa">Pessoa</label> 
+                    <div class="form-group" >
+                        <label for="text_pessoa"  class="lab">Pessoa</label> 
                         <input type="text" class="form-control" id="text_pessoa" name="pessoa"
                          placeholder="pessoa:" value="{{ $codigo->pessoa ?? old('pessoa') }}">   
                     </div>
@@ -44,8 +90,8 @@
             <div class="row"> {{--  <!-- Segunda linha de campos -->  --}}
 
                 <div class="col-12 col-md-6">
-                    <div class="form-group">
-                        <label for="text_cnpj">Cnpj</label> 
+                    <div  class="form-group">
+                        <label for="text_cnpj"  class="lab">Cnpj</label> 
                         <input type="text" class="form-control" id="text_cnpj" name="cnpj"
                          placeholder="cnpj:" value="{{ $codigo->cnpj ?? old('cnpj') }}">   
 
@@ -53,8 +99,8 @@
                 </div>
 
                 <div class="col-12 col-md-6">
-                    <div class="form-group">
-                        <label for="text_inscricao">inscricao</label> 
+                    <div  class="form-group">
+                        <label for="text_inscricao"  class="lab">inscricao</label> 
                         <input type="text" class="form-control" id="text_inscricao" name="inscest"
                          placeholder="inscricao:" value="{{ $codigo->inscest ?? old('inscest') }}">   
                     </div>
@@ -73,38 +119,32 @@
                     <h5>Contato</h5>
                 </div>
                 <div class="col-12 col-md-4">
-                    <div class="form-group">
-                        <label for="telefone">Fone</label>
+                    <div class="juntar" class="form-group">
+                        <label for="telefone" class="lab">Fone</label>
                         <input type="text" class="form-control" id="text_telefone" name="telefone"
                         placeholder="Seu Telefone"value="{{ $codigo->telefone ?? old('telefone') }}">
                     </div>
                 </div>
 
-                <div class="col-12 col-md-2">
+                <div class="col-12 col-md-4">
                     <div class="form-group">
-                        <label for="text_ramalcontato">R contato</label> 
+                        <label for="text_ramalcontato" class="lab">R contato</label> 
                         <input type="text" class="form-control" id="text_ramalcontato" name="ramalcontato"
                          placeholder="ramal do contato" value="{{ $codigo->ramalcontato ?? old('ramalcontato') }}">   
                     </div>
                 </div>   
                 
-                <div class="col-12 col-md-5">
+            
+                <div class="col-12 col-md-5"> 
                     <div class="form-group">
-                        <label for="cel">Celular</label>
-                    {{--     <input type="text" class="form-control" id="cel" placeholder="Celular">  --}}
-                    </div>  
-                </div>
-
-                <div class="col-12">
-                    <div class="form-group">
-                        <label for="text_email">email</label> 
+                        <label for="text_email"  class="lab">email</label> 
                         <input type="text" class="form-control" id="text_email" name="email" 
                         placeholder="email" value="{{ $codigo->email ?? old('email') }}" >   
                     </div>
                 </div>  
                 <div class="col-12 col-md-6">
                     <div class="form-group">
-                        <label for="text_contato">contato</label> 
+                        <label for="text_contato"  class="lab">contato</label> 
                         <input type="text" class="form-control" id="text_contato" name="contato"
                          placeholder="contato" value="{{ $codigo->contato ?? old('contato') }}">   
                     </div> 
@@ -126,7 +166,7 @@
 
                     <div class="col-12 col-md-10">
                         <div class="form-group">
-                            <label for="endereco">Endereço</label>
+                            <label for="endereco"  class="lab">Endereço</label>
                             <input type="text" class="form-control" id="endereco" name="endereco" 
                             placeholder="Seu Endereço" value="{{ $codigo->endereco ?? old('endereco') }}">
                         </div>
@@ -134,7 +174,7 @@
 
                     <div class="col-12 col-md-2">
                         <div class="form-group">
-                            <label for="numero">Nº</label>
+                            <label for="numero"  class="lab">Nº</label>
                             <input type="text" class="form-control" id="text_numero" name="numero" 
                             placeholder="n:" value="{{ $codigo->numero ?? old('numero') }}">
                         </div>
@@ -144,7 +184,7 @@
 
                     <div class="col-12 col-md-6">
                         <div class="form-group">
-                            <label for="text_bairro">Bairro</label> 
+                            <label for="text_bairro"  class="lab">Bairro</label> 
                             <input type="text" class="form-control" id="text_bairro" name="bairro" 
                             placeholder="bairro:" value="{{ $codigo->bairro ?? old('bairro') }}">   
                         </div>
@@ -152,7 +192,7 @@
                 
                     <div class="col-12 col-md-6">
                         <div class="form-group">
-                            <label for="text_cep">Cep</label> 
+                            <label for="text_cep"  class="lab">Cep</label> 
                             <input type="text" class="form-control" id="text_cep" name="cep"
                              placeholder="cep:" value="{{ $codigo->cep ?? old('cep') }}">   
                         </div>     
@@ -161,14 +201,14 @@
 
                     <div class="col-12 col-md-6">
                         <div class="form-group">
-                        <label for="text_codcidade">Cod Cidade</label> 
+                        <label for="text_codcidade"  class="lab">Cod Cidade</label> 
                         <input type="text" class="form-control" id="text_codcidade"  name="codcidade" 
                         placeholder="cc:" value="{{ $codigo->codcidade ?? old('codcidade') }}">   
                         </div>
                     </div>  
                     <div class="col-12 col-md-6">   
                         <div class="form-group">
-                            <label for="text_uf">uf</label> 
+                            <label for="text_uf"  class="lab">uf</label> 
                             <input type="text" class="form-control" id="text_uf" name="uf" 
                             placeholder="uf" value="{{ $codigo->uf ?? old('uf') }}">   
                         </div>
