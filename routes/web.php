@@ -13,6 +13,8 @@
 
 //use Illuminate\Routing\Route;
 
+//use Illuminate\Routing\Route;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -43,7 +45,10 @@ Route::get('cadastrofunc', 'FuncionarioController@telacadastrarFunc');
 Route::resource('cliente', 'ClientesController');
 
 //--------------------------------------------------------------------
-    
+
+Route::resource('produto', 'produtoController');
+
+//--------------------------------------------------------------------
 Route::get('/administrador',function(){
     return view('fr_admin');
 });

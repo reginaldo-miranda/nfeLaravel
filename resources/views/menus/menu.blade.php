@@ -68,7 +68,7 @@
                       <li><a href="#">Fornecedor</a></li>
                       <li><a href="{{ route('funcionario.create') }}">Funcionário</a></li>
                       <li><a href="{{ route('usuario.create') }}">Usuario</a></li>
-                      <li><a href="#">Produtos</a></li>
+                      <li><a href="{{ route('produto.create') }}">Produtos</a></li>
                     </ul>
                 </li>
             </ul>

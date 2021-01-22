@@ -90,7 +90,7 @@
             <div class="row"> {{--  <!-- Segunda linha de campos -->  --}}
 
                 <div class="col-12 col-md-6">
-                    <div  class="form-group">
+                    <div class="form-group">
                         <label for="text_cnpj"  class="lab">Cnpj</label> 
                         <input type="text" class="form-control" id="text_cnpj" name="cnpj"
                          placeholder="cnpj:" value="{{ $codigo->cnpj ?? old('cnpj') }}">   
@@ -164,8 +164,8 @@
                         <h5>Logradouro</h5>
                     </div>
 
-                    <div class="col-12 col-md-10">
-                        <div class="form-group">
+                    <div  class="col-12 col-md-10">
+                        <div class="juntar" class="form-group">
                             <label for="endereco"  class="lab">Endereço</label>
                             <input type="text" class="form-control" id="endereco" name="endereco" 
                             placeholder="Seu Endereço" value="{{ $codigo->endereco ?? old('endereco') }}">

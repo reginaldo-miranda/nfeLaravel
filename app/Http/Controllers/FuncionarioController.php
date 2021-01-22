@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\funcionario;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Route;
 
 class FuncionarioController extends Controller
 {
