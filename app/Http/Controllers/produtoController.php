@@ -2,85 +2,55 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\produtos;
+use App\produto;
 
 
 
 class produtoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function index()
     {
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function create()
     {
         return view('fr_produtos.fr_cadastroProdutos');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        
+         $dado = $request->only('nome_reduzido','seg_name','descricao','unidade','ean','origem','preco_compra','preco',
+        'peso','estoque','garantia','ncm','cest','icms_cst','icms_perc','icms_pred','ipi_cst','ipi_perc',    
+        'pis_cst', 'pis_perc','cofins_cst','cofins_perc','trib_st_perc','descnovo','cnpj_fornecedor',
+        'codigo_fornec','fornecedor','marca','link','images','source_fat'); 
+         produto::create($dado);
+
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+   
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //
     }
 }
+
+
