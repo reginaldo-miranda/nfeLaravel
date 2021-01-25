@@ -20,6 +20,11 @@
        
         
             <div class="row">
+                <div class="col-4">
+                    
+                    {{ $funcionario->id_funcionario }} 
+                                       
+                </div>
                
                 <div class="col-4">
                     

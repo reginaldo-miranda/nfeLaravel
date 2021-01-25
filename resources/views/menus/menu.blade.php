@@ -82,7 +82,7 @@
                         <li><a href="#">Fornecedor</a></li>
                         <li><a href="{{ route('funcionario.index') }}">Funcionario</a></li>
                         <li><a href="{{ route('usuario.index') }}">Usuario</a></li>
-                        <li><a href="#">Produtos</a></li>
+                        <li><a href="{{ route('produto.index') }}">Produtos</a></li>
                     </ul>
                 </li>
             </ul>
