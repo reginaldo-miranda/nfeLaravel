@@ -55,9 +55,12 @@ class produtoController extends Controller
          return redirect('produto');
     }
 
-    public function destroy($id)
+    public function destroy($codigo)
     {
-        //
+        if (!$codigo = produto::find($codigo))
+        return redirect()->back();
+        $codigo->delete();
+        return redirect('produto');
     }
 }
 
