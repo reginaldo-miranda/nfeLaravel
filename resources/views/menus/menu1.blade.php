@@ -12,6 +12,7 @@
     <link href="{{ asset('css/main.css')}}" rel="stylesheet">
     <title>sistema de usuarios</title>
 </head>
+{{-- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sidenav_full  link do site--}}
 
 @section('conteudo')
 
@@ -68,9 +69,11 @@
         <div class="col-md-12  offset-5 col-sm-8 offset-2 col-xs-12">
              <h3>Menu opercional</h3>
         </div> 
-        <div >
-            <div class="col-md-12 offset-5 col-sm-8 offset-2 col-xs-12"> 
-                
+            
+       
+            <div class="col-md-12 offset-2 col-sm-8 offset-2 col-xs-12"> 
+
+                    <button type="submit">Entrar</button>
                     <a href="#" id="menuoperacional">Pedido</a>
                     <a href="#" id="menuoperacional">Nota Fiscal</a>
                     <a href="#"  id="menuoperacional">Funcionário</a>
@@ -81,51 +84,55 @@
  
         </div>
 
-    </div> 
-    <div>
-       <h3>Menu</h3>
-    </div>     
-            <ul>
-                <li>
-                   <a href="#">cadastro</a>
-                   <ul>
-                      <li><a href="{{ route('cliente.create') }}">Clientes</a></li>
-                      <li><a href="#">Fornecedor</a></li>
-                      <li><a href="{{ route('funcionario.create') }}">Funcionário</a></li>
-                      <li><a href="{{ route('usuario.create') }}">Usuario</a></li>
-                      <li><a href="{{ route('produto.create') }}">Produtos</a></li>
-                    </ul>
-                </li>
-            </ul>
-
-            <ul>
-                <li>
-                    <a href="#">Relatorios</a>
-                    <ul>
-                        <a>relatorios</a>
-                        <li><a href="{{ route('cliente.index') }}">Clientes</a></li>
-                        <li><a href="#">Fornecedor</a></li>
-                        <li><a href="{{ route('funcionario.index') }}">Funcionario</a></li>
-                        <li><a href="{{ route('usuario.index') }}">Usuario</a></li>
-                        <li><a href="{{ route('produto.index') }}">Produtos</a></li>
-                    </ul>
-                </li>
-            </ul>
-            
-            <ul>
-                <li>
-                    <a href="#">Cad Opercaionais</a>
-                    <ul>
-                        <a>Outros Cadastros</a>
-                        <li><a href="#">Cond Pagamento</a></li>
-                        <li><a href="#">Fornecedor</a></li>
-                        <li><a href="#">Funcionario</a></li>
-                        <li><a href="#">Usuario</a></li>
-                        <li><a href="#">Produtos</a></li>
-                    </ul>
-                </li>
-            </ul>
     
+
+        <div>
+            <div>
+            <h3>Menu</h3>
+            </div>     
+                    <ul>
+                        <li>
+                        <a href="#">cadastro</a>
+                        <ul>
+                            <li><a href="{{ route('cliente.create') }}">Clientes</a></li>
+                            <li><a href="#">Fornecedor</a></li>
+                            <li><a href="{{ route('funcionario.create') }}">Funcionário</a></li>
+                            <li><a href="{{ route('usuario.create') }}">Usuario</a></li>
+                            <li><a href="{{ route('produto.create') }}">Produtos</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <ul>
+                        <li>
+                            <a href="#">Relatorios</a>
+                            <ul>
+                                <a>relatorios</a>
+                                <li><a href="{{ route('cliente.index') }}">Clientes</a></li>
+                                <li><a href="#">Fornecedor</a></li>
+                                <li><a href="{{ route('funcionario.index') }}">Funcionario</a></li>
+                                <li><a href="{{ route('usuario.index') }}">Usuario</a></li>
+                                <li><a href="{{ route('produto.index') }}">Produtos</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                    <ul>
+                        <li>
+                            <a href="#">Cad Opercaionais</a>
+                            <ul>
+                                <a>Outros Cadastros</a>
+                                <li><a href="#">Cond Pagamento</a></li>
+                                <li><a href="#">Fornecedor</a></li>
+                                <li><a href="#">Funcionario</a></li>
+                                <li><a href="#">Usuario</a></li>
+                                <li><a href="#">Produtos</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+        </div>
+    </div> 
 </nav>
+
 
 @endsection

@@ -1,2 +1,2 @@
 @extends('layouts.app')
-@include('menus.menu1') 
+@include('menus.menu2') 
