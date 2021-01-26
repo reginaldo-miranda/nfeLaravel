@@ -50,6 +50,10 @@ Route::resource('cliente', 'ClientesController');
 Route::resource('produto', 'produtoController');
 
 //--------------------------------------------------------------------
+
+Route::resource('empresa', 'empresaController');
+
+//--------------------------------------------------------------------
 Route::get('/administrador',function(){
     return view('fr_admin');
 });

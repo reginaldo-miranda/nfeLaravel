@@ -194,7 +194,7 @@ body {
 }
 
 .sidenav {
-  height: 70%;
+  height: 73%;
   width: 0;
   position: relative;
   z-index: 1;
@@ -209,7 +209,7 @@ body {
 .sidenav a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 13px;
 //  color: #818181;
   display: block;
   transition: 0.3s;
@@ -250,13 +250,14 @@ li ul {
     left: 221px;
     top: 0;
     display: none;
+    padding: 0;
  }
  ul li a {
     display: block;
     text-decoration: none;
     color: #5214e2;
     background: rgb(196, 193, 193);
-    padding: 5px;
+    //padding: 0;
   //  border: 1px solid #ccc;
  }
 
@@ -277,6 +278,13 @@ ul li ul li:hover {background: rgb(200, 211, 214);}
 }
 #spanbtn{
   margin-left: 0;
+  
+}
+
+#espacomenu{
+ 
+ padding:0 0 0 30px;
+ 
 }
 
 </style>
@@ -304,11 +312,12 @@ ul li ul li:hover {background: rgb(200, 211, 214);}
           <li>
               <a href="#">cadastro</a>
               <ul>
-                  <li><a href="{{ route('cliente.create') }}">Clientes</a></li>
-                  <li><a href="#">Fornecedor</a></li>
-                  <li><a href="{{ route('funcionario.create') }}">Funcionário</a></li>
-                  <li><a href="{{ route('usuario.create') }}">Usuario</a></li>
-                  <li><a href="{{ route('produto.create') }}">Produtos</a></li>
+                  <a>Cadastro</a>
+                  <li><a id="espacomenu" href="{{ route('cliente.create') }}">Clientes</a></li>
+                  <li><a id="espacomenu" href="#">Fornecedor</a></li>
+                  <li><a id="espacomenu" href="{{ route('funcionario.create') }}">Funcionário</a></li>
+                  <li><a id="espacomenu" href="{{ route('usuario.create') }}">Usuario</a></li>
+                  <li><a id="espacomenu" href="{{ route('produto.create') }}">Produtos</a></li>
                 </ul>
           </li>
         </ul>
@@ -318,11 +327,11 @@ ul li ul li:hover {background: rgb(200, 211, 214);}
                 <a href="#">Relatorios</a>
                 <ul>
                     <a>relatorios</a>
-                    <li><a href="{{ route('cliente.index') }}">Clientes</a></li>
-                    <li><a href="#">Fornecedor</a></li>
-                    <li><a href="{{ route('funcionario.index') }}">Funcionario</a></li>
-                    <li><a href="{{ route('usuario.index') }}">Usuario</a></li>
-                    <li><a href="{{ route('produto.index') }}">Produtos</a></li>
+                    <li><a id="espacomenu" href="{{ route('cliente.index') }}">Clientes</a></li>
+                    <li><a id="espacomenu" href="#">Fornecedor</a></li>
+                    <li><a id="espacomenu" href="{{ route('funcionario.index') }}">Funcionario</a></li>
+                    <li><a id="espacomenu" href="{{ route('usuario.index') }}">Usuario</a></li>
+                    <li><a id="espacomenu" href="{{ route('produto.index') }}">Produtos</a></li>
                 </ul>
             </li>
         </ul>
@@ -332,12 +341,12 @@ ul li ul li:hover {background: rgb(200, 211, 214);}
                 <a href="#">Cad Opercaionais</a>
                 <ul>
                     <a>Outros Cadastros</a>
-                    <li><a href="#">Cond Pagamento</a></li>
-                    <li><a href="#">Fornecedor</a></li>
-                    <li><a href="#">Funcionario</a></li>
-                    <li><a href="#">Usuario</a></li>
-                    <li><a href="#">Produtos</a></li>
-                </ul>
+                    <li><a id="espacomenu" href="{{ route('empresa.create') }}">Empresa</a></li>
+                    <li><a id="espacomenu" href="#">Fornecedor</a></li>
+                    <li><a id="espacomenu" href="#">Funcionario</a></li>
+                    <li><a id="espacomenu" href="#">Usuario</a></li>
+                    <li><a id="espacomenu" href="#">Produtos</a>
+                 </ul>
             </li>
         </ul>
     
