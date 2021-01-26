@@ -194,9 +194,9 @@ body {
 }
 
 .sidenav {
-  height: 100%;
+  height: 70%;
   width: 0;
-  position: fixed;
+  position: relative;
   z-index: 1;
   top: 0;
   left: 0;
@@ -227,6 +227,8 @@ body {
   margin-left: 50px;
 }
 
+
+
 @media screen and (max-height: 250px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
@@ -236,7 +238,7 @@ ul {
     margin: 0;
     padding: 0;
     list-style: none;
-    width: 250px;
+    width: 220px;
 }
 
 ul li {
@@ -245,7 +247,7 @@ ul li {
 
 li ul {
     position: absolute;
-    left: 255px;
+    left: 221px;
     top: 0;
     display: none;
  }
@@ -270,87 +272,92 @@ ul li ul li:hover {background: rgb(200, 211, 214);}
 
 #menuoperacional{
     
-    margin-left: 50px;
+    margin-left: 80px;
      
+}
+#spanbtn{
+  margin-left: 0;
 }
 
 </style>
 </head>
 <body>
 @section('conteudo')    
+    <div class="row">
+      <div  id="spanbtn" class="col-md-12 offset-2 col-sm-8 offset-2 col-xs-12"> 
+      
+          <span id="spanbtn" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+      
+          <a href="#" id="menuoperacional">Pedido</a>
+          <a href="#" id="menuoperacional">Nota Fiscal</a>
+          <a href="#" id="menuoperacional">Funcionário</a>
+          <a href="#" id="menuoperacional">teste</a>
+          <a href="#" id="menuoperacional">Produtos</a>
+      </div> 
+    </div>  
+      
 
-<div class="col-md-12 offset-2 col-sm-8 offset-2 col-xs-12"> 
-
-   
-    <a href="#" id="menuoperacional">Pedido</a>
-    <a href="#" id="menuoperacional">Nota Fiscal</a>
-    <a href="#"  id="menuoperacional">Funcionário</a>
-    <a href="#"  id="menuoperacional">teste</a>
-    <a href="#"  id="menuoperacional">Produtos</a>
- 
-{{-- </div>  --}} 
-
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <div>
-  <ul>
-    <li>
-    <a href="#">cadastro</a>
-    <ul>
-        <li><a href="{{ route('cliente.create') }}">Clientes</a></li>
-        <li><a href="#">Fornecedor</a></li>
-        <li><a href="{{ route('funcionario.create') }}">Funcionário</a></li>
-        <li><a href="{{ route('usuario.create') }}">Usuario</a></li>
-        <li><a href="{{ route('produto.create') }}">Produtos</a></li>
-        </ul>
-    </li>
-</ul>
-
-<ul>
-    <li>
-        <a href="#">Relatorios</a>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                  
         <ul>
-            <a>relatorios</a>
-            <li><a href="{{ route('cliente.index') }}">Clientes</a></li>
-            <li><a href="#">Fornecedor</a></li>
-            <li><a href="{{ route('funcionario.index') }}">Funcionario</a></li>
-            <li><a href="{{ route('usuario.index') }}">Usuario</a></li>
-            <li><a href="{{ route('produto.index') }}">Produtos</a></li>
+          <li>
+              <a href="#">cadastro</a>
+              <ul>
+                  <li><a href="{{ route('cliente.create') }}">Clientes</a></li>
+                  <li><a href="#">Fornecedor</a></li>
+                  <li><a href="{{ route('funcionario.create') }}">Funcionário</a></li>
+                  <li><a href="{{ route('usuario.create') }}">Usuario</a></li>
+                  <li><a href="{{ route('produto.create') }}">Produtos</a></li>
+                </ul>
+          </li>
         </ul>
-    </li>
-</ul>
 
-<ul>
-    <li>
-        <a href="#">Cad Opercaionais</a>
         <ul>
-            <a>Outros Cadastros</a>
-            <li><a href="#">Cond Pagamento</a></li>
-            <li><a href="#">Fornecedor</a></li>
-            <li><a href="#">Funcionario</a></li>
-            <li><a href="#">Usuario</a></li>
-            <li><a href="#">Produtos</a></li>
+            <li>
+                <a href="#">Relatorios</a>
+                <ul>
+                    <a>relatorios</a>
+                    <li><a href="{{ route('cliente.index') }}">Clientes</a></li>
+                    <li><a href="#">Fornecedor</a></li>
+                    <li><a href="{{ route('funcionario.index') }}">Funcionario</a></li>
+                    <li><a href="{{ route('usuario.index') }}">Usuario</a></li>
+                    <li><a href="{{ route('produto.index') }}">Produtos</a></li>
+                </ul>
+            </li>
         </ul>
-    </li>
-</ul>
-</div>
-</div>
+
+        <ul>
+            <li>
+                <a href="#">Cad Opercaionais</a>
+                <ul>
+                    <a>Outros Cadastros</a>
+                    <li><a href="#">Cond Pagamento</a></li>
+                    <li><a href="#">Fornecedor</a></li>
+                    <li><a href="#">Funcionario</a></li>
+                    <li><a href="#">Usuario</a></li>
+                    <li><a href="#">Produtos</a></li>
+                </ul>
+            </li>
+        </ul>
+    
+    </div>
 
 
-{{-- <h2>Animated Sidenav Example</h2> 
-<p>Click on the element below to open the side navigation menu.</p> --}}
-<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+    {{-- <h2>Animated Sidenav Example</h2> 
+    <p>Click on the element below to open the side navigation menu.</p> --}}
+    {{-- <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>  --}}
 
-<script>
-function openNav() {
-  document.getElementById("mySidenav").style.width = "470px";
-}
+    <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "470px";
+    }
 
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-}
-</script>
- @endsection  
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+    </script>
+@endsection  
 </body>
 </html> 
 
