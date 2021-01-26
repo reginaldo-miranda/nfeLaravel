@@ -42,7 +42,7 @@ class produtoController extends Controller
     public function edit($codigo)
     {
         $produto = produto::find($codigo);
- 
+        
         return view('fr_produtos.fr_editarProdutos', compact('produto'));
     }
 

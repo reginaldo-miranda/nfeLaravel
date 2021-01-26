@@ -72,28 +72,28 @@
         <div>
             <label class="juntar">nome</label>
             <input type="text" class="form-control" id="text_nome_reduzido" name="nome_reduzido"
-            placeholder=" nome reduzido" value="{{ $codigo->nome_reduzido ?? old('nome_reduzido') }}">         
+            placeholder=" nome reduzido" value="{{ $produto->nome_reduzido ?? old('nome_reduzido') }}">         
         </div>
         <div>
             <label class="juntar">Complemento do nome</label>
             <input type="text" class="form-control" id="text_seg_name" name="seg_name"
-            placeholder=" complemento " value="{{ $codigo->seg_name ?? old('seg_name') }}">         
+            placeholder=" complemento " value="{{ $produto->seg_name ?? old('seg_name') }}">         
         </div>
          <div>
              <label class="juntar">Descricao</label>
              <input type="text" class="form-control" id="text_descricao" name="descricao"
 
-             placeholder="descricao" value="{{ $codigo->descricao ?? old('descricao') }}">
+             placeholder="descricao" value="{{ $produto->descricao ?? old('descricao') }}">
          </div>
 
             <div>
                 <label class="juntar">Codigo Barra</label>
-                <input type="text" class="form-control" id="text_ean" name="ean" placeholder="codigo de barras" value="{{ $codigo->ean ?? old('ean') }}">
+                <input type="text" class="form-control" id="text_ean" name="ean" placeholder="codigo de barras" value="{{ $produto->ean ?? old('ean') }}">
             </div>
             <div>
                 <label class="juntar">Origem</label>
                 <input type="text" class="form-control" id="text_origem" name="origem"
-                placeholder="codigo de barras" value="{{ $codigo->origem ?? old('origem') }}">         
+                placeholder="codigo de barras" value="{{ $produto->origem ?? old('origem') }}">         
             </div>
          
     </div> {{-- fim class col --}}{{-- cnpj_fornecedor  --}}
@@ -103,28 +103,28 @@
 
      <div>
          <label class="juntar">descnovo</label>
-         <input type="text" class="form-control" id="text_descnovo" name="descnovo" placeholder="desconto novo" value="{{ $codigo->descnovo ?? old('descnovo') }}">
+         <input type="text" class="form-control" id="text_descnovo" name="descnovo" placeholder="desconto novo" value="{{ $produto->descnovo ?? old('descnovo') }}">
      </div>
      
       <div>
           <label class="juntar">cnpj_fornecedor</label>
-          <input type="text" class="form-control" id="Text_cnpj_fornecedor" name="cnpj_fornecedor" placeholder="cnpj_fornecedor" value="{{ $codigo->cnpj_fornecedor ?? old('cnpj_fornecedor') }}">
+          <input type="text" class="form-control" id="Text_cnpj_fornecedor" name="cnpj_fornecedor" placeholder="cnpj_fornecedor" value="{{ $produto->cnpj_fornecedor ?? old('cnpj_fornecedor') }}">
       </div>
       <div>
           <label class="juntar">codigo_fornec</label>
-          <input type="text" class="form-control" id="text_codigo_fornec" name="codigo_fornec" placeholder="codigo_fornec" value="{{ $codigo->codigo_fornec ?? old('codigo_fornec') }}">
+          <input type="text" class="form-control" id="text_codigo_fornec" name="codigo_fornec" placeholder="codigo_fornec" value="{{ $produto->codigo_fornec ?? old('codigo_fornec') }}">
       </div>
       <div>
           <label class="juntar">fornecedor</label>
-          <input type="text" class="form-control" id="text_fornecedor" name="fornecedor" placeholder="fornecedor" value="{{ $codigo->fornecedor ?? old('fornecedor') }}">
+          <input type="text" class="form-control" id="text_fornecedor" name="fornecedor" placeholder="fornecedor" value="{{ $produto->fornecedor ?? old('fornecedor') }}">
       </div>
       <div>
           <label class="juntar">marca</label>
-          <input type="text" class="form-control" id="text_marca" name="marca" placeholder="marca " value="{{ $codigo->marca ?? old('marca') }}">
+          <input type="text" class="form-control" id="text_marca" name="marca" placeholder="marca " value="{{ $produto->marca ?? old('marca') }}">
       </div>
       <div>
           <label class="juntar">source_fat</label>
-          <input type="text" class="form-control" id="text_source_fat" name="source_fat" placeholder="source_fat " value="{{ $codigo->source_fat ?? old('source_fat') }}">
+          <input type="text" class="form-control" id="text_source_fat" name="source_fat" placeholder="source_fat " value="{{ $produto->source_fat ?? old('source_fat') }}">
           {{-- `link` VARCHAR(255) NULL DEFAULT NULL,
  `images` VARCHAR(255) NULL DEFAULT NULL, --}}
 
@@ -142,35 +142,35 @@
                 <div>
                     <label class="juntar">Preco de custo</label>
                     <input type="text" class="form-control" id="text_preco_compra" name="preco_compra"
-                    placeholder=" preco de compra" value="{{ $codigo->preco_compra ?? old('preco_compra') }}">
+                    placeholder=" preco de compra" value="{{ $produto->preco_compra ?? old('preco_compra') }}">
 
                 </div>
                 <div class="espaco">
 
                     <label class="juntar">Preco de venda</label>
                     <input type="text" class="form-control" id="text_preco" name="preco"
-                    placeholder=" preco " value="{{ $codigo->preco ?? old('preco') }}">         
+                    placeholder=" preco " value="{{ $produto->preco ?? old('preco') }}">         
                 </div>
                  <div class="espaco">
 
                      <label class="juntar">peso</label>
-                     <input type="text" class="form-control" id="text_peso" name="peso" placeholder="peso" value="{{ $codigo->peso ?? old('peso') }}">
+                     <input type="text" class="form-control" id="text_peso" name="peso" placeholder="peso" value="{{ $produto->peso ?? old('peso') }}">
                  </div>
                  <div class="espaco">
                      <label class="juntar">unidade</label>
-                     <input type="text" class="form-control" id="text_unidade" name="unidade" placeholder="unidade" value="{{ $codigo->unidade ?? old('unidade') }}">
+                     <input type="text" class="form-control" id="text_unidade" name="unidade" placeholder="unidade" value="{{ $produto->unidade ?? old('unidade') }}">
                  </div>
                 <div class="espaco">
 
                     <label class="juntar">Estoque</label>
                     <input type="text" class="form-control" id="text_estoque" name="estoque"
-                    placeholder="estoque" value="{{ $codigo->estoque ?? old('estoque') }}">
+                    placeholder="estoque" value="{{ $produto->estoque ?? old('estoque') }}">
                 </div>
                 <div class="espaco">
 
                     <label class="juntar">Garatia</label>
                     <input type="text" class="form-control" id="text_garatia" name="garantia"
-                    placeholder="Garantia" value="{{ $codigo->garantia ?? old('garantia') }}">         
+                    placeholder="Garantia" value="{{ $produto->garantia ?? old('garantia') }}">         
                 </div>  
             </div>
 
@@ -180,40 +180,40 @@
                     <div class="espaco">
 
                         <label class="juntar">Ncm</label>
-                        <input type="text" class="form-control" id="text_ncm" name="ncm" placeholder=" Ncm " value="{{ $codigo->ncm  ?? old('ncm') }}">
+                        <input type="text" class="form-control" id="text_ncm" name="ncm" placeholder=" Ncm " value="{{ $produto->ncm  ?? old('ncm') }}">
                     </div>
                     <div class="espaco">
 
                         <label class="juntar">Cest</label>
-                        <input type="text" class="form-control" id="text_cest" name="cest" placeholder="cest" value="{{ $codigo->cest ?? old('cest') }}">
+                        <input type="text" class="form-control" id="text_cest" name="cest" placeholder="cest" value="{{ $produto->cest ?? old('cest') }}">
                     </div>
                     <div class="espaco">
                         <label class="juntar">icms cst</label>
-                        <input type="text" class="form-control" id="text_icms_cst" name="icms_cst" placeholder="icms_cst" value="{{ $codigo->icms_cst ?? old('icms_cst') }}">
+                        <input type="text" class="form-control" id="text_icms_cst" name="icms_cst" placeholder="icms_cst" value="{{ $produto->icms_cst ?? old('icms_cst') }}">
                     </div>
                 
 
                     <div class="espaco">
 
                         <label class="juntar">icms perc</label>
-                        <input type="text" class="form-control" id="text_icms_perc" name="icms_perc" placeholder="icms perc" value="{{ $codigo->icms_perc ?? old('icms_perc') }}">
+                        <input type="text" class="form-control" id="text_icms_perc" name="icms_perc" placeholder="icms perc" value="{{ $produto->icms_perc ?? old('icms_perc') }}">
                     </div>
                     <div class="espaco">
 
                         <label class="juntar">icms_pred</label>
-                        <input type="text" class="form-control" id="text_icms_pred" name="icms_pred" placeholder="icms_pred" value="{{ $codigo->icms_pred ?? old('icms_pred') }}">
+                        <input type="text" class="form-control" id="text_icms_pred" name="icms_pred" placeholder="icms_pred" value="{{ $produto->icms_pred ?? old('icms_pred') }}">
                     </div>
                 
 
                     <div class="espaco">
 
                         <label class="juntar">ipi_cst</label>
-                        <input type="text" class="form-control" id="text_icms_perc" name="ipi_cst" placeholder="ipi_cst" value="{{ $codigo->ipi_cst ?? old('ipi_cst') }}">
+                        <input type="text" class="form-control" id="text_icms_perc" name="ipi_cst" placeholder="ipi_cst" value="{{ $produto->ipi_cst ?? old('ipi_cst') }}">
                     </div>
                     <div class="espaco">
 
                         <label class="juntar">ipi_perc</label>
-                        <input type="text" class="form-control" id="text_ipi_perc" name="ipi_perc" placeholder="ipi_perc" value="{{ $codigo->ipi_perc ?? old('ipi_perc') }}">
+                        <input type="text" class="form-control" id="text_ipi_perc" name="ipi_perc" placeholder="ipi_perc" value="{{ $produto->ipi_perc ?? old('ipi_perc') }}">
 
                     </div>
                 </div>
@@ -221,31 +221,31 @@
                     <div class="espaco">
 
                         <label class="juntar">pis_perc</label>
-                        <input type="text" class="form-control" id="text_pis_perc" name="pis_perc" placeholder="pis_perc" value="{{ $codigo->ipi_perc ?? old('pis_perc') }}">
+                        <input type="text" class="form-control" id="text_pis_perc" name="pis_perc" placeholder="pis_perc" value="{{ $produto->ipi_perc ?? old('pis_perc') }}">
 
                     </div>
                     <div class="espaco">
 
                         <label class="juntar">pis_cst</label>
-                        <input type="text" class="form-control" id="text_pis_cst" name="pis_cst" placeholder="pis_cst" value="{{ $codigo->pis_cst ?? old('pis_cst') }}">
+                        <input type="text" class="form-control" id="text_pis_cst" name="pis_cst" placeholder="pis_cst" value="{{ $produto->pis_cst ?? old('pis_cst') }}">
 
                     </div>
                     <div class="espaco"> 
 
                         <label class="juntar">cofins_cst</label>
-                        <input type="text" class="form-control" id="text_cofins_cst" name="cofins_cst" placeholder="cofins_cst" value="{{ $codigo->cofins_cst ?? old('cofins_cst') }}">
+                        <input type="text" class="form-control" id="text_cofins_cst" name="cofins_cst" placeholder="cofins_cst" value="{{ $produto->cofins_cst ?? old('cofins_cst') }}">
 
                     </div>
                     <div class="espaco"> 
 
                         <label class="juntar">cofins_perc</label>
-                        <input type="text" class="form-control" id="text_cofins_perc" name="cofins_perc" placeholder="cofins_perc" value="{{ $codigo->cofins_perc ?? old('cofins_perc') }}">
+                        <input type="text" class="form-control" id="text_cofins_perc" name="cofins_perc" placeholder="cofins_perc" value="{{ $produto->cofins_perc ?? old('cofins_perc') }}">
 
                     </div>
                     <div class="espaco">
 
                         <label class="juntar">trib_st_perc</label>
-                        <input type="text" class="form-control" id="text_trib_st_perc" name="trib_st_perc" placeholder="trib_st_perc" value="{{ $codigo->trib_st_perc ?? old('trib_st_perc') }}">
+                        <input type="text" class="form-control" id="text_trib_st_perc" name="trib_st_perc" placeholder="trib_st_perc" value="{{ $produto->trib_st_perc ?? old('trib_st_perc') }}">
 
                     </div>
                 </div>

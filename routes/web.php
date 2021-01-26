@@ -25,7 +25,8 @@ Route::resource('usuario', 'usuariosController');
 Route::post('executaLog', 'usuariosController@execurtarLogin');
 
 //Route::get('cadastrorUsuario' ,'usuariosController@telacadastrar');
-Route::get('Rotchamarlogim','usuariosController@telaLogin');
+//Route::get('Rotchamarlogim','usuariosController@telaLogin');
+Route::get('logim','usuariosController@telaLogin');
 //-----------------------------------------------------------------
 
 
