@@ -14,6 +14,10 @@
      @if (count($dados)==0)
 
         <p class="alert alert-damger">nao foi encontrado dados no banco</p>
+        <form action="{{ route('usuario.create') }}">
+            @csrf
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </form>  
     @else
       
        @foreach($dados as $usuarios)
@@ -54,8 +58,11 @@
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger btn-sm">Excluir</button>
-
                     </form>
+                    <form action="{{ route('usuario.create') }}">
+                        @csrf
+                        <button type="submit" class="btn btn-primary">Cadastrar</button>
+                    </form>  
                       
                     
 

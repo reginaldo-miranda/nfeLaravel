@@ -14,6 +14,10 @@
      @if (count($dados)==0)
 
         <p class="alert alert-damger">nao foi encontrado dados no banco</p>
+        <form action="{{ route('cliente.create') }}">
+            @csrf
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </form>  
     @else
       
        @foreach($dados as $cliente)
@@ -50,7 +54,7 @@
                             text-align: center;
                         }
                     </style>
-
+   
                     <form action="{{ route('cliente.edit', $cliente->codigo ) }}" method="get">
                         @csrf
                         <button type="submit" class="btn btn-warning btn-sm">Editar</button>
@@ -59,12 +63,15 @@
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger btn-sm">Excluir</button>
-
                     </form>
+                    <form action="{{ route('cliente.create') }}">
+                        @csrf
+                        <button type="submit" class="btn btn-primary">Cadastrar</button>
+                    </form>   
                       
                     
 
-                   {{--   class="glyphicon glyphicon-pencil"  --}}
+                {{--   class="glyphicon glyphicon-pencil"  
                {{--  </div>  --}}  
             
             </div>
@@ -72,9 +79,11 @@
            
        @endforeach 
     
+      
+    
      
      @endif
-
+      
 
 
  @endsection 

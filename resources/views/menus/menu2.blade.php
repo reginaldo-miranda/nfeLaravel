@@ -313,11 +313,11 @@ ul li ul li:hover {background: rgb(200, 211, 214);}
               <a href="#">cadastro</a>
               <ul>
                   <a>Cadastro</a>
-                  <li><a id="espacomenu" href="{{ route('cliente.create') }}">Clientes</a></li>
-                  <li><a id="espacomenu" href="#">Fornecedor</a></li>
-                  <li><a id="espacomenu" href="{{ route('funcionario.create') }}">Funcionário</a></li>
-                  <li><a id="espacomenu" href="{{ route('usuario.create') }}">Usuario</a></li>
-                  <li><a id="espacomenu" href="{{ route('produto.create') }}">Produtos</a></li>
+                  <li><a id="espacomenu" href="{{ route('cliente.index') }}">Clientes</a></li>
+                  <li><a id="espacomenu" href="{{ route('fornecedor.index') }}">Fornecedor</a></li>
+                  <li><a id="espacomenu" href="{{ route('funcionario.index') }}">Funcionário</a></li>
+                  <li><a id="espacomenu" href="{{ route('usuario.index') }}">Usuario</a></li>
+                  <li><a id="espacomenu" href="{{ route('produto.index') }}">Produtos</a></li>
                 </ul>
           </li>
         </ul>

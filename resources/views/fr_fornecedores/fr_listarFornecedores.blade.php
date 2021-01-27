@@ -1,10 +1,9 @@
-
 @extends('layouts.app') 
 
 @section('titulopagina')
     <div class="img" class="col-md-4 col-md-4 offset-5 col-sm-8 offset-2 col-xs-12">
 
-        <h4>Lista Empresa</h4>
+        <h4>Lista Forncedores</h4>
      </div>
 @endsection    
 
@@ -14,31 +13,30 @@
      @if (count($dados)==0)
 
         <p class="alert alert-damger">nao foi encontrado dados no banco</p>
-        <form action="{{ route('empresa.create') }}">
+        <form action="{{ route('fornecedor.create') }}">
             @csrf
             <button type="submit" class="btn btn-primary">Cadastrar</button>
-        </form>   
-        
+        </form>  
     @else
       
-       @foreach($dados as $empresa)
+       @foreach($dados as $fornecedor)
        
         
             <div class="row">
                 <div class="col-2">
                     
-                    {{ $empresa->codigo }} 
+                    {{ $fornecedor->codigo }} 
                                        
                 </div>
                
                 <div class="col-4">
                     
-                    {{ $empresa->razao }} 
+                    {{ $fornecedor->razaosocial }} 
                                        
                 </div>
                 <div class="col-2">
 
-                    {{ $empresa->cnpj }}
+                    {{ $fornecedor->cnpj }}
 
 
                 </div>
@@ -55,26 +53,24 @@
                             text-align: center;
                         }
                     </style>
-
-                    <form action="{{ route('empresa.edit', $empresa->codigo ) }}" method="get">
+   
+                    <form action="{{ route('fornecedor.edit', $fornecedor->codigo ) }}" method="get">
                         @csrf
                         <button type="submit" class="btn btn-warning btn-sm">Editar</button>
                     </form>
-                    <form action="{{ route('empresa.destroy', $empresa->codigo) }}" method="post">
+                    <form action="{{ route('fornecedor.destroy', $fornecedor->codigo) }}" method="post">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger btn-sm">Excluir</button>
                     </form>
-
-                    <form action="{{ route('empresa.create') }}">
+                    <form action="{{ route('fornecedor.create') }}">
                         @csrf
                         <button type="submit" class="btn btn-primary">Cadastrar</button>
                     </form>   
-                    
                       
                     
 
-                   {{--   class="glyphicon glyphicon-pencil"  --}}
+                {{--   class="glyphicon glyphicon-pencil"  
                {{--  </div>  --}}  
             
             </div>
@@ -82,9 +78,11 @@
            
        @endforeach 
     
+      
+    
      
      @endif
-
+      
 
 
  @endsection 

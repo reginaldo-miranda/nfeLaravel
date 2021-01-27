@@ -47,6 +47,9 @@ Route::resource('cliente', 'ClientesController');
 
 //--------------------------------------------------------------------
 
+  Route::resource('fornecedor', 'fornecedorController');
+//--------------------------------------------------------------------
+
 Route::resource('produto', 'produtoController');
 
 //--------------------------------------------------------------------
@@ -59,5 +62,5 @@ Route::get('/administrador',function(){
 });
 
 
-
+//{{-- λ php artisan make:model empresa -mcr --}}
 

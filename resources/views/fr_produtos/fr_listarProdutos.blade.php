@@ -14,6 +14,10 @@
      @if (count($dados)==0)
 
         <p class="alert alert-damger">nao foi encontrado dados no banco</p>
+        <form action="{{ route('produto.create') }}">
+            @csrf
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </form>
     @else
       
        @foreach($dados as $produto)
@@ -30,7 +34,7 @@
                 <div class="col-4">
 
                     {{ $produto->nome_reduzido }}
-prod
+
 
                 </div>
 
@@ -55,8 +59,12 @@ prod
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger btn-sm">Excluir</button>
-
                     </form>
+
+                    <form action="{{ route('produto.create') }}">
+                        @csrf
+                        <button type="submit" class="btn btn-primary">Cadastrar</button>
+                    </form>   
                       
                     
 
