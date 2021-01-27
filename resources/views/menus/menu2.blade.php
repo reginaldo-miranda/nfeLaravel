@@ -341,7 +341,7 @@ ul li ul li:hover {background: rgb(200, 211, 214);}
                 <a href="#">Cad Opercaionais</a>
                 <ul>
                     <a>Outros Cadastros</a>
-                    <li><a id="espacomenu" href="{{ route('empresa.create') }}">Empresa</a></li> 
+                    <li><a id="espacomenu" href="{{ route('empresa.index') }}">Empresa</a></li> 
                     <li><a id="espacomenu" href="#">Fornecedor</a></li>
                     <li><a id="espacomenu" href="#">Funcionario</a></li>
                     <li><a id="espacomenu" href="#">Usuario</a></li>

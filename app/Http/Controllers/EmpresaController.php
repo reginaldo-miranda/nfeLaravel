@@ -14,7 +14,10 @@ class EmpresaController extends Controller
      */
     public function index()
     {
-        return view('fr_empresa.fr_listarEmpresa');
+
+        $dados = empresa::all();
+        return  view('fr_empresa.fr_listarEmpresa', compact('dados'));
+       
     }
 
     /**
@@ -35,7 +38,10 @@ class EmpresaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+     
+     $dados = $request->only('codigo','bairro','cep','cnpj','codempresa','codigo_pais_nfe','complemento','contato','endereco','fantasia','telefone','inscest','numero','razao','tipo_nf','codcidade','crt','margem_lucro');
+     empresa::create($dados);
+     return redirect()->route('empresa.index');
     }
 
     /**
@@ -55,10 +61,13 @@ class EmpresaController extends Controller
      * @param  \App\empresa  $empresa
      * @return \Illuminate\Http\Response
      */
-    public function edit(empresa $empresa)
+    public function edit($empresa)
     {
-        //
-    }
+        $codigoe = empresa::find($empresa);
+        // dd($codigo);
+         return view('fr_empresa.fr_editarEmpresa', compact('codigoe'));
+
+       }
 
     /**
      * Update the specified resource in storage.
@@ -67,9 +76,14 @@ class EmpresaController extends Controller
      * @param  \App\empresa  $empresa
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, empresa $empresa)
+    public function update(Request $request, $codigo)
     {
-        //
+        $data = empresa::find();
+           
+         $data->update($request->all($data));
+   
+         return redirect('empresa');
+
     }
 
     /**

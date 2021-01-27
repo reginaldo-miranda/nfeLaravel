@@ -51,7 +51,7 @@
                         }
                     </style>
 
-                    <form action="{{ route('cliente.edit',$cliente->codigo ) }}" method="get">
+                    <form action="{{ route('cliente.edit', $cliente->codigo ) }}" method="get">
                         @csrf
                         <button type="submit" class="btn btn-warning btn-sm">Editar</button>
                     </form>
