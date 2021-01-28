@@ -57,6 +57,9 @@ Route::resource('produto', 'produtoController');
 Route::resource('empresa', 'empresaController');
 
 //--------------------------------------------------------------------
+
+Route::resource('pedido', 'pedidoController');
+//--------------------------------------------------------------------
 Route::get('/administrador',function(){
     return view('fr_admin');
 });
