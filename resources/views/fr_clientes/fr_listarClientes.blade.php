@@ -11,6 +11,13 @@
 @section('conteudo') 
 
 
+
+<form action="{{ route('cliente.search')}}" method="post" class="form form-inline">
+    @csrf
+    <input type="text" name="filtro" placeholder="filtrar" class="form-control">
+    <button type="submit" class="btn btn-primary">Pesquisar</button>
+</form> 
+
      @if (count($dados)==0)
 
         <p class="alert alert-damger">nao foi encontrado dados no banco</p>

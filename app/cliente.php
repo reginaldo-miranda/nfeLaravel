@@ -8,4 +8,19 @@ class cliente extends Model
 {
     protected $primaryKey = 'codigo';
     protected $fillable = ['razaosocial','fantasia','pessoa','cnpj','inscest','telefone','ramalcontato','email','contato','endereco','numero','bairro' ,'cep','codcidade','uf','consufinal', 'diferido','ehtransp'];
+
+    public function search($filtro = null){
+         
+        $results = $this->where(function ($query) use($filtro){
+       
+            if($filtro){
+                $query->where('name', 'like' ,"%{$filtro}%");
+                6,12 50
+            }
+
+        })
+        ->paginate();
+    } 
+
+
 }

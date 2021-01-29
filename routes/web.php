@@ -15,6 +15,8 @@
 
 //use Illuminate\Routing\Route;
 
+use App\Http\Controllers\ClientesController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -44,6 +46,7 @@ Route::get('cadastrofunc', 'FuncionarioController@telacadastrarFunc');
 //--------------------------------------------------------------------
 
 Route::resource('cliente', 'ClientesController');
+Route::any('search', 'ClientesController@search')->name('cliente.search');
 
 //--------------------------------------------------------------------
 
@@ -59,6 +62,7 @@ Route::resource('empresa', 'empresaController');
 //--------------------------------------------------------------------
 
 Route::resource('pedido', 'pedidoController');
+
 //--------------------------------------------------------------------
 Route::get('/administrador',function(){
     return view('fr_admin');

@@ -90,4 +90,9 @@ class ClientesController extends Controller
         $cliente->delete();
         return redirect('cliente');
     }
+
+    public function search(Request $request){
+
+        dd($request->all());
+    }
 }

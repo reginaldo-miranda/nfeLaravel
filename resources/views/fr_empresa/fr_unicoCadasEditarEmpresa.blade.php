@@ -276,3 +276,7 @@
                       <a id="espacomenu" href="{{ route('empresa.index') }}">empresa</a>
                     </div>   
                 </div>   
+{{-- 
+                ['codigo','bairro','cep','cnpj','codempresa','codigo_pais_nfe','complemento',
+                'contato','endereco','fantasia','telefone','inscest',
+                'numero','razao','tipo_nf','codcidade','crt','margem_lucro'];  --}}

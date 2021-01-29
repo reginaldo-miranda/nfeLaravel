@@ -24,7 +24,7 @@ class PedidoController extends Controller
      */
     public function create()
     {
-        return view('fr_pedidos.fr_pedido');
+        return view('fr_pedidos.fr_CadastrarPedido');
     }
 
     /**

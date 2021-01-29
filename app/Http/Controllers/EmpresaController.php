@@ -39,7 +39,9 @@ class EmpresaController extends Controller
     public function store(Request $request)
     {
      
-     $dados = $request->only('codigo','bairro','cep','cnpj','codempresa','codigo_pais_nfe','complemento','contato','endereco','fantasia','telefone','inscest','numero','razao','tipo_nf','codcidade','crt','margem_lucro');
+     $dados = $request->only('bairro','cep','cnpj','codempresa','codigo_pais_nfe','complemento','contato','endereco','fantasia','telefone','inscest','numero','razao','tipo_nf','codcidade','crt','margem_lucro');
+
+     
      empresa::create($dados);
      return redirect()->route('empresa.index');
     }
@@ -77,10 +79,10 @@ class EmpresaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $codigo)
-    {
-        $data = empresa::find();
-           
-         $data->update($request->all($data));
+    {   
+         $data = empresa::find($codigo);
+        
+         $data->update($request->all());
    
          return redirect('empresa');
 
