@@ -91,8 +91,13 @@ class ClientesController extends Controller
         return redirect('cliente');
     }
 
-    public function search(Request $request){
+    public function search(){//Request $request ,$filtro){
 
-        dd($request->all());
+      $dados = cliente::all();
+
+      return view('fr_pedidos.fr_pesquisaClientePedido', compact('dados'));
+
+
     }
 }
+//https://blog.schoolofnet.com/trabalhando-com-repository-no-laravel/

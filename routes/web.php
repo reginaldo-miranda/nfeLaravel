@@ -62,6 +62,7 @@ Route::resource('empresa', 'empresaController');
 //--------------------------------------------------------------------
 
 Route::resource('pedido', 'pedidoController');
+Route::get('pesquisaCliente', 'pedidoController@pesquisarCliente')->name('pesquisacliente');
 
 //--------------------------------------------------------------------
 Route::get('/administrador',function(){

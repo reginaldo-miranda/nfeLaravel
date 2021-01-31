@@ -14,12 +14,13 @@ class cliente extends Model
         $results = $this->where(function ($query) use($filtro){
        
             if($filtro){
-                $query->where('name', 'like' ,"%{$filtro}%");
-                6,12 50
+                $query->where('razaosocial', 'LIKE',"%{$filtro}%");
+                
             }
 
-        })
-        ->paginate();
+        })->toSql();
+        //->paginate();
+        dd($results);
     } 
 
 

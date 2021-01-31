@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\pedido;
+use App\cliente;
 use Illuminate\Http\Request;
 
 class PedidoController extends Controller
@@ -14,7 +15,8 @@ class PedidoController extends Controller
      */
     public function index()
     {
-        //
+        return 'aqui na index';
+
     }
 
     /**
@@ -35,7 +37,7 @@ class PedidoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // 
     }
 
     /**
@@ -81,5 +83,14 @@ class PedidoController extends Controller
     public function destroy(pedido $pedido)
     {
         //
+    }
+
+    public function pesquisarCliente($filtro){
+
+        /* 
+         $dados = cliente::all();
+        return  view('fr_clientes.fr_listarClientes', compact('dados')); */
+        dd($filtro);
+        return 'estou na pesquisa cliente pedido controller';
     }
 }
