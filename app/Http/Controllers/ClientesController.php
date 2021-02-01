@@ -3,15 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\cliente;
+use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Http\Request;
 
 class ClientesController extends Controller
 {
     protected $request;
     
-    public function __construct(Request $request)
+    public function __construct(Request $request, cliente $clientes)
     {
     $this->request = $request;
+    $this->repository = $clientes;
     } 
 
    
@@ -91,13 +93,16 @@ class ClientesController extends Controller
         return redirect('cliente');
     }
 
-    public function search(){//Request $request ,$filtro){
+    public function search(Request $request){
 
-      $dados = cliente::all();
+     $dados = $this->repository->search($request->filtro);
 
-      return view('fr_pedidos.fr_pesquisaClientePedido', compact('dados'));
+  //   $dados = cliente::all();
+   //  return  view('fr_pedidos.fr_pesquisaClientePedido',['clientes' => $dados]);
 
+     return  view('fr_pedidos.fr_pesquisaClientePedido', compact('dados'));
 
     }
-}
+  
+ }
 //https://blog.schoolofnet.com/trabalhando-com-repository-no-laravel/

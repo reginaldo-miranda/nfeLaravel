@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Controllers\ClientesController;
+
 
 use App\pedido;
 use App\cliente;
@@ -85,12 +87,17 @@ class PedidoController extends Controller
         //
     }
 
-    public function pesquisarCliente($filtro){
-
-        /* 
+    public function PCliente(){
+  
          $dados = cliente::all();
-        return  view('fr_clientes.fr_listarClientes', compact('dados')); */
-        dd($filtro);
-        return 'estou na pesquisa cliente pedido controller';
+         return view('fr_pedidos.fr_pesquisaClientePedido', compact('dados'));
+    }
+
+
+    public function escolherCliente(Request $request){
+       // dd($request);
+        $codigo = cliente::find($request);
+        
+         return view('fr_pedidos.fr_unicoCEPedido', compact('codigo'));
     }
 }

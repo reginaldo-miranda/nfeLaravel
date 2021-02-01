@@ -18,9 +18,10 @@ class cliente extends Model
                 
             }
 
-        })->toSql();
-        //->paginate();
-        dd($results);
+        })//->toSql();
+        ->paginate();
+        //dd($results);
+        return $results;
     } 
 
 

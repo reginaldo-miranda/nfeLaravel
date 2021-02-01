@@ -10,7 +10,7 @@
 
     
     @endsection 
-    <form method="post" action="/pedido">  {{--  video aula 46 ti --}}
+    {{-- <form method="post" action="{{ route('pcliente') }}">  {{--  video aula 46 ti --}}
 
         @include('fr_pedidos.fr_unicoCEPedido')
 

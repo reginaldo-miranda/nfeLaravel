@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
+
 <style>
 
 #text_nomeCliente{
@@ -10,19 +11,22 @@
 
 
     <div class="juntar" class="form-group">
+        <label for="text_numeroPedido">numero: </label>
+        <input type="text" name="numeroPedido">
 
-        <form action="">
-
-            <label for="text_nomeCliente" class="lab">Nome do Cliente</label> 
-            <input type="text" class="form-control" id="text_nomeCliente" name="nomeCliente"
-            placeholder=" Nome do cliente:" value="{{ $codigoe->razao ?? old('nomeCliente') }}">   
-            
-        
-
+        <form action="{{ route('escolher_cli') }}" class="form form-inline">
             @csrf
-          {{-- <button type="submit" class="btn btn-primary">pesquisar cliente</button>  --}}
-
-            <a id="espacomenu" href="{{ route('cliente.search') }}">Clientes</a>
+                <label for="text_nomeCliente" class="lab">Nome do Cliente</label> 
+                <input type="text" class="form-control" id="text_nomeCliente" name="nomeCliente" placeholder=" Nome do cliente:" value="{{ $codigo->codigo ?? old('nomeCliente') }}">  
+                
+                <div class="juntar" class="form-group">
+                <label for="text_fantasia"  class="lab">Fantasia</label> 
+                
+            </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">pesquisar cliente</button> 
+                </div> 
         </form>  
-                                        
+
+                               
     </div>

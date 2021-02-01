@@ -16,6 +16,7 @@
 //use Illuminate\Routing\Route;
 
 use App\Http\Controllers\ClientesController;
+use App\Http\Controllers\pedidoController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -62,7 +63,16 @@ Route::resource('empresa', 'empresaController');
 //--------------------------------------------------------------------
 
 Route::resource('pedido', 'pedidoController');
-Route::get('pesquisaCliente', 'pedidoController@pesquisarCliente')->name('pesquisacliente');
+//Route::get('pesquisaCliente', 'pedidoController@pesquisarCliente')->name('pesquisacliente');
+
+//Route::get('PesquisaCpedidos', 'pedidoController@PCliente')->name('pcliente');
+Route::get('escolherCliente', 'pedidoController@escolherCliente')->name('escolher_cli');
+
+
+/*Route::get('/listarfuncionario', function () {
+    return view('fr_funcionarios.fr_listarFuncionarios');
+});*/
+
 
 //--------------------------------------------------------------------
 Route::get('/administrador',function(){

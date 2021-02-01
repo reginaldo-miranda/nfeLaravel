@@ -3,7 +3,7 @@
 @section('titulopagina')
 <div class="img" class="col-md-4 col-md-4 offset-5 col-sm-8 offset-2 col-xs-12">
 
-    <h4>Lista Clientes</h4>
+    <h4>Lista Clientes para o pedido</h4>
 </div>
 @endsection
 
@@ -11,7 +11,7 @@
 
 
 
-<form action="{{ route('pesquisacliente')}}" method="post" class="form form-inline">
+<form action="{{ route('cliente.search')}}" method="post" class="form form-inline">
     @csrf
     <input type="text" name="filtro" placeholder="filtrar" class="form-control">
     <button type="submit" class="btn btn-primary">Pesquisar cli</button>
@@ -29,25 +29,28 @@
 @foreach($dados as $cliente)
 
 
+
+
+
 <div class="row">
     <div class="col-2">
 
-        {{ $cliente->codigo }}
+       {{  $cliente->codigo }}
 
     </div>
 
     <div class="col-4">
-
-        {{ $cliente->razaosocial }}
-
+         {{ $cliente->razaosocial }}
     </div>
+
     <div class="col-2">
-
-        {{ $cliente->cnpj }}
-
+       {{ $cliente->cnpj }}
 
     </div>
-
+    <form action="{{ route('escolher_cli', $cliente->codigo ) }}" method="get">
+        @csrf
+        <button type="submit" class="btn btn-warning btn-sm">Escolher</button>
+    </form>
     {{-- <div class="col-4">   --}}
     {{-- <a href="edit_func/{{ $funcionario->id_funcionarios}}">editar</a>
     <a href="#">Excluir</a> --}}
@@ -68,7 +71,7 @@
         @csrf
         @method('DELETE')
         <button type="submit" class="btn btn-danger btn-sm">Excluir</button>
-    </form>
+    </form> 
     <form action="{{ route('cliente.create') }}">
         @csrf
         <button type="submit" class="btn btn-primary">Cadastrar</button>
