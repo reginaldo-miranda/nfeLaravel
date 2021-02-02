@@ -68,7 +68,7 @@ Route::resource('pedido', 'pedidoController');
 Route::get('PesquisaCpedidos', 'pedidoController@PCliente')->name('pcliente');
 Route::get('escolherCliente', 'pedidoController@escolherCliente')->name('escolherCliente');
 
-Route::any('searchPed', 'pedidoController@searchClientePed')->name('pedido.searchPed');
+Route::any('searchPed', 'ClientesController@searchClientePed')->name('pedido.searchPed');
 
 
 /*Route::get('/listarfuncionario', function () {

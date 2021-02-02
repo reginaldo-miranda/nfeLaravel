@@ -10,12 +10,12 @@
 @section('conteudo')
 
                                  
-
+{{-- 
         <form action="{{ route('pedido.searchPed')}}" method="post" class="form form-inline">
             @csrf
-            <input type="text" name="nomeCliente" placeholder="filtrar" class="form-control">
+            <input type="text" name="filtro" placeholder="filtrar" class="form-control" >
             <button type="submit" class="btn btn-primary">Pesquisar cli</button> 
-        </form>
+        </form>  --}}
 
         @if (count($dados)==0)
 
@@ -25,6 +25,11 @@
             <button type="submit" class="btn btn-primary">Cadastrar</button>
         </form>
         @else
+        <form action="{{ route('pedido.searchPed')}}" method="post" class="form form-inline">
+            @csrf
+            <input type="text" name="filtro" placeholder="filtrar" class="form-control" value="{{ $dados }}" >
+            <button type="submit" class="btn btn-primary">Pesquisar cli</button> 
+        </form>  
 
                 @foreach($dados as $cliente)
 
@@ -43,8 +48,9 @@
                             {{ $cliente->cnpj }}
 
                             </div>
-                           <form action="{{ route('escolherCliente', $cliente->razaosocial) }}" method="get">
+                           <form action="{{ route('escolherCliente', $cliente->codigo) }}" method="get">
                                 @csrf
+                               
                                 <button type="submit" class="btn btn-warning btn-sm">Escolher</button>
                             </form> 
                                                        

@@ -25,5 +25,23 @@ class cliente extends Model
       
     } 
 
+    
+    public function searchClientePed($filtro = null){
+         
+        $results = $this->where(function ($query) use($filtro){
+       
+            if($filtro){
+                $query->where('razaosocial', 'LIKE',"%{$filtro}%");
+                
+            }
+
+        })//->toSql();
+        ->paginate();
+        //dd($results);
+       return $results;
+      
+      
+    } 
+
 
 }

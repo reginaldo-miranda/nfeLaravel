@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\cliente;
+use App\pedido;
 use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Http\Request;
 
@@ -103,6 +104,18 @@ class ClientesController extends Controller
      return  view('fr_clientes.fr_listarClientes', compact('dados'));
 
     }
+
+    public function searchClientePed(Request $request){
+
+      $dados = $this->repository->searchClientePed($request->filtro);
+ 
+   //   $dados = cliente::all();
+    //  return  view('fr_pedidos.fr_pesquisaClientePedido', [
+    //    'cliente' => $dados ,
+     //   'filtro' =>  $dados]);
+     return  view('fr_pedidos.fr_pesquisaClientePedido', compact('dados'));
+ 
+     }
   
  }
 //https://blog.schoolofnet.com/trabalhando-com-repository-no-laravel/

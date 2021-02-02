@@ -106,24 +106,11 @@ class PedidoController extends Controller
 
     public function escolherCliente(Request $request){
         // dd($request);
-        $codigo= cliente::find($request);
+        $codigo = cliente::find($request);
         dd($codigo);
         
          return view('fr_pedidos.fr_unicoCEPedido', compact('codigo'));
     }
 
-    public function searchClientePed(Request $request){
-
-        $dados = $this->repository->searchClientePed($request->filtro);
-   
-     //   $dados = cliente::all();
-        //return  view('fr_pedidos.fr_pesquisaClientePedido',['clientes' => $dados]);
-        return  view('fr_pedidos.fr_pesquisaClientePedido', compact('dados'));
-        
-
-
-   
-      
-   
-       }
+  
 }
