@@ -22,6 +22,7 @@ class cliente extends Model
         ->paginate();
         //dd($results);
         return $results;
+      
     } 
 
 

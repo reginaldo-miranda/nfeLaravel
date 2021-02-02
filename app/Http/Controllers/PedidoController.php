@@ -10,6 +10,16 @@ use Illuminate\Http\Request;
 
 class PedidoController extends Controller
 {
+
+    protected $request;
+    
+    public function __construct(Request $request, cliente $clientes, pedido $pedido)
+    {
+    $this->request = $request;
+    $this->repository = $clientes;
+    $this->repository = $pedido;
+    } 
+
     /**
      * Display a listing of the resource.
      *
@@ -95,9 +105,25 @@ class PedidoController extends Controller
 
 
     public function escolherCliente(Request $request){
-       // dd($request);
-        $codigo = cliente::find($request);
+        // dd($request);
+        $codigo= cliente::find($request);
+        dd($codigo);
         
          return view('fr_pedidos.fr_unicoCEPedido', compact('codigo'));
     }
+
+    public function searchClientePed(Request $request){
+
+        $dados = $this->repository->searchClientePed($request->filtro);
+   
+     //   $dados = cliente::all();
+        //return  view('fr_pedidos.fr_pesquisaClientePedido',['clientes' => $dados]);
+        return  view('fr_pedidos.fr_pesquisaClientePedido', compact('dados'));
+        
+
+
+   
+      
+   
+       }
 }

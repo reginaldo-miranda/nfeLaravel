@@ -65,8 +65,10 @@ Route::resource('empresa', 'empresaController');
 Route::resource('pedido', 'pedidoController');
 //Route::get('pesquisaCliente', 'pedidoController@pesquisarCliente')->name('pesquisacliente');
 
-//Route::get('PesquisaCpedidos', 'pedidoController@PCliente')->name('pcliente');
-Route::get('escolherCliente', 'pedidoController@escolherCliente')->name('escolher_cli');
+Route::get('PesquisaCpedidos', 'pedidoController@PCliente')->name('pcliente');
+Route::get('escolherCliente', 'pedidoController@escolherCliente')->name('escolherCliente');
+
+Route::any('searchPed', 'pedidoController@searchClientePed')->name('pedido.searchPed');
 
 
 /*Route::get('/listarfuncionario', function () {

@@ -100,7 +100,7 @@ class ClientesController extends Controller
   //   $dados = cliente::all();
    //  return  view('fr_pedidos.fr_pesquisaClientePedido',['clientes' => $dados]);
 
-     return  view('fr_pedidos.fr_pesquisaClientePedido', compact('dados'));
+     return  view('fr_clientes.fr_listarClientes', compact('dados'));
 
     }
   
