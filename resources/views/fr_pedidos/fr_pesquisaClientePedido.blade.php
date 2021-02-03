@@ -48,15 +48,12 @@
                             {{ $cliente->cnpj }}
 
                             </div>
-                           <form action="{{ route('escolherCliente', $cliente->codigo) }}" method="post">
+                           <form action="{{ route('escolherCliente', $cliente->codigo) }}" method="get">
                                 @csrf
                                
                                 <button type="submit" class="btn btn-warning btn-sm">Escolher</button>
                             </form> 
-                            <form action="{{ route('cliente.edit', $cliente->codigo ) }}" method="get">
-                                @csrf
-                                <button type="submit" class="btn btn-warning btn-sm">Editar</button>
-                            </form>
+                           
                                                        
 
 

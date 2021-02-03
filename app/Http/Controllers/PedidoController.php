@@ -108,8 +108,8 @@ class PedidoController extends Controller
         // dd($request);
        // $codigo = cliente::find($codigo);
      //  $dados = cliente::find($request);
-       $dados = $request->all();
-    //   dd($dados);
+         $dados = $request->all();
+       //  dd($dados);
         
          return view('fr_pedidos.fr_cadastrarPedido', compact('dado'));
     }

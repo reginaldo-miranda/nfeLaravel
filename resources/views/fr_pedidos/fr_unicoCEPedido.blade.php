@@ -20,8 +20,8 @@
             @csrf
                 <label for="text_razaosocial" class="lab">Nome do Cliente</label> 
                 <input type="text" class="form-control" id="text_razaosocial" name="razaosocial"
-                 placeholder=" Nome do cliente:" value="{{ $dados->razaosocial ?? old('razaosocial') }}">  
-                
+                 placeholder=" Nome do cliente:" value="{{ $cliente->razaosocial ?? old('razaosocial') }}">  
+         
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">pesquisar cliente</button> 
                 </div> 
