@@ -104,12 +104,14 @@ class PedidoController extends Controller
     }
 
 
-    public function escolherCliente(Request $request){
+    public function escolherCliente( Request $request){
         // dd($request);
-        $codigo = cliente::find($request);
-        dd($codigo);
+       // $codigo = cliente::find($codigo);
+     //  $dados = cliente::find($request);
+       $dados = $request->all();
+    //   dd($dados);
         
-         return view('fr_pedidos.fr_unicoCEPedido', compact('codigo'));
+         return view('fr_pedidos.fr_cadastrarPedido', compact('dado'));
     }
 
   

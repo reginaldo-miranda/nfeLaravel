@@ -27,7 +27,7 @@
         @else
         <form action="{{ route('pedido.searchPed')}}" method="post" class="form form-inline">
             @csrf
-            <input type="text" name="filtro" placeholder="filtrar" class="form-control" value="{{ $dados }}" >
+            <input type="text" name="filtro" placeholder="filtrar" class="form-control" >
             <button type="submit" class="btn btn-primary">Pesquisar cli</button> 
         </form>  
 
@@ -48,11 +48,15 @@
                             {{ $cliente->cnpj }}
 
                             </div>
-                           <form action="{{ route('escolherCliente', $cliente->codigo) }}" method="get">
+                           <form action="{{ route('escolherCliente', $cliente->codigo) }}" method="post">
                                 @csrf
                                
                                 <button type="submit" class="btn btn-warning btn-sm">Escolher</button>
                             </form> 
+                            <form action="{{ route('cliente.edit', $cliente->codigo ) }}" method="get">
+                                @csrf
+                                <button type="submit" class="btn btn-warning btn-sm">Editar</button>
+                            </form>
                                                        
 
 
