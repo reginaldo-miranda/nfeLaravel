@@ -25,13 +25,12 @@
             <button type="submit" class="btn btn-primary">Cadastrar</button>
         </form>
         @else
-        <form action="{{ route('pedido.searchPed')}}" method="post" class="form form-inline">
-            @csrf
-            <input type="text" name="filtro" placeholder="filtrar" class="form-control" >
-            <button type="submit" class="btn btn-primary">Pesquisar cli</button> 
-        </form>  
-
-                @foreach($dados as $cliente)
+                <form action="{{ route('pedido.searchPed')}}" method="post" class="form form-inline">
+                    @csrf
+                    <input type="text" name="filtro"  placeholder="filtrar" class="form-control" >
+                    <button type="submit" class="btn btn-primary">Pesquisar cli</button> 
+                </form> 
+             @foreach($dados as $cliente)
 
                         <div class="row">
                             <div class="col-2">
@@ -50,7 +49,7 @@
                             </div>
                            <form action="{{ route('escolherCliente', $cliente->codigo) }}" method="get">
                                 @csrf
-                               
+                             
                                 <button type="submit" class="btn btn-warning btn-sm">Escolher</button>
                             </form> 
                            
@@ -73,6 +72,8 @@
                         
                         </style>
                 @endforeach
+                
+        
 
         @endif
 

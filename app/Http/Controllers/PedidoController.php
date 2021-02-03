@@ -49,7 +49,8 @@ class PedidoController extends Controller
      */
     public function store(Request $request)
     {
-        // 
+        $data=$request->only('nomeCliente');
+        pedido::create($data);
     }
 
     /**
@@ -104,14 +105,24 @@ class PedidoController extends Controller
     }
 
 
-    public function escolherCliente( Request $request){
-        // dd($request);
-       // $codigo = cliente::find($codigo);
-     //  $dados = cliente::find($request);
-         $dados = $request->all();
-       //  dd($dados);
-        
-         return view('fr_pedidos.fr_cadastrarPedido', compact('dado'));
+    public function escolherCliente(Request $request, $codigo){
+
+       
+        // dd($codigo);
+         $dados = cliente::find($codigo);
+        // dd($dados);
+        // $dados = cliente::find($request);
+        // $dados = $request->all();
+        // $dados = $request->input('razaosocial');
+        // $dados = $request->input('products.0.name');
+        // $dados = $request->input();
+        // $dados = $request->query($codigo);
+        // $dados = $request->input('user.name');
+        // dd($dados);
+            
+        return view('fr_pedidos.fr_cadastrarPedido', compact('dados'));
+      // return view('fr_pedidos.fr_unicoCEPedido', compact('dados'));
+       
     }
 
   
