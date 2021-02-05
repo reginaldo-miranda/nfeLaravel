@@ -67,6 +67,8 @@ Route::resource('pedido', 'pedidoController');
 
 Route::get('PesquisaCpedidos', 'pedidoController@PCliente')->name('pcliente');
 Route::get('escolherCliente/{codigo}', 'pedidoController@escolherCliente')->name('escolherCliente');
+Route::get('escolherProduto/{codigo}', 'pedidoController@escolherproduto')->name('escolherProduto');
+Route::get('prencherTabela'. 'pedidoController@prencherTabela')->name('prencherTabela');
 
 Route::any('searchPed', 'ClientesController@searchClientePed')->name('pedido.searchPed');
 

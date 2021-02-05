@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Http\Controllers\ClientesController;
 
-
+use App\produto;
 use App\pedido;
 use App\cliente;
 use Illuminate\Http\Request;
@@ -49,6 +49,8 @@ class PedidoController extends Controller
      */
     public function store(Request $request)
     {
+        
+     //   dd($request);        
         $data=$request->only('nomeCliente');
         pedido::create($data);
     }
@@ -123,6 +125,23 @@ class PedidoController extends Controller
         return view('fr_pedidos.fr_cadastrarPedido', compact('dados'));
       // return view('fr_pedidos.fr_unicoCEPedido', compact('dados'));
        
+    }
+
+    public function escolherproduto(Request $request, $codigo){
+      
+        $dadoprod = produto::find($codigo);
+        //dd($dadoprod);
+
+        // $arrayProd[]=$dadoprod;
+        
+
+       // return view('fr_pedidos.fr_cadastrarPedido', compact('dadoprod'));
+        return view('fr_pedidos.fr_tabelaProd', compact('dadoprod'));
+    }
+        
+    public function prencherTabela(){
+
+        return view('fr_pedidos.fr_cadastrarPedido');
     }
 
   
