@@ -38,14 +38,23 @@ use App\Http\Controllers\pedidoController;
                     <label for="text_razaosocial" class="lab">Nome do Cliente</label> 
                     <input type="text" class="form-control" id="text_razaosocial" name="nomeCliente"
                             placeholder=" Nome do cliente:" value="{{ $dados->razaosocial ?? old('razaosocial') }}">  
-                
-                     {{--    <div class="form-group">
-                            <button type="submit" class="btn btn-primary">pesquisar cliente</button> 
-                        </div>  --}}
-                        <a href="{{ route('pcliente') }}">Pesquisar</a>
-                        <button type="submit" class="btn btn-primary">Enviar</button> 
+                                              
+                     <button type="submit" class="btn btn-primary">Enviar</button>  
                        
                 </form> 
+
+                    {{-- inicio do teste com botao--}}
+                  <div>
+                    <a href="{{ route('pcliente') }}">                                            
+                     <button class="btn btn-primary">pesquisar href com btn </button> 
+                    </a>
+
+                  </div>
+
+                  {{--  fim do teste com botao --}}  
+
+
+
                 
                 <form action="#" method('post')> {{-- pedido itens --}}
 
@@ -55,9 +64,17 @@ use App\Http\Controllers\pedidoController;
                 
 
                     <div class="form-group">
-                        <a href="/produto">Pesquisar</a>
-                        <button type="submit" class="btn btn-primary">Enviar</button> 
+                     {{--    <a href="/produto">Pesquisar</a> --}}
+                        <button type="submit" class="btn btn-primary">Enviar prod</button> 
                     </div>
+                    <div class="form-group">
+                        <a href="/produto"
+                           <button  class="btn btn-primary">pesquisa</button> 
+                        </a>
+                    </div>
+    
+                    
+                  
                     {{-- @include('fr_pedidos.fr_tabelaProd'); 
                     @foreach($dadoprod as $produto) --}}
                 </form>
@@ -65,7 +82,8 @@ use App\Http\Controllers\pedidoController;
                     
                     
                 </form>       
-                             
+             
+                
     </div>
  {{--  @endif  --}} 
 

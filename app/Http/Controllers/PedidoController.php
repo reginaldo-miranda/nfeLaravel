@@ -27,7 +27,8 @@ class PedidoController extends Controller
      */
     public function index()
     {
-        return 'aqui na index';
+        $dados = pedido::all();
+        return view('fr_pedidos.fr_listarPedidos' , compact('dados'));
 
     }
 
@@ -135,8 +136,8 @@ class PedidoController extends Controller
         // $arrayProd[]=$dadoprod;
         
 
-       // return view('fr_pedidos.fr_cadastrarPedido', compact('dadoprod'));
-        return view('fr_pedidos.fr_tabelaProd', compact('dadoprod'));
+       return view('fr_pedidos.fr_cadastrarPedido', compact('dadoprod'));
+       // return view('fr_pedidos.fr_tabelaProd', compact('dadoprod'));
     }
         
     public function prencherTabela(){

@@ -1,5 +1,6 @@
 <?php
 
+use App\pedido;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -16,12 +17,14 @@ class CreatePedidoitensTable extends Migration
     {
         Schema::create('pedidoitens', function (Blueprint $table) {
             $table->increments('id_pedidoitens');
-            $table->integer('id_pedido');
+            $table->integer('id_pedido')->insignade();
+            $table->foreign('id_pedidoitens')->references('id_pedido')->on('pedido')->onDelete('cascade')->onUpdate('cascade');
             $table->integer('codigoCliente');
             $table->integer('codigoProduto');
             $table->double('qde',10,2);
             $table->double('precoUnit',10,2);
             $table->double('precoTotal', 10,2);
+            $table->engine = 'InnoDB';
             $table->timestamps();
         });
     }

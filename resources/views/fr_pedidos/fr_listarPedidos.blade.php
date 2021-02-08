@@ -14,26 +14,26 @@
      @if (count($dados)==0)
 
         <p class="alert alert-damger">nao foi encontrado dados no banco</p>
-        <form action="{{ route('produto.create') }}">
+        <form action="{{ route('pedido.create') }}">
             @csrf
             <button type="submit" class="btn btn-primary">Cadastrar</button>
         </form>
     @else
       
-       @foreach($dados as $produto)
+       @foreach($dados as $pedido)
        
         
             <div class="row">
                
                 <div class="col-4">
                     
-                    {{ $produto->codigo }} 
+                    {{ $pedido->id_pedido }} 
                                        
                 </div>
                 
                 <div class="col-4">
 
-                    {{ $produto->nome_reduzido }}
+                    {{ $pedido->nomeCliente }}
 
 
                 </div>
@@ -51,11 +51,11 @@
                         }
                     </style>
 
-                    <form action="{{ route('produto.edit',$produto->codigo ) }}" method="get">
+                    <form action="{{ route('produto.edit',$pedido->id_pedido ) }}" method="get">
                         @csrf
                         <button type="submit" class="btn btn-warning btn-sm">Editar</button>
                     </form>
-                    <form action="{{ route('produto.destroy', $produto->codigo) }}" method="post">
+                    <form action="{{ route('produto.destroy', $pedido->id_pedido) }}" method="post">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger btn-sm">Excluir</button>
@@ -66,13 +66,13 @@
                         <button type="submit" class="btn btn-primary">Cadastrar</button>
                     </form>   
                     {{-- 
-                    <form action="{{ route('escolherProduto', $produto->codigo) }}" method="get">
+                    <form action="{{ route('escolherProduto', $pedido->codigo) }}" method="get">
                         @csrf
                         <button type="submit" class="btn btn-primary">escolher</button>
                     </form>   --}}
                       
                     <div>
-                        <a href ="{{ url("escolherProduto/$produto->codigo") }}">
+                        <a href ="{{ url("escolherProduto/$pedido->id_pedido") }}">
                             <button type="submit" class="btn btn-warning btn-sm">Escolher novo</button>
                         </a>
                     </div> 
