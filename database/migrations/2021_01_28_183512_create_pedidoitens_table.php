@@ -18,7 +18,7 @@ class CreatePedidoitensTable extends Migration
         Schema::create('pedidoitens', function (Blueprint $table) {
             $table->increments('id_pedidoitens');
             $table->integer('id_pedido')->insignade();
-            $table->foreign('id_pedidoitens')->references('id_pedido')->on('pedido')->onDelete('cascade')->onUpdate('cascade');
+           // $table->foreign('id_pedido')->references('id_pedido')->on('pedido')->onDelete('cascade')->onUpdate('cascade');
             $table->integer('codigoCliente');
             $table->integer('codigoProduto');
             $table->double('qde',10,2);
