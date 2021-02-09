@@ -1,13 +1,10 @@
 <?php
 
-use App\pedido;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-use PhpParser\Node\Expr\Cast\Double;
-use \Illuminate\Support\Fluent;
 
-class CreatePedidoitensTable extends Migration
+class CreatePvendaitensTable extends Migration
 {
     /**
      * Run the migrations.
@@ -16,20 +13,19 @@ class CreatePedidoitensTable extends Migration
      */
     public function up()
     {
-        Schema::create('pedidoitens', function (Blueprint $table) {
-            $table->increments('id_pedidoitens');
+        Schema::create('pvendaitens', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('pvitens')->unsigned();
+            $table->foreign('pvitens')->references('id')->on('pvendas')->onDelete('cascade')->onUpdate('cascade');
             $table->integer('codigoCliente');
             $table->integer('codigoProduto');
             $table->double('qde',10,2);
             $table->double('precoUnit',10,2);
             $table->double('precoTotal', 10,2);
-            $table->integer('pedido_id')->unsigned();
-        //  $table->foreign('pedido_id')->references('id_pedido')->on('pedido')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
+            
         });
-      
-     }
-//}
+    }
 
     /**
      * Reverse the migrations.
@@ -38,6 +34,6 @@ class CreatePedidoitensTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pedidoitens');
+        Schema::dropIfExists('pvendaitens');
     }
 }
