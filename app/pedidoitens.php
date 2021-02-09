@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class pedidoitens extends Model
 {
-    protected $primaryKey = 'id_pedido';
+    protected $primaryKey = 'id_pedidoitens';
 }

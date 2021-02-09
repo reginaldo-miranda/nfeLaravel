@@ -8,5 +8,5 @@ class pedido extends Model
 {
     protected $primaryKey = 'id_pedido';
     protected $fillable =['nomeCliente'];
-    protected $table='pedido';
+    protected $table='pedidos';
 }

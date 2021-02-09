@@ -17,17 +17,20 @@ class CreatePedidoitensTable extends Migration
     {
         Schema::create('pedidoitens', function (Blueprint $table) {
             $table->increments('id_pedidoitens');
-            $table->integer('id_pedido')->insignade();
-           // $table->foreign('id_pedido')->references('id_pedido')->on('pedido')->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('id_pedido');
             $table->integer('codigoCliente');
             $table->integer('codigoProduto');
             $table->double('qde',10,2);
             $table->double('precoUnit',10,2);
             $table->double('precoTotal', 10,2);
-            $table->engine = 'InnoDB';
+           // $table->engine = 'InnoDB';
+           // $table->unsignedInteger('pedido_id');
+           // $table->foreign('pedido_id')->references('id_pedido')->on('pedido')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
-    }
+      
+     }
+//}
 
     /**
      * Reverse the migrations.

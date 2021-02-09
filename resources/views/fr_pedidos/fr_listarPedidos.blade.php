@@ -4,7 +4,7 @@
 @section('titulopagina')
     <div class="img" class="col-md-4 col-md-4 offset-5 col-sm-8 offset-2 col-xs-12">
 
-        <h4>Lista produtos</h4>
+        <h4>Lista Pedidos</h4>
      </div>
 @endsection    
 
@@ -61,7 +61,7 @@
                         <button type="submit" class="btn btn-danger btn-sm">Excluir</button>
                     </form>
 
-                    <form action="{{ route('produto.create') }}">
+                    <form action="{{ route('pedido.create') }}">
                         @csrf
                         <button type="submit" class="btn btn-primary">Cadastrar</button>
                     </form>   
@@ -73,7 +73,7 @@
                       
                     <div>
                         <a href ="{{ url("escolherProduto/$pedido->id_pedido") }}">
-                            <button type="submit" class="btn btn-warning btn-sm">Escolher novo</button>
+                            <button type="submit" class="btn btn-warning btn-sm">Escolher novo </button>
                         </a>
                     </div> 
 
