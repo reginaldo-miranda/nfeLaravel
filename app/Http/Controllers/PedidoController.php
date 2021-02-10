@@ -5,6 +5,7 @@ use App\Http\Controllers\ClientesController;
 
 use App\produto;
 use App\pedido;
+use App\pedidoitens;
 use App\cliente;
 use Illuminate\Http\Request;
 
@@ -12,12 +13,20 @@ class PedidoController extends Controller
 {
 
     protected $request;
+    private $objpedidoitens;
+    private $objpedido;
     
-    public function __construct(Request $request, cliente $clientes, pedido $pedido)
+    public function __construct(Request $request, cliente $clientes, pedido $pedido, pedidoitens $objpedidoitens)
     {
-    $this->request = $request;
+      
+    $this->request    = $request;
     $this->repository = $clientes;
     $this->repository = $pedido;
+    $this->repository = $objpedidoitens;
+    $this->objpedidoitens = new pedidoitens();
+    $this->objpedido      = new pedido();
+   
+
     } 
 
     /**
@@ -27,6 +36,7 @@ class PedidoController extends Controller
      */
     public function index()
     {
+        dd($this->objpedidoitens->find(1)->relpedido);
         $dados = pedido::all();
         return view('fr_pedidos.fr_listarPedidos' , compact('dados'));
 
@@ -54,6 +64,7 @@ class PedidoController extends Controller
      //   dd($request);        
         $data=$request->only('nomeCliente');
         pedido::create($data);
+        return view('fr_pedidos.fr_listarPedidos');
     }
 
     /**

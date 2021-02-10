@@ -82,6 +82,26 @@
             
             </div>
             
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">codigo</th>
+        <th scope="col">nome</th>
+        <th scope="col">Nickname</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      
+    </tbody>
+  </table>
+            
            
        @endforeach 
     

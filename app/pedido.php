@@ -11,8 +11,7 @@ class pedido extends Model
     protected $table='pedidos';
 
 
-    public function pedidoitens()
-    {
-        return $this->hasMany('id_pedidoitens');
-    }
+    public function relpedido(){
+        return $this->hasOne('App\pedido', 'id_pedido', 'pvitens');
+     }
 }

@@ -15,8 +15,8 @@ class CreatePvendaitensTable extends Migration
     {
         Schema::create('pvendaitens', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('pvitens')->unsigned();
-            $table->foreign('pvitens')->references('id')->on('pvendas')->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('pvitens');
+           // $table->foreign('pvitens')->references('id')->on('pvendas')->onDelete('cascade')->onUpdate('cascade');
             $table->integer('codigoCliente');
             $table->integer('codigoProduto');
             $table->double('qde',10,2);

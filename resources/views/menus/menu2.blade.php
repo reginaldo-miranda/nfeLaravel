@@ -299,7 +299,7 @@ ul li ul li:hover {background: rgb(200, 211, 214);}
           <a href="{{ route('pedido.index') }}" id="menuoperacional">Pedido</a>
           <a href="#" id="menuoperacional">Nota Fiscal</a>
           <a href="#" id="menuoperacional">Funcionário</a>
-          <a href="#" id="menuoperacional">teste</a>
+          <a href="/fr_vendas/index" id="menuoperacional">teste</a>
           <a href="#" id="menuoperacional">Produtos</a>
       </div> 
     </div>  
