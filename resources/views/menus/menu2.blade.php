@@ -296,7 +296,8 @@ ul li ul li:hover {background: rgb(200, 211, 214);}
       
           <span id="spanbtn" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
       
-          <a href="{{ route('pedido.index') }}" id="menuoperacional">Pedido</a>
+       {{--    <a href="{{ route('pedido.index') }}" id="menuoperacional">Pedido</a> --}}
+          <a href="{{ route('testevenda') }}">pedido</a>
           <a href="#" id="menuoperacional">Nota Fiscal</a>
           <a href="#" id="menuoperacional">Funcionário</a>
           <a href="/fr_vendas/index" id="menuoperacional">teste</a>

@@ -86,3 +86,6 @@ Route::get('/administrador',function(){
 
 //{{-- λ php artisan make:model empresa -mcr --}}
 
+//------------------------------------------------------------------------
+
+Route::get('vendas', 'pedidoController@index')->name('testevenda');
