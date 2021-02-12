@@ -12,6 +12,11 @@ class pedido extends Model
 
 
     public function relpedido(){
-        return $this->hasOne('App\pedido', 'id_pedido', 'pvitens');
+        return $this->hasOne('App\pedido', 'id_pedido', 'pedido_id');
      }
+
+     public function relpedidoitens(){
+      return $this->hasMany('App\pedidoitens', 'pedido_id');
+   }
+
 }

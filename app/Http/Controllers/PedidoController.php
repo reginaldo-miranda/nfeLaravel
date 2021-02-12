@@ -66,10 +66,12 @@ class PedidoController extends Controller
     public function store(Request $request)
     {
         
-     //   dd($request);        
-        $data=$request->only('nomeCliente');
-        pedido::create($data);
-        return view('fr_pedidos.fr_listarPedidos');
+      // dd($request);        
+        $dados=$request->only('nomeCliente');
+        pedido::create($dados);
+
+        $pedido = $this->objpedido->all();
+        return view('fr_vendas.fr_inicio',compact('pedido'));
     }
 
     /**
@@ -78,10 +80,10 @@ class PedidoController extends Controller
      * @param  \App\pedido  $pedido
      * @return \Illuminate\Http\Response
      */
-    public function show(pedido $pedido)
+    public function show($pedido)
     {
-        //
-    }
+        return 'numero show';
+      }
 
     /**
      * Show the form for editing the specified resource.
@@ -89,9 +91,9 @@ class PedidoController extends Controller
      * @param  \App\pedido  $pedido
      * @return \Illuminate\Http\Response
      */
-    public function edit(pedido $pedido)
+    public function edit($pedido)
     {
-        //
+        return 'aqui editar';
     }
 
     /**
@@ -112,9 +114,9 @@ class PedidoController extends Controller
      * @param  \App\pedido  $pedido
      * @return \Illuminate\Http\Response
      */
-    public function destroy(pedido $pedido)
+    public function destroy($pedido)
     {
-        //
+       return "desletar";
     }
 
     public function PCliente(){
@@ -155,11 +157,20 @@ class PedidoController extends Controller
        return view('fr_pedidos.fr_cadastrarPedido', compact('dadoprod'));
        // return view('fr_pedidos.fr_tabelaProd', compact('dadoprod'));
     }
-        
-    public function prencherTabela(){
+       
+   /* public function prencherTabela(request $requst, $id){
 
-        return view('fr_pedidos.fr_cadastrarPedido');
+          $dados = pedido::find($id);
+         
+     //   $dados = pedido::all();
+
+      //  dd($dados);
+        echo ($dados->id_pedido);
+
+        return view('fr_vendas.fr_listaProdutosPedido',compact('dados'));
     }
+*/
+   
 
   
 }

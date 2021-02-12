@@ -3,15 +3,25 @@
 namespace App\Http\Controllers;
 
 use App\pedidoitens;
+use App\pedido;
 use Illuminate\Http\Request;
 
 class PedidoitensController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
+    private $objpedido;
+    private $objpedidoitens;
+
+    public function __construct()
+    {
+        
+        $this->objpedido = new pedido();
+        $this->objpedidoitens = new pedidoitens();
+
+    }
+
+
+
     public function index()
     {
         //
@@ -82,4 +92,21 @@ class PedidoitensController extends Controller
     {
         //
     }
+    
+    public function prencherTabela(request $requst, $id){
+
+
+        
+    // dd($this->objpedido->find(1)->relpedidoitens);
+
+      $dados = $this->objpedido->find($id)->relpedidoitens;
+         
+     //  $dados = pedidoitens::where('pedido_id == $id');
+
+      // dd($dados);
+       // echo ($dados->id_pedido);
+
+        return view('fr_vendas.fr_listaProdutosPedido',compact('dados'));
+    }
+
 }

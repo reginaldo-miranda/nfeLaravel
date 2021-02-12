@@ -68,11 +68,16 @@ Route::resource('pedido', 'pedidoController');
 Route::get('PesquisaCpedidos', 'pedidoController@PCliente')->name('pcliente');
 Route::get('escolherCliente/{codigo}', 'pedidoController@escolherCliente')->name('escolherCliente');
 Route::get('escolherProduto/{codigo}', 'pedidoController@escolherproduto')->name('escolherProduto');
-Route::get('prencherTabela'. 'pedidoController@prencherTabela')->name('prencherTabela');
+Route::get('listarProdPedido/{id_pedido}','pedidoitensController@prencherTabela')->name('listarProdPedido');
 
 Route::any('searchPed', 'ClientesController@searchClientePed')->name('pedido.searchPed');
 
+//--------------------------------------------------------------------
 
+Route::get('listarProdPedido/{id_pedidoitens}','pedidoitensController@prencherTabela')->name('listarProdPedido');
+
+
+//--------------------------------------------------------------------
 /*Route::get('/listarfuncionario', function () {
     return view('fr_funcionarios.fr_listarFuncionarios');
 });*/

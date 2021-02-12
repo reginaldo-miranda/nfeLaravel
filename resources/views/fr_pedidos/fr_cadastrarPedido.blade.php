@@ -37,7 +37,8 @@ use App\Http\Controllers\pedidoController;
                     @csrf
                     <label for="text_razaosocial" class="lab">Nome do Cliente</label> 
                     <input type="text" class="form-control" id="text_razaosocial" name="nomeCliente"
-                            placeholder=" Nome do cliente:" value="{{ $dados->razaosocial ?? old('razaosocial') }}">  
+                            placeholder=" Nome do cliente:">
+                           {{--   value="{{ $dados->razaosocial ?? old('razaosocial') }}">   --}}
                                               
                      <button type="submit" class="btn btn-primary">Enviar</button>  
                        
