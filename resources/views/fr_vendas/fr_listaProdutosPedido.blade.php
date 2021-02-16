@@ -2,10 +2,19 @@
 
 
 @section('conteudo')
-<div>
+<h2>lista de produtos do pedido</h2>
+<div class="row">
     <a href="{{ route('testevenda') }}">
        <button  class="btn btn-warning btn-sm">Pedidos</button>
     </a>
+  
+    <form action="{{ route('listaIncluirProd', $dadosped->id_pedido) }}">
+
+
+        @csrf
+        <button type="submit" class="btn btn-primary">Incluir Itens</button>
+    </form>
+
 </div>
 
 
@@ -14,32 +23,33 @@
 <p class="alert alert-damger">nao foi encontrado dados no banco</p>
 <form action="{{ route('produto.create') }}">
     @csrf
-    <button type="submit" class="btn btn-primary">Cadastrar</button>
+    <button type="submit" class="btn btn-primary">Incluir Itens</button>
 </form>
 @else
+ <div>
+     <label>codigo do pedido</label>
+     {{ $dadosped->id_pedido }}
+ </div>
 
-@foreach($dados as $produto)
+
+@foreach($dados as $proditens)
 
 
     <div class="row">
        
         <div class="col-4">
             
-            {{ $produto->codigoProduto }} 
-            {{ $produto->precoUnit }}
+            {{ $proditens->codigoProduto }} 
+            {{ $proditens->precoTotal }}
+                   
                                
         </div>
         
         <div class="col-4">
-
-           
-
-
+             <label>nome produto</label>
+                      
         </div>
 
-            {{--  <div class="col-4">   --}}
-            {{-- <a href="edit_func/{{ $funcionario->id_funcionarios}}">editar</a>
-            <a href="#">Excluir</a>  --}}
             <style>
 
                 .btn{

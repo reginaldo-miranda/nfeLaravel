@@ -62,6 +62,15 @@ class produtoController extends Controller
         $codigo->delete();
         return redirect('produto');
     }
+
+    public function itens_p_cadastrar_pedido($id_pedido){
+        $dadosidped = $id_pedido;
+        
+        $dadosProd = produto::all();
+        return view('fr_pedidos.fr_listadeProdutosPIncluir', compact('dadosProd', 'dadosidped'));
+
+
+    }
 }
 
 

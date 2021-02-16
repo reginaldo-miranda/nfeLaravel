@@ -2,21 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use App\pedidoitens;
+
 use App\pedido;
+use App\pedidoitens;
+use App\produto;
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PedidoitensController extends Controller
 {
     
     private $objpedido;
-    private $objpedidoitens;
+    protected $objpedidoitens;
 
     public function __construct()
     {
         
-        $this->objpedido = new pedido();
+        $this->objpedido      = new pedido();
         $this->objpedidoitens = new pedidoitens();
+        $this->objprodutos    = new produto();
 
     }
 
@@ -24,7 +29,8 @@ class PedidoitensController extends Controller
 
     public function index()
     {
-        //
+            $pedido = pedidoitens::all();
+            return 'aqui na index'; //view('fr_vendas.fr_inicio', compact('pedido'));
     }
 
     /**
@@ -32,9 +38,9 @@ class PedidoitensController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($codigo)
     {
-        //
+     //
     }
 
     /**
@@ -45,7 +51,11 @@ class PedidoitensController extends Controller
      */
     public function store(Request $request)
     {
-        //
+            
+            $dados = $request->only('pedido_id', 'codigoProduto','qde', 'desconto', 'precoUnit','precoTotal');
+            pedidoitens::create($dados);
+
+            return 'gravado';//view('fr_pedidos.fr_incluirItensPedido');
     }
 
     /**
@@ -65,9 +75,11 @@ class PedidoitensController extends Controller
      * @param  \App\pedidoitens  $pedidoitens
      * @return \Illuminate\Http\Response
      */
-    public function edit(pedidoitens $pedidoitens)
+    public function edit($codigo)
     {
-        //
+        
+       //
+
     }
 
     /**
@@ -99,14 +111,34 @@ class PedidoitensController extends Controller
         
     // dd($this->objpedido->find(1)->relpedidoitens);
 
-      $dados = $this->objpedido->find($id)->relpedidoitens;
+      $dados    = $this->objpedido->find($id)->relpedidoitens;
+      $dadosped = $this->objpedido->find($id);
+      
          
      //  $dados = pedidoitens::where('pedido_id == $id');
 
       // dd($dados);
        // echo ($dados->id_pedido);
 
-        return view('fr_vendas.fr_listaProdutosPedido',compact('dados'));
+       $dadosProd =DB::table('produtos')
+       ->join('pedidoitens', 'codigoproduto', '=', 'produtos.codigo')
+       ->select('produtos.nome_reduzido')->get($id);
+      // dd($dadosProd); */
+       
+
+        return view('fr_vendas.fr_listaProdutosPedido',compact('dados','dadosped','dadosProd'));
+    }
+
+    public function lancarItens($codigo,$dadosidped){
+        $dadosProd = produto::find($codigo);
+        $dadoidpedido = $dadosidped;
+
+
+       // dd($codigo);
+        //return view('fr_produtos.fr_listarProdutos', compact('dados'));
+
+        return view('fr_pedidos.fr_incluirItensPedido', compact('dadosProd','dadoidpedido'));
+       // return 'aqui';
     }
 
 }

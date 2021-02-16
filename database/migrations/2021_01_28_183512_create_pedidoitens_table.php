@@ -18,12 +18,14 @@ class CreatePedidoitensTable extends Migration
     {
         Schema::create('pedidoitens', function (Blueprint $table) {
             $table->increments('id_pedidoitens');
-            $table->integer('codigoCliente');
+          $table->integer('pedido_id')->unsigned();
+
+            $table->double('desconto');
             $table->integer('codigoProduto');
             $table->double('qde',10,2);
             $table->double('precoUnit',10,2);
             $table->double('precoTotal', 10,2);
-            $table->integer('pedido_id')->unsigned();
+          
         //  $table->foreign('pedido_id')->references('id_pedido')->on('pedido')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });

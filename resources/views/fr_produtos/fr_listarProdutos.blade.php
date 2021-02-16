@@ -28,7 +28,8 @@
                 <div class="col-4">
                     
                     {{ $produto->codigo }} 
-                                       
+                                                       
+
                 </div>
                 
                 <div class="col-4">
@@ -72,10 +73,17 @@
                     </form>   --}}
                       
                     <div>
-                        <a href ="{{ url("escolherProduto/$produto->codigo") }}">
+                        <a href="{{ route('PedidoItens.create') }}">
+
                             <button type="submit" class="btn btn-warning btn-sm">Escolher novo</button>
                         </a>
                     </div> 
+
+                    <form action="{{ route('PedidoItens.edit',$produto->codigo ) }}" method="get">
+                        @csrf
+                        <button type="submit" class="btn btn-warning btn-sm">escolher btn</button>
+                    </form>
+
 
                    {{--   class="glyphicon glyphicon-pencil"  --}}
                {{--  </div>  --}}  

@@ -1,9 +1,4 @@
 @extends('layouts.app')
-{{--namespace App\Http\Controllers;
- use App\Http\Controllers\ClientesController;
-use App\Http\Controllers\pedidoController;
-//use Illuminate\Http\Request;
-//use App\Http\Controllers\Controller; --}}
 
 @section('conteudo')
 

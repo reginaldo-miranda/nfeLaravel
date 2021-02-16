@@ -55,6 +55,7 @@ Route::any('search', 'ClientesController@search')->name('cliente.search');
 //--------------------------------------------------------------------
 
 Route::resource('produto', 'produtoController');
+Route::get('listaIncluirProd/{id_pedido}', 'produtoController@itens_p_cadastrar_pedido')->name('listaIncluirProd');
 
 //--------------------------------------------------------------------
 
@@ -71,6 +72,14 @@ Route::get('escolherProduto/{codigo}', 'pedidoController@escolherproduto')->name
 Route::get('listarProdPedido/{id_pedido}','pedidoitensController@prencherTabela')->name('listarProdPedido');
 
 Route::any('searchPed', 'ClientesController@searchClientePed')->name('pedido.searchPed');
+
+//--------------------------------------------------------------------
+
+
+Route::resource('PedidoItens', 'pedidoitensController');
+Route::get('lancarItens/{codigo}/{nome_reduzido}' , 'pedidoitensController@lancarItens')->name('lancarItens');
+
+
 
 //--------------------------------------------------------------------
 
