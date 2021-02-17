@@ -114,6 +114,7 @@ class PedidoitensController extends Controller
       $dados    = $this->objpedido->find($id)->relpedidoitens;
       $dadosped = $this->objpedido->find($id);
       
+
          
      //  $dados = pedidoitens::where('pedido_id == $id');
 
@@ -121,10 +122,14 @@ class PedidoitensController extends Controller
        // echo ($dados->id_pedido);
 
        $dadosProd =DB::table('produtos')
-       ->join('pedidoitens', 'codigoproduto', '=', 'produtos.codigo')
-       ->select('produtos.nome_reduzido')->get($id);
-      // dd($dadosProd); */
-       
+      
+       ->join('pedidoitens', 'codigoProduto', '=', 'produtos.codigo')
+
+       ->select('produtos.nome_reduzido')->where('pedidoitens.codigoProduto'=='produtos.codigo')->get();
+     dd($dadosProd); 
+     
+     SELECT PI.* , P.NOME_REDUZIDO FROM PEDIDOITENS PI INNER JOIN PRODUTOS P ON (PI.codigoProduto = p.codigo)
+     WHERE pedido_id = 1
 
         return view('fr_vendas.fr_listaProdutosPedido',compact('dados','dadosped','dadosProd'));
     }

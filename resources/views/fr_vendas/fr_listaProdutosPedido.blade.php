@@ -46,7 +46,11 @@
         </div>
         
         <div class="col-4">
-             <label>nome produto</label>
+                      
+          
+               @foreach( $dadosProd as $key)
+                   {{ $key->nome_reduzido }}
+               @endforeach  
                       
         </div>
 
