@@ -25,7 +25,7 @@ class PedidoitensController extends Controller
 
     }
 
-
+    
 
     public function index()
     {
@@ -107,30 +107,17 @@ class PedidoitensController extends Controller
     
     public function prencherTabela(request $requst, $id){
 
-
-        
-    // dd($this->objpedido->find(1)->relpedidoitens);
+   // dd($this->objpedido->find($id)->relpedidoitens);
 
       $dados    = $this->objpedido->find($id)->relpedidoitens;
       $dadosped = $this->objpedido->find($id);
-      
+      $dadosProd = $this->objprodutos->get();
 
+      
+      dd($dadosProd);
+      
          
-     //  $dados = pedidoitens::where('pedido_id == $id');
-
-      // dd($dados);
-       // echo ($dados->id_pedido);
-
-       $dadosProd =DB::table('produtos')
-      
-       ->join('pedidoitens', 'codigoProduto', '=', 'produtos.codigo')
-
-       ->select('produtos.nome_reduzido')->where('pedidoitens.codigoProduto'=='produtos.codigo')->get();
-     dd($dadosProd); 
-     
-     SELECT PI.* , P.NOME_REDUZIDO FROM PEDIDOITENS PI INNER JOIN PRODUTOS P ON (PI.codigoProduto = p.codigo)
-     WHERE pedido_id = 1
-
+    
         return view('fr_vendas.fr_listaProdutosPedido',compact('dados','dadosped','dadosProd'));
     }
 
@@ -145,5 +132,7 @@ class PedidoitensController extends Controller
         return view('fr_pedidos.fr_incluirItensPedido', compact('dadosProd','dadoidpedido'));
        // return 'aqui';
     }
-
+ //   SELECT PI.* , P.NOME_REDUZIDO FROM PEDIDOITENS PI INNER JOIN PRODUTOS P ON (PI.codigoProduto = p.codigo)
+    // WHERE pedido_id = 1 
 }
+

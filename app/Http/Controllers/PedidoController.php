@@ -38,12 +38,14 @@ class PedidoController extends Controller
     {
       // dd($this->objpedidoitens->find(1)->relpedido);
        $pedido = $this->objpedido->all();
+      
      //  dd($pedido);
 
        // $dados = pedido::all();
        // dd($dados);
         //return view('fr_pedidos.fr_listarPedidos' , compact('dados'));
        return view('fr_vendas.fr_inicio', compact('pedido'));
+       
 
     }
 

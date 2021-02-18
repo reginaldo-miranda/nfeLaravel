@@ -46,11 +46,8 @@
         </div>
         
         <div class="col-4">
-                      
-          
-               @foreach( $dadosProd as $key)
-                   {{ $key->nome_reduzido }}
-               @endforeach  
+                    
+               
                       
         </div>
 

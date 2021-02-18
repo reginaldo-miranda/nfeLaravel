@@ -8,6 +8,17 @@ use App\produto;
 
 class produtoController extends Controller
 {
+
+
+
+    protected $request;
+    
+    public function __construct(Request $request, produto $produto)
+    {
+    $this->request = $request;
+    $this->repository = $produto;
+    } 
+
    
     public function index()
     {
@@ -71,6 +82,16 @@ class produtoController extends Controller
 
 
     }
+    public function search(Request $request){
+
+        $dadosProd = $this->repository->search($request->filtro);
+        $dadosidped = '';
+     //   $dados = cliente::all();
+      //  return  view('fr_pedidos.fr_pesquisaClientePedido',['clientes' => $dados]);
+   
+        return  view('fr_pedidos.fr_listadeProdutosPIncluir', compact('dadosProd dadosidped'));
+   
+       }
 }
 
 

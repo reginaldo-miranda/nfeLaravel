@@ -10,6 +10,8 @@
 @section('conteudo')
 
 
+
+
 @if (count($dadosProd)==0)
 
 <p class="alert alert-damger">nao foi encontrado dados no banco</p>
@@ -18,6 +20,11 @@
     <button type="submit" class="btn btn-primary">Cadastrar</button>
 </form>
 @else
+<form action="{{ route('produto.search')}}" method="post" class="form form-inline">
+    @csrf
+    <input type="text" name="filtro" placeholder="filtrar" class="form-control">
+    <button type="submit" class="btn btn-primary">Pesquisar</button>
+</form> 
 
 <div>
   <label>id pedido</label>

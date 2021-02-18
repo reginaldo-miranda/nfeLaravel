@@ -38,12 +38,12 @@
                       
                               <div>
                                   <a href="{{ route('listarProdPedido', $pedidos->id_pedido) }}">
-                                     <button type="submit" class="btn btn-primary">visualizar a</button>
+                                     <button type="submit" class="btn btn-primary btn-sm">visualizar a</button>
                                   </a>
                               </div>
                               <div>
                                 <a href="{{ route('pedido.edit', $pedidos->id_pedido) }}">
-                                  <button class="btn btn-primary">editar 1</button>
+                                  <button class="btn btn-primary btn-sm">editar 1</button>
                                 </a>
                               </div> 
                               <form action="{{ route('pedido.destroy', $pedidos->id_pedido) }}" method="post">

@@ -18,5 +18,5 @@ class pedido extends Model
      public function relpedidoitens(){
       return $this->hasMany('App\pedidoitens', 'pedido_id');
    }
-
+ 
 }

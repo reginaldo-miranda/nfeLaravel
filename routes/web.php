@@ -56,7 +56,7 @@ Route::any('search', 'ClientesController@search')->name('cliente.search');
 
 Route::resource('produto', 'produtoController');
 Route::get('listaIncluirProd/{id_pedido}', 'produtoController@itens_p_cadastrar_pedido')->name('listaIncluirProd');
-
+Route::any('search','produtoController@search')->name('produto.search');
 //--------------------------------------------------------------------
 
 Route::resource('empresa', 'empresaController');

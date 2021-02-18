@@ -17,6 +17,7 @@ class pedidoitens extends Model
     public function relpedido(){
         return $this->hasOne('App\pedido', 'id_pedido', 'pedido_id');
      }
-
+     
 }
+
 
