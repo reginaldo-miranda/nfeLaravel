@@ -26,50 +26,43 @@
     <button type="submit" class="btn btn-primary">Incluir Itens</button>
 </form>
 @else
+    <style>
+
+        #text_peq{
+            width: 60px;
+        }
+        .btn{
+            height: 23px;
+            margin-right: 5px;
+            font-size: 10px;
+            text-align: center;
+        }
+    </style>
  <div>
      <label>codigo do pedido</label>
      {{ $dadosped->id_pedido }}
  </div>
 
 
-{{-- @foreach($dados as $proditens)
 
-
-    <div class="row">
-       
-        <div class="col-4">
-            
-            {{ $proditens->codigoProduto }} 
-            {{ $proditens->precoTotal }}
-                   
-                               
-        </div>  --}}
         @foreach($dadosProd as $key)
-        <div class="col-4">
+        <div class="row">
+
+            <div class="espaco">
+                <input type="text" class="form-control" id="text_peq" name="codigoProduto"
+                placeholder="codigo Produto" value="{{  $key->codigoProduto ?? old('codigoProduto') }}">
+            </div>
                     
-           
-           
-             {{ $key->codigoProduto}}
-             {{ $key->NOME_REDUZIDO}}
-            {{ $key->precoTotal }}  
-              
-                      
-        </div>
-        @endforeach 
-            <style>
-
-                .btn{
-                    height: 23px;
-                    margin-right: 5px;
-                    font-size: 10px;
-                    text-align: center;
-                }
-            </style>
-
-          
-          
-          
-            
+            <div class="espaco">
+                <input type="text" class="form-control" id="text_estoque" name="nome_reduzido"
+                placeholder="nome_reduzido" value="{{  $key->NOME_REDUZIDO ?? old('nome_reduzido') }}">
+            </div>
+             
+            <div class="espaco">
+                <input type="text" class="form-control" id="text_peq" name="precoTotal"
+                placeholder="nome_reduzido" value="{{  $key->precoTotal ?? old('precoTotal') }}">
+            </div>
+             
             <form action="#" method="post">
                 @csrf
                 @method('DELETE')
@@ -79,7 +72,18 @@
             <form action="{{ route('produto.create') }}">
                 @csrf
                 <button type="submit" class="btn btn-primary">Cadastrar</button>
-            </form>   
+            </form> 
+              
+                      
+        </div>
+        @endforeach 
+         
+
+          
+          
+          
+            
+              
             {{-- 
             <form action="{{ route('escolherProduto', $produto->codigo) }}" method="get">
                 @csrf
@@ -97,9 +101,6 @@
     
     </div>
     
- {{-- 
-@endforeach 
- --}}  
 
 @endif
 
