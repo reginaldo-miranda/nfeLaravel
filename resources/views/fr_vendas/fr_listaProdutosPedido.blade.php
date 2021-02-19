@@ -32,7 +32,7 @@
  </div>
 
 
-@foreach($dados as $proditens)
+{{-- @foreach($dados as $proditens)
 
 
     <div class="row">
@@ -43,14 +43,19 @@
             {{ $proditens->precoTotal }}
                    
                                
-        </div>
-        
+        </div>  --}}
+        @foreach($dadosProd as $key)
         <div class="col-4">
                     
-               
+           
+           
+             {{ $key->codigoProduto}}
+             {{ $key->NOME_REDUZIDO}}
+            {{ $key->precoTotal }}  
+              
                       
         </div>
-
+        @endforeach 
             <style>
 
                 .btn{
@@ -92,9 +97,9 @@
     
     </div>
     
-   
+ {{-- 
 @endforeach 
-
+ --}}  
 
 @endif
 

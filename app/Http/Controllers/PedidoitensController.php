@@ -111,12 +111,14 @@ class PedidoitensController extends Controller
 
       $dados    = $this->objpedido->find($id)->relpedidoitens;
       $dadosped = $this->objpedido->find($id);
-      $dadosProd = $this->objprodutos->get();
+    
 
       
-      dd($dadosProd);
+     $dadosProd = DB::select('SELECT PI.* , P.NOME_REDUZIDO FROM PEDIDOITENS PI INNER JOIN PRODUTOS P ON (PI.codigoProduto = p.codigo)
+      WHERE pedido_id ='. $id );
+     
       
-         
+  //  dd($dadosProd);  
     
         return view('fr_vendas.fr_listaProdutosPedido',compact('dados','dadosped','dadosProd'));
     }
