@@ -18,7 +18,7 @@
 </div>
 
 
-@if (count($dados)==0)
+@if (count($dadosProd)==0)
 
 <p class="alert alert-damger">nao foi encontrado dados no banco</p>
 <form action="{{ route('produto.create') }}">

@@ -17,6 +17,8 @@
     <input type="text" name="filtro" placeholder="filtrar" class="form-control">
     <button type="submit" class="btn btn-primary">Pesquisar</button>
 </form> 
+ 
+
 
      @if (count($dados)==0)
 
@@ -26,8 +28,14 @@
             <button type="submit" class="btn btn-primary">Cadastrar</button>
         </form>  
     @else
+    <form action="{{ route('cliente.create') }}">
+        @csrf
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </form>
+
       
-       @foreach($dados as $cliente)
+ @foreach($dados as $cliente)
+
        
         
             <div class="row">
@@ -71,10 +79,7 @@
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger btn-sm">Excluir</button>
                     </form>
-                    <form action="{{ route('cliente.create') }}">
-                        @csrf
-                        <button type="submit" class="btn btn-primary">Cadastrar</button>
-                    </form>   
+                    
                       
                     
 

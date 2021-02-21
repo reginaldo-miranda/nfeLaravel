@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Http\Controllers\ClientesController;
+//namespace App\Http\Controllers\paginate;
+//namespace App\Http\Controllers\paginate\Controller;
+use Illuminate\Pagination\Paginator;
 
 use App\produto;
 use App\pedido;
@@ -15,6 +18,7 @@ class PedidoController extends Controller
     protected $request;
     private $objpedidoitens;
     private $objpedido;
+    private $totalpagina = 4;
     
     public function __construct(Request $request, cliente $clientes, pedido $pedido, pedidoitens $objpedidoitens)
     {
@@ -36,9 +40,9 @@ class PedidoController extends Controller
      */
     public function index()
     {
+     
       // dd($this->objpedidoitens->find(1)->relpedido);
-       $pedido = $this->objpedido->all();
-      
+       $pedido = $this->objpedido->paginate($this->totalpagina);
      //  dd($pedido);
 
        // $dados = pedido::all();

@@ -7,11 +7,11 @@
      <h2 class="text-center">Lista Pedidos</h2><hr>
      <div class="text-center mt-3 mb-3">
       <a href="{{ route('pedido.create') }}">
-        <button class="btn btn-success">Cadastrar</button>
+        <button class="btn btn-success btn-sm">Cadastrar</button>
       </href=>
      </div>
 
-      <div class="col-8 m-auto">
+      <div class="col-12 m-auto">
             <table class="table text_center">
               <thead class="thead-dark">
                 <tr>
@@ -50,7 +50,8 @@
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm">Excluir</button>
-                            </form>
+                              </form>
+
                        </div>                                 
                       </td>
                   </tr>
@@ -58,9 +59,12 @@
                 
                </tbody>
             </table>
+            
+                {!!$pedido->links()!!}
+            
+
+
        </div>
   
-
-
-
-  @endsection  
+  @endsection
+   

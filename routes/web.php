@@ -47,7 +47,7 @@ Route::get('cadastrofunc', 'FuncionarioController@telacadastrarFunc');
 //--------------------------------------------------------------------
 
 Route::resource('cliente', 'ClientesController');
-Route::any('search', 'ClientesController@search')->name('cliente.search');
+Route::any('cliente.search', 'ClientesController@search')->name('cliente.search');
 
 //--------------------------------------------------------------------
 

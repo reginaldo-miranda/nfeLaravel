@@ -70,7 +70,7 @@
                     <form action="{{ route('escolherProduto', $produto->codigo) }}" method="get">
                         @csrf
                         <button type="submit" class="btn btn-primary">escolher</button>
-                    </form>   --}}
+                    </form>  
                       
                     <div>
                         <a href="{{ route('PedidoItens.create') }}">
@@ -82,7 +82,8 @@
                     <form action="{{ route('PedidoItens.edit',$produto->codigo ) }}" method="get">
                         @csrf
                         <button type="submit" class="btn btn-warning btn-sm">escolher btn</button>
-                    </form>
+                    </form> --}}
+
 
 
                    {{--   class="glyphicon glyphicon-pencil"  --}}

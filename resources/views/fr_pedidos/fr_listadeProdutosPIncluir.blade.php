@@ -20,11 +20,7 @@
     <button type="submit" class="btn btn-primary">Cadastrar</button>
 </form>
 @else
-<form action="{{ route('produto.search')}}" method="post" class="form form-inline">
-    @csrf
-    <input type="text" name="filtro" placeholder="filtrar" class="form-control">
-    <button type="submit" class="btn btn-primary">Pesquisar</button>
-</form> 
+
 
 <div>
   <label>id pedido</label>
@@ -32,7 +28,15 @@
      
 
 </div>
+<form action="{{ route('produto.search')}}" method="post" class="form form-inline">
+    @csrf
+    <input type="text" name="filtro" placeholder="filtrar" class="form-control">
+    <button type="submit" class="btn btn-primary">Pesquisar</button>
+</form>
+
 @foreach($dadosProd as $produto)
+
+
 
 
 <div class="row">
@@ -67,9 +71,14 @@
 
 
                          
+ 
 
         @csrf
-        <button type="submit" class="btn btn-warning btn-sm">escolher btn</button>
+      {{-- <button type="submit" class="btn btn-warning btn-sm">escolher btn</button> --}}
+
+        <button type="submit" onclick="window.location.replace('fr_incluirItensPedido.blade.php')">escolher iten</button>
+
+
     </form>
 
 
