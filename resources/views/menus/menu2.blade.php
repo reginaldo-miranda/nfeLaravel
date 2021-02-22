@@ -343,10 +343,10 @@ ul li ul li:hover {background: rgb(200, 211, 214);}
                 <ul>
                     <a>Outros Cadastros</a>
                     <li><a id="espacomenu" href="{{ route('empresa.index') }}">Empresa</a></li> 
-                    <li><a id="espacomenu" href="#">Fornecedor</a></li>
-                    <li><a id="espacomenu" href="#">Funcionario</a></li>
-                    <li><a id="espacomenu" href="#">Usuario</a></li>
-                    <li><a id="espacomenu" href="#">Produtos</a>
+                    <li><a id="espacomenu" href="{{ route('forma_pgto.index') }}">cond pagamento</a></li>
+                    <li><a id="espacomenu" href="#">a fazer</a></li>
+                    <li><a id="espacomenu" href="#">a fazer</a></li>
+                    <li><a id="espacomenu" href="#">a fazer</a><li>
                  </ul>
             </li>
         </ul>

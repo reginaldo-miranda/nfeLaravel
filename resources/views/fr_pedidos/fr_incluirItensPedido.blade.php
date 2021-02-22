@@ -7,6 +7,7 @@
   
 </div>
 
+
 <form name="inclusao" class='form-control' method="post" action="/PedidoItens">
  {{ csrf_field() }}
 
@@ -27,22 +28,21 @@
      <label class="juntar">Pedido</label>
 
      {{ $dadoidpedido }}
- </div>
+
 
 
     <div class="row">
-       
+        
           <div>
-             <label class="juntar">N: Pedido</label>
-             <input type="text" class= "inputquatro" class="form-control" id=" text_pedido_id" name="pedido_id"
-
-
+             <label class="juntar">N: Pedido</label><br> 
+           
+             <input type="text" class="inputquatro" class="form-control" id=" text_pedido_id" name="pedido_id"
               placeholder="id pedido" value="{{ $dadoidpedido ?? old('pedido_id') }}">
 
          </div>
 
           <div>
-              <label class="juntar">cod produto</label>
+              <label class="juntar">cod produto</label><br>
               <input type="text" class="form-control, inputquatro" id="text_codigoProduto" name="codigoProduto"
                placeholder="codigo produto" value="{{ $dadosProd->codigo ?? old('codigoProdutto') }}">
 
@@ -51,21 +51,21 @@
 
 
         <div>
-            <label class="juntar">nome</label>
+            <label class="juntar">nome</label><br>
             <input type="text" class="form-control, inputvinte" id="text_nome_reduzido" name="nome_reduzido"
             placeholder=" nome reduzido" value="{{ $dadosProd->nome_reduzido ?? old('nome_reduzido') }}">
 
 
         </div>
         <div>
-            <label class="juntar">Quantidade</label>
+            <label class="juntar">Quantidade</label><br>
             <input type="text" class="form-control, inputquatro" id="text_qde" name="qde"
             placeholder="qde" value="{{ $dadoProd->qde ?? old('qde') }}"> {{-- onblur="calcular()"> --}}
 
 
         </div>
          <div>
-             <label class="juntar">Desconto</label>
+             <label class="juntar">Desconto</label><br>
              <input type="text" class="form-control, inputquatro" id="text_desconto" name="desconto" 
              placeholder=" desconto" value="{{ $dadosProd->desconto ?? old('desconto') }}" onblur="calcular()">
 
@@ -73,7 +73,7 @@
          </div>
 
         <div>
-            <label class="juntar">Preco Unit</label>
+            <label class="juntar">Preco Unit</label><br>
             <input type="text" class="form-control, inputseis" id="text_preco" name="preco"
             placeholder="preco unitario " value="{{ $dadosProd->preco ?? old('preco') }}">
 
@@ -83,7 +83,7 @@
         </div>
     
         <div>
-            <label class="juntar">total</label>
+            <label class="juntar">total</label><br>
             <input type="text" class="form-control, inputseis" id="text_precoTotal" name="precoTotal"
             placeholder="preco total" value="{{ $dadosProd->precoTotal ?? old('precoTotal')  }}"> 
 

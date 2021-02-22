@@ -2,6 +2,7 @@
     width: 40px;
     padding: 10px;
     border: 2px;
+    margin-left: 25px;
 }
 
 .inputseis {
@@ -21,4 +22,10 @@
 
 .botoes {
     height: 30px;
+}
+
+.juntar{
+ width: 90px;   
+ margin-right: 20px;
+ margin-left: 15px;
 }

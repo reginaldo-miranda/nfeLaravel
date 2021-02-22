@@ -13,6 +13,7 @@
   --}}    
     <link href="{{ asset('css/app.css')}}" rel="stylesheet">
     <link href="{{ asset('css/fr_incluiritensPedido.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/fr_unicoFormaPgto.css') }}" rel="stylesheet">
     {{-- <link href="{{ asset('css/main.css')}}"rel="stylesheet">  --}} 
     <link href="{{ asset('js/app.js') }}"rel="stylesheet">
     <title>sistema de usuarios</title>
@@ -36,8 +37,8 @@
          }
             
        
-        input {
-            height: 25px;
+        input{
+            height: 20px;
             border: 0;
             padding: 0;
         }
