@@ -2,10 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Http\Controllers\ClientesController;
-//namespace App\Http\Controllers\paginate;
-//namespace App\Http\Controllers\paginate\Controller;
 use Illuminate\Pagination\Paginator;
-
 use App\produto;
 use App\pedido;
 use App\pedidoitens;
@@ -33,11 +30,7 @@ class PedidoController extends Controller
 
     } 
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function index()
     {
      
@@ -53,26 +46,17 @@ class PedidoController extends Controller
 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function create()
     {
         return view('fr_pedidos.fr_CadastrarPedido');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+  
     public function store(Request $request)
     {
         
-      // dd($request);        
+        
         $dados=$request->only('nomeCliente');
         pedido::create($dados);
 
@@ -80,46 +64,25 @@ class PedidoController extends Controller
         return view('fr_vendas.fr_inicio',compact('pedido'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\pedido  $pedido
-     * @return \Illuminate\Http\Response
-     */
+    
     public function show($pedido)
     {
         return 'numero show';
       }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\pedido  $pedido
-     * @return \Illuminate\Http\Response
-     */
+    
     public function edit($pedido)
     {
         return 'aqui editar';
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\pedido  $pedido
-     * @return \Illuminate\Http\Response
-     */
+    
     public function update(Request $request, pedido $pedido)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\pedido  $pedido
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy($pedido)
     {
        return "desletar";
@@ -164,19 +127,5 @@ class PedidoController extends Controller
        // return view('fr_pedidos.fr_tabelaProd', compact('dadoprod'));
     }
        
-   /* public function prencherTabela(request $requst, $id){
-
-          $dados = pedido::find($id);
-         
-     //   $dados = pedido::all();
-
-      //  dd($dados);
-        echo ($dados->id_pedido);
-
-        return view('fr_vendas.fr_listaProdutosPedido',compact('dados'));
-    }
-*/
-   
-
   
 }

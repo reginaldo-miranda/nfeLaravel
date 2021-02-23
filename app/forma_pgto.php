@@ -8,6 +8,7 @@ class forma_pgto extends Model
 {
     protected $primaryKey = 'codigo';
     protected $table='forma_pgtos';
+    protected $fillable = ['descricao','qtde_parcelas','dias_inicial','dias_intervalo'];
 
     
 /*

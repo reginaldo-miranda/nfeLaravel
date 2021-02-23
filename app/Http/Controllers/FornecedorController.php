@@ -7,33 +7,20 @@ use Illuminate\Http\Request;
 
 class FornecedorController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+  
     public function index()
     {
         $dados = fornecedor::all();
         return  view('fr_fornecedores.fr_listarFornecedores', compact('dados'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function create()
     {
         return view('fr_fornecedores.fr_cadastroFornecedor');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    
     public function store(Request $request)
     {
 
@@ -43,36 +30,19 @@ class FornecedorController extends Controller
   
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\fornecedor  $fornecedor
-     * @return \Illuminate\Http\Response
-     */
+    
     public function show(fornecedor $fornecedor)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\fornecedor  $fornecedor
-     * @return \Illuminate\Http\Response
-     */
     public function edit($codigo)
     {
         $codigo = fornecedor::find($codigo);
         return view('fr_fornecedores.fr_editarFornecedores', compact('codigo'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\fornecedor  $fornecedor
-     * @return \Illuminate\Http\Response
-     */
+    
     public function update(Request $request, $codigo)
     {
         $data = fornecedor::find($codigo);
@@ -82,12 +52,7 @@ class FornecedorController extends Controller
          return redirect('fornecedor');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\fornecedor  $fornecedor
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy($fornecedor)
     {
         if (!$fornecedor = fornecedor::find($fornecedor))
