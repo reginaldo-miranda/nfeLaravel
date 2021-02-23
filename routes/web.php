@@ -106,7 +106,11 @@ Route::get('vendas', 'pedidoController@index')->name('testevenda');
 
 //------------------------------------------------------------------------
   
-Route::resource('formapgto','formaPgtoController');
+//Route::resource('formapgto','formaPgtoController')->name('formapgto');
+
+
+Route::resource('formapgto', 'formaPgtoController');
+
 //------------------------------------------------------------------------
 
 // php artisan make:model post -mcr

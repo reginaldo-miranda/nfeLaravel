@@ -10,6 +10,7 @@
 
     
     @endsection 
-  
+    
+     @include('fr_formaPgto.fr_unicoFormaPgto')
             
 @endsection

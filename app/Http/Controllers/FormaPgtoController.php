@@ -17,8 +17,8 @@ class FormaPgtoController extends Controller
     public function index()
     {
         $dadospgto = forma_pgto::all();
-      //  dd($dadospgto);
-        return view('fr_formapgto.fr_unicoFormaPgto', compact('dadospgto'));
+       //dd($dadospgto);
+        return view('fr_formapgto.fr_listaFormaPgto', compact('dadospgto'));
     }
 
     /**
@@ -28,7 +28,7 @@ class FormaPgtoController extends Controller
      */
     public function create()
     {
-        //
+        return view('fr_formapgto.fr_cadastroFormaPagamento');
     }
 
     /**
@@ -59,9 +59,11 @@ class FormaPgtoController extends Controller
      * @param  \App\forma_pgto  $forma_pgto
      * @return \Illuminate\Http\Response
      */
-    public function edit(forma_pgto $forma_pgto)
+    public function edit($codigo)
     {
-        //
+        $dadospgto = forma_pgto::find($codigo);
+       //dd($dadospgto);
+         return view('fr_formaPgto.fr_editarFormaPgto', compact('dadospgto'));
     }
 
     /**
@@ -71,9 +73,14 @@ class FormaPgtoController extends Controller
      * @param  \App\forma_pgto  $forma_pgto
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, forma_pgto $forma_pgto)
+    public function update(Request $request, $codigo)
     {
-        //
+        $dados = forma_pgto::find($codigo);
+       // dd($dados);
+        $dados->update($request->all());
+        
+
+        return redirect('formapgto');
     }
 
     /**
