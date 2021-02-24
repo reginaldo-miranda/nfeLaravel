@@ -12,6 +12,7 @@
  {{ csrf_field() }}
 
  <script type="text/javascript">
+    /*
     function calcular(){
         // document.inclusao.precoTotal.value =
         var calc = (Number(document.inclusao.precoUnit.value)* Number(document.inclusao.qde.value));
@@ -21,6 +22,7 @@
           document.inclusao.precoTotal.value = tot;
 
     }
+*/
 
  </script>
  
@@ -67,7 +69,7 @@
          <div>
              <label class="juntar">Desconto</label><br>
              <input type="text" class="form-control, inputquatro" id="text_desconto" name="desconto" 
-             placeholder=" desconto" value="{{ $dadosProd->desconto ?? old('desconto') }}" onblur="calcular()">
+             placeholder=" desconto" value="{{ $dadosProd->desconto ?? old('desconto') }}" {{-- onblur="calcular()  --}}>
 
 
          </div>
@@ -77,22 +79,23 @@
             <input type="text" class="form-control, inputseis" id="text_preco" name="precoUnit"
             placeholder="preco unitario " value="{{ $dadosProd->preco ?? old('precoUnit') }}">
 
-
-
-
         </div>
-    
+        <?php
+        
+      //  $vtotal=App\pedido::calcular($dadosProd->preco, $dadosProd->qde, $dadosProd->desconto);
+        $vtotal=App\pedido::calcular(10, 2, 30);
+        ?> 
         <div>
             <label class="juntar">total</label><br>
             <input type="text" class="form-control, inputseis" id="text_precoTotal" name="precoTotal"
-            placeholder="preco total" value="{{ $dadosProd->precoTotal ?? old('precoTotal')  }}"> 
+            placeholder="preco total" value="<?= $vtotal ?>"> 
 
         </div>
          <div class="col-12" id="btnsubmit">
              <button type="submit" class="btn btn-primary , botoes">Enviar gravar</button>
 
          </div>
-
+        
         
     </div>
     <div>
@@ -103,6 +106,8 @@
    
 
 </form>
+
+
 
 
 </div>

@@ -108,7 +108,8 @@ class PedidoitensController extends Controller
       where pedido_id = '.$id );
       $soma = DB:: select ('SELECT sum(precoTotal) as totalv FROM pedidoitens WHERE pedido_id = '.$id);
       //dd($soma);
-
+  //    SELECT  PI. *, P.NOME_REDUZIDO, (select sum(precoTotal) FROM pedidoitens WHERE pedido_id = 1) AS vtotal FROM PEDIDOITENS PI INNER JOIN PRODUTOS P ON (PI.codigoProduto = p.codigo)
+  //WHERE pedido_id = 1 
       
       return view('fr_vendas.fr_listaProdutosPedido',compact('dados','dadosped','dadosProd','soma'));
     }
