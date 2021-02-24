@@ -35,12 +35,8 @@ class PedidoController extends Controller
     {
      
       // dd($this->objpedidoitens->find(1)->relpedido);
-       $pedido = $this->objpedido->paginate($this->totalpagina);
-     //  dd($pedido);
-
-       // $dados = pedido::all();
-       // dd($dados);
-        //return view('fr_pedidos.fr_listarPedidos' , compact('dados'));
+      $pedido = $this->objpedido->paginate($this->totalpagina);
+     
        return view('fr_vendas.fr_inicio', compact('pedido'));
        
 
@@ -60,7 +56,7 @@ class PedidoController extends Controller
         $dados=$request->only('nomeCliente');
         pedido::create($dados);
 
-        $pedido = $this->objpedido->all();
+        $pedido = $this->objpedido->paginate($this->totalpagina);
         return view('fr_vendas.fr_inicio',compact('pedido'));
     }
 
@@ -100,15 +96,7 @@ class PedidoController extends Controller
        
         // dd($codigo);
          $dados = cliente::find($codigo);
-        // dd($dados);
-        // $dados = cliente::find($request);
-        // $dados = $request->all();
-        // $dados = $request->input('razaosocial');
-        // $dados = $request->input('products.0.name');
-        // $dados = $request->input();
-        // $dados = $request->query($codigo);
-        // $dados = $request->input('user.name');
-        // dd($dados);
+       
             
         return view('fr_pedidos.fr_cadastrarPedido', compact('dados'));
       // return view('fr_pedidos.fr_unicoCEPedido', compact('dados'));

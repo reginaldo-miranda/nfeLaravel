@@ -72,12 +72,6 @@
                         <button type="submit" class="btn btn-danger btn-sm">Excluir</button>
                     </form>
 
-                   
-                      
-                    
-
-                   {{--   class="glyphicon glyphicon-pencil"  --}}
-               {{--  </div>  --}}  
             
             </div>
             

@@ -55,26 +55,16 @@ class PedidoitensController extends Controller
             $dados = $request->only('pedido_id', 'codigoProduto','qde', 'desconto', 'precoUnit','precoTotal');
             pedidoitens::create($dados);
 
-            return 'gravado';//view('fr_pedidos.fr_incluirItensPedido');
+            return redirect('pedido');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\pedidoitens  $pedidoitens
-     * @return \Illuminate\Http\Response
-     */
+    
     public function show(pedidoitens $pedidoitens)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\pedidoitens  $pedidoitens
-     * @return \Illuminate\Http\Response
-     */
+    
     public function edit($codigo)
     {
         
@@ -116,20 +106,11 @@ class PedidoitensController extends Controller
 
       $dadosProd = DB :: select ( 'SELECT PI. *, P.NOME_REDUZIDO FROM PEDIDOITENS PI INNER JOIN PRODUTOS P ON (PI.codigoProduto = p.codigo)
       where pedido_id = '.$id );
+      $soma = DB:: select ('SELECT sum(precoTotal) as totalv FROM pedidoitens WHERE pedido_id = '.$id);
+      //dd($soma);
+
       
-         
-     //  $dados = pedidoitens::where('pedido_id == $id');
-
-      // dd($dados);
-       // echo ($dados->id_pedido);
-
-      /* $dadosProd =DB::table('produtos')
-       ->join('pedidoitens', 'codigoproduto', '=', 'produtos.codigo')
-       ->select('produtos.nome_reduzido')->get($id);
-      // dd($dadosProd); */
-       
-
-        return view('fr_vendas.fr_listaProdutosPedido',compact('dados','dadosped','dadosProd'));
+      return view('fr_vendas.fr_listaProdutosPedido',compact('dados','dadosped','dadosProd','soma'));
     }
 
     public function lancarItens($codigo,$dadosidped){

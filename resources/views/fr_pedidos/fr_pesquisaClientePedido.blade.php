@@ -52,14 +52,7 @@
                              
                                 <button type="submit" class="btn btn-warning btn-sm">Escolher</button>
                             </form> 
-                           
-                                                       
-
-
-                            {{-- <div class="col-4">   --}}
-                            {{-- <a href="edit_func/{{ $funcionario->id_funcionarios}}">editar</a>
-                            <a href="#">Excluir</a> --}}
-                           
+                        
                     
                         </div>
                         <style>

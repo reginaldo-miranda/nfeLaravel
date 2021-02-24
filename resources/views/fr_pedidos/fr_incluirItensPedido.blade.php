@@ -14,7 +14,7 @@
  <script type="text/javascript">
     function calcular(){
         // document.inclusao.precoTotal.value =
-        var calc = (Number(document.inclusao.preco.value)* Number(document.inclusao.qde.value));
+        var calc = (Number(document.inclusao.precoUnit.value)* Number(document.inclusao.qde.value));
         var desc = (calc * Number(document.inclusao.desconto.value));
         var desc1 = (desc/100);
         var tot   = (calc - desc1);  
@@ -74,8 +74,8 @@
 
         <div>
             <label class="juntar">Preco Unit</label><br>
-            <input type="text" class="form-control, inputseis" id="text_preco" name="preco"
-            placeholder="preco unitario " value="{{ $dadosProd->preco ?? old('preco') }}">
+            <input type="text" class="form-control, inputseis" id="text_preco" name="precoUnit"
+            placeholder="preco unitario " value="{{ $dadosProd->preco ?? old('precoUnit') }}">
 
 
 

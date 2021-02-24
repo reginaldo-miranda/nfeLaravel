@@ -10,7 +10,9 @@
 
     
     @endsection 
-    
-     @include('fr_formaPgto.fr_unicoFormaPgto')
+    <form method="post" action="/formapgto" >
+         @csrf
+        @include('fr_formaPgto.fr_unicoFormaPgto')
+    </form>    
             
 @endsection

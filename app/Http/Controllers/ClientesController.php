@@ -36,27 +36,7 @@ class ClientesController extends Controller
       // dd($request);
        $data = $request->only('razaosocial','fantasia','pessoa','cnpj','inscest','telefone', 'ramalcontato','email','contato','endereco','numero','bairro','cep','codcidade','uf', 'consufinal', 'diferido','ehtransp' );
        cliente::create($data);
-      /*
-       $cliente = new cliente;
-       $cliente->razaosocial  = $request->text_razaosocial;
-       $cliente->fantasia     = $request->text_fantasia;
-       $cliente->pessoa       = $request->text_pessoa;
-       $cliente->cnpj         = $request->text_cnpj;
-       $cliente->inscest      = $request->text_inscricao;
-       $cliente->endereco     = $request->text_endereco;
-       $cliente->numero       = $request->text_numero;
-       $cliente->bairro       = $request->text_bairoo;
-       $cliente->cep          = $request->text_cep;
-       $cliente->codcidade    = $request->text_codcidade;
-       $cliente->uf           = $request->text_uf;
-       $cliente->telefone     = $request->text_telefone;
-       $cliente->contato      = $request->text_contato;
-       $cliente->ramalcontato = $request->text_ramalcontato;
-       $cliente->email        = $request->text_email;
-       $cliente->consufinal   = $request->text_consufinal;
-       $cliente->diferido     = $request->text_diferido;
-       $cliente->ehtransp     = $request->text_ehtransp;
-       $cliente->save(); */
+  
        return redirect()->route('cliente.index');
 
     }

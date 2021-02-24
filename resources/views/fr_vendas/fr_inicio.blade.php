@@ -4,10 +4,12 @@
 @section('conteudo')
     <meta name="csrf-token" content="{{ csrf_token() }}" />
      <h2 class="text-center">Lista Pedidos</h2><hr>
+
      <div class="text-center mt-3 mb-3">
         <a href="{{ route('pedido.create') }}">
          <button class="btn btn-success btn-sm">Cadastrar</button>
      </div>
+
      <div class="col-12 m-auto">
           <table class="table text_center">
               <thead class="thead-dark">
@@ -49,7 +51,7 @@
                </tbody>
             </table>
               
-                {!!$pedido->links()!!}
+               {!!$pedido->links()!!}  
 
        </div>
   
