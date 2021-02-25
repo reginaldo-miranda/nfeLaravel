@@ -12,17 +12,17 @@
  {{ csrf_field() }}
 
  <script type="text/javascript">
-    /*
+
     function calcular(){
-        // document.inclusao.precoTotal.value =
+       // document.inclusao.precoTotal.value = 
         var calc = (Number(document.inclusao.precoUnit.value)* Number(document.inclusao.qde.value));
         var desc = (calc * Number(document.inclusao.desconto.value));
         var desc1 = (desc/100);
         var tot   = (calc - desc1);  
-          document.inclusao.precoTotal.value = tot;
+        document.inclusao.precoTotal.value = tot;
 
     }
-*/
+
 
  </script>
  
@@ -62,14 +62,14 @@
         <div>
             <label class="juntar">Quantidade</label><br>
             <input type="text" class="form-control, inputquatro" id="text_qde" name="qde"
-            placeholder="qde" value="{{ $dadoProd->qde ?? old('qde') }}"> {{-- onblur="calcular()"> --}}
+            placeholder="qde" value="{{ $dadoProd->qde ?? old('qde') }}" onblur="calcular()"> 
 
 
         </div>
          <div>
              <label class="juntar">Desconto</label><br>
              <input type="text" class="form-control, inputquatro" id="text_desconto" name="desconto" 
-             placeholder=" desconto" value="{{ $dadosProd->desconto ?? old('desconto') }}" {{-- onblur="calcular()  --}}>
+             placeholder=" desconto" value="{{ $dadosProd->desconto ?? old('desconto') }}" onblur="calcular()">
 
 
          </div>
@@ -80,15 +80,11 @@
             placeholder="preco unitario " value="{{ $dadosProd->preco ?? old('precoUnit') }}">
 
         </div>
-        <?php
-        
-      //  $vtotal=App\pedido::calcular($dadosProd->preco, $dadosProd->qde, $dadosProd->desconto);
-        $vtotal=App\pedido::calcular(10, 2, 30);
-        ?> 
-        <div>
+      
+        <div> 
             <label class="juntar">total</label><br>
             <input type="text" class="form-control, inputseis" id="text_precoTotal" name="precoTotal"
-            placeholder="preco total" value="<?= $vtotal ?>"> 
+            placeholder="preco total" value=" {{ $dadosProd->precoTotal ?? old ('precoTotal') }} "> 
 
         </div>
          <div class="col-12" id="btnsubmit">

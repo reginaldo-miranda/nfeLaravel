@@ -18,8 +18,9 @@ class pedido extends Model
      public function relpedidoitens(){
       return $this->hasMany('App\pedidoitens', 'pedido_id');
    }
-
-  public static function calcular($precoUnit,$qde, $desconto){
+   /*
+      // nao esta sendo usanda
+     public static function calcular($precoUnit,$qde, $desconto){
       // document.inclusao.precoTotal.value =
        $calc = ($precoUnit * $qde) ;
        $desc = ($calc * $desconto);
@@ -27,6 +28,6 @@ class pedido extends Model
        $vltotal   = ($calc - $desc1);  
       return $vltotal;
 
-  }
+  }*/
   
 }
