@@ -3,24 +3,14 @@
 
 @section('titulopagina')
     <div class="img" class="col-md-4 col-md-4 offset-5 col-sm-8 offset-2 col-xs-12">
-
         <h4>Lista Clientes</h4>
      </div>
 @endsection    
 
 @section('conteudo') 
+       
 
-
-
-<form action="{{ route('cliente.search')}}" method="post" class="form form-inline">
-    @csrf
-    <input type="text" name="filtro" placeholder="filtrar" class="form-control">
-    <button type="submit" class="btn btn-primary">Pesquisar</button>
-</form> 
- 
-
-
-     @if (count($dados)==0)
+    @if (count($dados)==0)
 
         <p class="alert alert-damger">nao foi encontrado dados no banco</p>
         <form action="{{ route('cliente.create') }}">
@@ -28,16 +18,29 @@
             <button type="submit" class="btn btn-primary">Cadastrar</button>
         </form>  
     @else
-    <form action="{{ route('cliente.create') }}">
-        @csrf
-        <button type="submit" class="btn btn-primary">Cadastrar</button>
-    </form>
-
-      
- @foreach($dados as $cliente)
-
-       
+        <div class="row">
         
+
+                <form action="{{ route('cliente.search')}}" method="post" class="form form-inline">
+                    @csrf
+                    <input type="text" name="filtro" placeholder="filtrar" class="form-control">
+                    <button type="submit" class="btn btn-primary btn">Pesquisar</button>
+                </form>  
+                
+                <form action="{{ route('cliente.create') }}">
+                    @csrf
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                </form>
+        </div>
+        <div>
+            <label class="lab">Codigo</label>
+            <label class="labpu">Nome</label>
+            <label class="lab">Cnpj/Cpf</label>
+           
+        </div>
+      
+        @foreach($dados as $cliente)
+
             <div class="row">
                 <div class="col-2">
                     
@@ -50,10 +53,9 @@
                     {{ $cliente->razaosocial }} 
                                        
                 </div>
-                <div class="col-2">
+                <div class="col-4">
 
                     {{ $cliente->cnpj }}
-
 
                 </div>
 
@@ -64,9 +66,16 @@
 
                         .btn{
                             height: 23px;
-                            margin-right: 5px;
+                            margin-left: 5px;
                             font-size: 10px;
                             text-align: center;
+                        }
+
+                        .lab{
+                            padding-right: 165px;
+                        }
+                        .labpu{
+                            padding-right: 330px;
                         }
                     </style>
    
@@ -79,23 +88,11 @@
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger btn-sm">Excluir</button>
                     </form>
-                    
-                      
-                    
-
-                {{--   class="glyphicon glyphicon-pencil"  
-               {{--  </div>  --}}  
             
             </div>
-            
            
-       @endforeach 
-    
-      
-    
+        @endforeach 
      
-     @endif
-      
-
-
+    @endif
+ 
  @endsection 

@@ -2,20 +2,20 @@
 
 
 @section('conteudo')
-<h2>lista de produtos do pedido {{  $dadosped->id_pedido }} </h2>
+<h2>lista de produtos do pedido n:  {{  $dadosped->id_pedido }} </h2>
 
 <div class="row">
     <a href="{{ route('testevenda') }}">
-       <button  class="btn btn-warning btn-sm">Pedidos</button>
+       <button id="btns" class="btn btn-warning btn-sm">Pedidos</button>
     </a>
   
     <form action="{{ route('listaIncluirProd', $dadosped->id_pedido) }}">
         @csrf
-        <button type="submit" class="btn btn-primary btn-sm">Incluir Itens</button>
+        <button type="submit"id="btns" class="btn btn-primary btn-sm">Incluir Itens</button>
     </form>
     <form action="{{ route('produto.create') }}">
         @csrf
-        <button type="submit" class="btn btn-primary btn-sm">Cadastrar</button>
+        <button type="submit" id="btns" class="btn btn-primary btn-sm">Cadastrar</button>
     </form> 
 
 </div>
@@ -30,10 +30,16 @@
 </form>
 @else
 
-
+        <div>
+            <label class="lab">Codigo</label>
+            <label class="labpu">descricao</label>
+            <label class="lab">P Unit</label>
+            <label class="lab">Qtde</label>
+            <label class="lab">Total</label>
+        </div>
 
         @foreach($dadosProd as $key)
-        <div class="row">
+        <div class="row ml-1">
 
             <div class="espaco">
                 <input type="text" class="form-control" id="text_peq" name="codigoProduto"
@@ -66,7 +72,7 @@
             <form action="#" method="post">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="btn btn-danger btn-sm">Excluir</button>
+                <button type="submit" id="btns" class="btn btn-danger ">Excluir</button>
             </form>
             
             
@@ -75,9 +81,9 @@
         </div>
         @endforeach 
         @foreach($soma as $ss);
-
-          <label><h2>total :{{ $ss->totalv }}</h2></label>  
-
+          <div id="somatotal">
+             <label><h2>total :{{ $ss->totalv }}</h2></label>  
+          </div>  
          @endforeach;
        
         
@@ -86,7 +92,27 @@
             #text_peq{
                 width: 60px;
             }
-        
+            .lab{
+                padding-right: 30px;
+            }
+            .labpu{
+                padding-right: 100px;
+            }
+            #btns{
+
+               height: 18px;
+               justify-content: center;
+               padding: 0;
+               padding-right: 10px;
+               margin-right: 10px;
+               margin-left: 10px;
+               font-size: 12px;
+            }
+        #somatotal{
+            margin-left: 120px;
+        }
+
+
         </style>
         
       

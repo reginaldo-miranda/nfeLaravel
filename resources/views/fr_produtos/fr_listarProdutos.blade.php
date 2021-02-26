@@ -25,18 +25,17 @@
         
             <div class="row">
                
-                <div class="col-4">
-                    
+                <div class="col-2">
                     {{ $produto->codigo }} 
-                                                       
-
                 </div>
                 
                 <div class="col-4">
 
                     {{ $produto->nome_reduzido }}
 
-
+                </div>
+                <div class="col-2">
+                    {{ $produto->preco }}
                 </div>
 
                     {{--  <div class="col-4">   --}}
