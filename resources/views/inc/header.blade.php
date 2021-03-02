@@ -25,22 +25,27 @@
        #titulo{
           text-align: center;
        }
+       #cabe{
+         padding-left: 20px;
+       }
     
     </style> 
      
   <div class="row">
  
       <div class="topo">
-         <h4>Empresa de distribuicao</h4>
-         <h5>Rua Duque de Caxias,199 - Limeira<h5>
-         @yield('titulopagina')
-
+        <div class="row">
+           <img src="imagem/logoPequeno.jpg" width="40" height="40">
+           <div id="cabe">
+             <h4>Empresa de distribuicao</h4>
+             <h5>Rua Duque de Caxias,199 - Limeira<h5>
+            </div>     
+             @yield('titulopagina')
+         </div> 
          <a id="botao" href="/">sair</a>
          <a id="botao" href="/administrador">Voltar</a>
       </div>
 
-  </div> 
-
-     <br>
+  </div><br>
    
   
