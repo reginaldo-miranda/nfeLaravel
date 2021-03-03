@@ -38,26 +38,23 @@
 {{--   @endif --}}
 
 @section('conteudo')
+
+<div class="row justify-content-center">
+  <h2>lista de produtos do <a id="voltar" href="{{ route('testevenda') }}">pedido
+    {{  $dadosped->id_pedido }}</h2></a>
+   
+{{-- 
     <div class="row justify-content-center">
-         <h2 >lista de produtos do pedido n:  {{  $dadosped->id_pedido }} </h2>
-        <a id="voltar" href="{{ route('testevenda') }}">
-            <button type="submit" class="btn btn-warning btn-sm">voltar no pedido</button>
-        </a>
+         <h2 >lista de produtos do pedido n:  {{  $dadosped->id_pedido }}</h2>
+          <a id="voltar" href="{{ route('testevenda') }}">pedido</a>
+        {{--   <button type="submit" class="btn btn-warning btn-sm">voltar no pedido</button>  --}}
+       
        
     </div>  
    
     <div class="row">
-        
-      {{--   <div class="col">  
-          <div class="row" id="linha">
-              <label class="labcodi">Codigo</label>
-              <label class="labdesc">descricao</label>
-              <label class="labpuni">P Unit</label>
-              <label class="labqde">Qtde</label>
-              <label class="labdesc">% desc</label>
-              <label class="labptotal">Total</label>
-           </div>  --}}
-           <div style="overflow: auto; width: 1000px; height: 100px"> {{--  border:solid 1px">  --}}
+     
+           <div style="overflow: auto; width: 1000px; height: 100px"  "border:solid 0,5px">
                 <table class="tabela"  style="width:900px"> 
                     
                     <tread>
@@ -97,17 +94,19 @@
                     @endforeach
                 
                 </table>
-            </div><hr>
+            </div>
            
-            @foreach($soma as $ss);
-            <div id="somatotal">
-               <label><h2>total :{{ $ss->totalv }}</h2></label>  
-            </div>  
-           @endforeach;
+       
+        </div> <hr> 
+        @foreach($soma as $ss);
+        <div id="somatotal">
+           <label><h2>total :{{ $ss->totalv }}</h2></label>  
         </div>  
-
+       @endforeach;
     </div>
   @endsection  
+
+
  <style>
 /* .tbody{
   background-color: #bdc3c7;
@@ -149,9 +148,9 @@
 }
 
 .labcodi{
- /* width: 60px;*/
+
   padding-left: 40px;
-  /*padding-right: 90px;*/
+ 
 }
 .labdescr{
   padding-left: 50px;
@@ -168,8 +167,7 @@
 }
 .labqde{
     width: 50px;
-  /*  padding-left: 40px;*/
-  
+    
 }
 .labptotal{
   width: 60px;
@@ -192,22 +190,14 @@
   padding-left: 60px;
 }
 
-
 #somatotal{
 margin-left: 40px;
 }
+/*
 #voltar{
 padding-left:  120px;
-}
-
- /*.td_nome {
-  text-align: center;
-}
-.tr_desc{
-  width: 25px;
-   
- 
 }*/
+
 .final{
   text-align: right;
 }
