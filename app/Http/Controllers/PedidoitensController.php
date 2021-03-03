@@ -104,7 +104,7 @@ class PedidoitensController extends Controller
       $dados    = $this->objpedido->find($id)->relpedidoitens;
       $dadosped = $this->objpedido->find($id);
 
-      $dadosProd = DB :: select ( 'SELECT PI. *, P.NOME_REDUZIDO FROM PEDIDOITENS PI INNER JOIN PRODUTOS P ON (PI.codigoProduto = p.codigo)
+      $dadosProd = DB :: select( 'SELECT PI. *, P.NOME_REDUZIDO FROM PEDIDOITENS PI INNER JOIN PRODUTOS P ON (PI.codigoProduto = p.codigo)
       where pedido_id = '.$id );
       $soma = DB:: select ('SELECT sum(precoTotal) as totalv FROM pedidoitens WHERE pedido_id = '.$id);
       // dd($soma);
