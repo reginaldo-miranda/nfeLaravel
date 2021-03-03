@@ -36,59 +36,68 @@
 
 
 {{--   @endif --}}
+
 @section('conteudo')
     <div class="row justify-content-center">
-        <h2 >lista de produtos do pedido n:  {{  $dadosped->id_pedido }} </h2>
+         <h2 >lista de produtos do pedido n:  {{  $dadosped->id_pedido }} </h2>
         <a id="voltar" href="{{ route('testevenda') }}">
             <button type="submit" class="btn btn-warning btn-sm">voltar no pedido</button>
         </a>
        
-    </div>    
+    </div>  
+   
     <div class="row">
         
-        <div class="col">  
-          <div class="row">
+      {{--   <div class="col">  
+          <div class="row" id="linha">
               <label class="labcodi">Codigo</label>
               <label class="labdesc">descricao</label>
               <label class="labpuni">P Unit</label>
               <label class="labqde">Qtde</label>
+              <label class="labdesc">% desc</label>
               <label class="labptotal">Total</label>
-           </div>
-           <div style="overflow: auto; width: 1000px; height: 150px; border:solid 1px">
+           </div>  --}}
+           <div style="overflow: auto; width: 1000px; height: 100px"> {{--  border:solid 1px">  --}}
                 <table class="tabela"  style="width:900px"> 
                     
-                  {{--   <tread>
+                    <tread>
                         <tr>
-                            <th>codigo</th>
-                            <th>Descricao</th>
-                            <th>P Unid</th>
-                            <th>Qtde</th>
-                            <th>Total</th>
+                            <th class="labcodi">codigo</th>
+                            <th class="labdescr">Descricao</th>
+                            <th class="labpuni">P Unid</th>
+                            <th class="labqde">Qtde</th>
+                            <th class="labdesc">% Desc</th>
+                            <th class="labptotal">Total</th>
                         </tr>
-                    </tread>  --}}
+                    </tread>  
                        
                     @foreach($dadosProd as $key)
                     
                             <tbody>
-                            
+                           
                                 <td> {{ $key->codigoProduto }}</th>
-                                <td class="esquerda"> {{ $key->NOME_REDUZIDO }}</td>
+                                <td class="td_nome"> {{ $key->NOME_REDUZIDO }}</td>
                                 <td> {{ $key->precoUnit }}</td>
                                 <td> {{ $key->qde }}</td>
+                                <td class="tr_desc"> {{ $key->desconto }}</td>
                                 <td class="final"> {{ $key->precoTotal }}</td>
                                 <td>
-                                    <form action="#" method="post">
+                                    <form class="form-group" action="#" method="post">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" id="btns" class="btn btn-danger ">Excluir</button>
+                                        <div id="btnex">
+                                          <button type="submit" id="btns" class="btn btn-danger">Excluir</button>
+                                        </div>
+                                        
                                     </form>
                                 </td> 
+                            
                             </tbody>
                     
                     @endforeach
                 
                 </table>
-            </div>
+            </div><hr>
            
             @foreach($soma as $ss);
             <div id="somatotal">
@@ -135,22 +144,42 @@
 #text_peq{
   width: 60px;
 }
+#linha{
+  text-align: center;
+}
 
 .labcodi{
-  margin-left: 10px;
-  padding-right: 100px;
+ /* width: 60px;*/
+  padding-left: 40px;
+  /*padding-right: 90px;*/
+}
+.labdescr{
+  padding-left: 50px;
 }
 
 .labdesc{
-  padding-right: 200px;
-  margin-right: 150px;
- 
+  width: 170px;
+  padding: 2px;
+ }
+
+.labpuni{
+ width: 100px;
+ padding-left: 10px;
+}
+.labqde{
+    width: 50px;
+  /*  padding-left: 40px;*/
+  
+}
+.labptotal{
+  width: 60px;
+  padding-left: 70px;
 }
 
 
 #btns{
 
- height: 18px;
+ height: 16px;
  justify-content: center;
  padding: 0;
  padding-right: 10px;
@@ -158,22 +187,40 @@
  margin-left: 10px;
  font-size: 12px;
 }
+#btnex{
+  width: 70px;
+  padding-left: 60px;
+}
 
 
 #somatotal{
-margin-left: 120px;
+margin-left: 40px;
 }
 #voltar{
 padding-left:  120px;
 }
 
- .esquerda {
+ /*.td_nome {
   text-align: center;
 }
+.tr_desc{
+  width: 25px;
+   
+ 
+}*/
 .final{
   text-align: right;
 }
-
+td{
+  text-align: left;
+  padding-left: 50px;
+}
+th {
+  position: sticky;
+  top: 0;
+  background: rgb(0, 255, 34);
+    
+}
  </style>
 
 
