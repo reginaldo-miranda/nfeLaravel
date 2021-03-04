@@ -2,7 +2,10 @@
 
 @section('titulopagina')
     <div class="img" class="col-md-4 col-md-4 offset-5 col-sm-8 offset-2 col-xs-12">
-        <h4>Lista produtos para incluir no pedido</h4>
+        <div class="row">
+            <h4>Lista produtos para incluir no pedido</h4>
+        </div>
+    
     </div>
 @endsection
 
@@ -39,6 +42,9 @@
                             {{ $produto->nome_reduzido }}
 
                         </div>
+                        <div>
+                            {{ $produto->preco }}
+                        </div>
                         <style>
                             .btn {
                                 height: 23px;
@@ -46,14 +52,23 @@
                                 font-size: 10px;
                                 text-align: center;
                             }
+                            #btns{
+                                margin-left: 50px;
+                            }
 
                         </style>
-                        <form method="get" action="{{ route('lancarItens', ['codigo' => $produto, 'id_pedido' => $dadosidped]) }}">
-                            @csrf
-                            <button type="submit" class="btn btn-warning btn-sm">escolher btn</button> 
+                        <div id="btns" class="row">
+                           <form method="get" action="{{ route('lancarItens', ['codigo' => $produto, 'id_pedido' => $dadosidped]) }}">
+                               @csrf
+                               <button type="submit" class="btn btn-warning btn-sm">escolher btn</button> 
 
                             {{--   <button type="submit" onclick="window.location.replace('fr_incluirItensPedido.blade.php')">escolher iten</button>  --}}
-                        </form>
+                            </form>
+                            <form action="{{ route('produto.edit',$produto->codigo ) }}" method="get">
+                                @csrf
+                                <button type="submit" class="btn btn-warning btn-sm">Editar</button>
+                            </form>
+                        </div>
                 </div>
         @endforeach
 
