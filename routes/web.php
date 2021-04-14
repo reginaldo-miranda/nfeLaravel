@@ -112,3 +112,4 @@ Route::get('vendas', 'pedidoController@index')->name('testevenda');
 Route::resource('formapgto', 'formaPgtoController');
 
 //------------------------------------------------------------------------
+//{{-- λ php artisan make:model empresa -mcr --}}
